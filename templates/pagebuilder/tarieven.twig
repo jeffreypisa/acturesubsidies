@@ -1,0 +1,129 @@
+<section class="mod-tarieven mod-cards {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+		<div class="row justify-content-center">
+			{% set delay = 0 %}
+  		{% for blok in item.cat_1_blocks %}
+  			<div class="col-lg-4 d-flex align-items-end">
+  				<div class="w-100 card body3 with-shadow {% if blok.uitgelicht %} uitgelicht {% endif %}" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}">
+  					<div class="card-body body3">
+	  					<div class="top" data-mh>
+					  		<div class="linewithdots">
+				  				<div class="row">
+				  					<div class="col-auto">
+											<div class="dot" style="background: {{ blok.color }}"></div>
+				  					</div>
+				  					<div class="col-auto">
+											<div class="dot" style="background: {{ blok.color }}"></div>
+				  					</div>
+				  					<div class="col">
+											<div class="line" style="background: {{ blok.color }}"></div>
+				  					</div>
+				  				</div>
+				  			</div>
+				  			{% if blok.titel %}
+				        	<span class="sub" style="color: {{ blok.color }}">{{ blok.titel }}</span>
+				        {% endif %}
+		  					{% if blok.prijs %}
+		  						<h5 class="d-inline">{{ blok.va }}</h5>
+		  						{% if blok.reken_module %}
+		  							<h4 class="h1 d-inline" style="margin: 0">€<output id="rangevalue">{{ blok.basis_bedrag }}</output></h4>
+		  						{% else %}
+		  							<h4 class="h1 d-inline" style="margin: 0"> {{ blok.prijs }} </h4> 
+		  						{% endif %}
+		  						<h5 class="d-inline">{{ blok.per }}</h5>
+									<div class="clearfix"></div>
+		  					{% endif %}
+		  					{% if blok.delabel %}
+		  						<div class="delabel bg-lightgrey">
+		  							{{ blok.delabel }}
+		  						</div>
+		  					{% endif %}
+		  					{% if blok.tekst %}
+		  						<div class="boldtekst">
+		  							{{ blok.tekst }}
+		  						</div>
+		  					{% endif %}
+		  					{% if blok.reken_module %}
+		  						
+		  						<div class="slidecontainer">
+									  <div class="fill" id="range_fill"></div>
+										<input 
+											type="range" 
+											class="volume-slider" 
+											min="{{ blok.min_loonstroken }}" 
+											max="{{ blok.max_loonstroken }}" 
+											value="0"
+											id="range_slider_input" 
+											name="rangeslider"  
+											oninput="changeRange()">
+									</div>
+									
+									<div class="boldtekst">
+		  							Ik doe <output id="howmanyloonstroken">{{ blok.min_loonstroken }}</output> loonstroken per maand 
+		  						</div>
+		  						<br>
+									<script>
+									
+			  						function changeRange() {
+											var basisbedrag = {{ blok.basis_bedrag }};
+											var bedragperloonstrook = {{ blok.bedrag_per_loonstrook }};
+											var hoeveel = document.getElementById('range_slider_input').value;
+											
+											<!-- Bereken bedrag -->
+											debedrag = Math.trunc(hoeveel * +bedragperloonstrook);
+											if (debedrag > {{ blok.max_bedrag }}) {
+												var debedrag = {{ blok.max_bedrag }}
+											}
+											
+											document.getElementById('rangevalue').value = debedrag; 
+											
+											if (hoeveel == {{ blok.max_loonstroken }}) {
+												document.getElementById('howmanyloonstroken').value = hoeveel + '+';
+											} else if (hoeveel == {{ blok.min_loonstroken }}) {
+												document.getElementById('howmanyloonstroken').value = hoeveel + ' of minder';
+											} else {
+												document.getElementById('howmanyloonstroken').value = hoeveel;
+											}
+											
+											<!-- Bereken achtergrond -->
+											var hoeveel = document.getElementById('range_slider_input').value - {{ blok.min_loonstroken }};
+											var maxloonstroken = {{ blok.max_loonstroken }} - {{ blok.min_loonstroken }};
+										  var percent = 100 / maxloonstroken * hoeveel;
+										  document.getElementById('range_fill').style.width = percent+ '%';
+										}
+										
+										document.onload = changeRange();
+
+		  						</script>
+		  					{% endif %}
+		  					{% if blok.lijst %}
+		  						<ul class="list-group">
+			  						{% for item in blok.lijst %}
+			  							<li class="list-group-item"> {{ item.tekst }} </li>
+			  						{% endfor %}
+		  						</ul>
+		  					{% endif %}
+	  					</div>		
+	  					{% if blok.link_primary %}
+	  						<br>
+								<a class="btn btn-primary btn-block" target="{{ blok.link_primary.target }}" href="{{ blok.link_primary.url }}">
+									{{ blok.link_primary.title }}
+								</a>
+					    {% endif %}
+					    {% if blok.link_secondary %}
+					    	<div class="text-center">
+		  						<br>
+									<a class="btn-link" target="{{ blok.link_secondary.target }}" href="{{ blok.link_secondary.url }}">
+										{{ blok.link_secondary.title }}
+									</a>
+	  						</div>
+					    {% endif %}
+  					</div>
+  				</div>
+  			</div>
+  			{% set delay = delay + '150' %}
+  		{% endfor %}
+		</div>
+	</div>
+</div>    
+</section>

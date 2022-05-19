@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		{% if categories %}
+			<div class="mod-categorybar">
+				<div class="container">
+					<div class="row no-gutters">
+						<div class="col-auto col-md">
+							<a href="/changelog" class="btn btn-sm {% if current_category == '' %} active {% endif %}">Changelog</a>
+						</div>
+						{% for item in categories %}
+							<div class="col-auto">
+								<a href="{{ item.link }}" class="btn btn-sm {% if item.id == current_category %} active {% endif %}"><div class="color" style="background: {{ item.kleur }}"></div> {{ item.title }}</a>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	  <section class="mod-changelog less-padding bg-lightgrey">
+			<div class="container">
+				<h1> Changelog </h1>		
+				<br>
+				<div class="row stickem-container">
+					<div class="col-md-8">
+						{% set year = 0 %}
+			    	{% for item in posts %}
+			    		{% if item.date|date('Y') != year %}
+			    			{% set year = item.date|date('Y') %}
+			    			<div id="year{{ year }}"></div>
+			    		{% endif %}
+			    		{% include 'tease-changelog.twig' %}
+			    	{% endfor %}
+					</div>
+					<div class="col-md-4 d-none d-md-block">
+		      	<div class="stickem">
+		      		<div class="content">
+				      	<span class="sub"> Jaar </span>
+				      	{% set year = 0 %}
+				      	{% for item in posts %}
+					    		{% if item.date|date('Y') != year %}
+					    			{% set year = item.date|date('Y') %}
+					    			<a href="#year{{ year }}"> {{ year }}</a>
+					    			<br>
+					    		{% endif %}
+					    	{% endfor %}
+		      		</div>
+		      	</div>
+		      </div>
+				</div>
+		  </div>
+		</section>
+		{% include 'pagebuilder.twig' %}
+	</div>
+{% endblock %}

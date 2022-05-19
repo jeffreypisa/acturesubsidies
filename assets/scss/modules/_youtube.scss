@@ -1,0 +1,26 @@
+.mod-youtube {
+	.cards {
+		margin-top: 60px;
+	}
+	.card {
+		.img-container:before {
+	    position: absolute;
+	    top: 50%;
+	    color: #fff;
+	    left: 50%;
+	    color: #fff;
+	    opacity: 2;
+	    margin-top: -14px;
+	    margin-left: -20px;
+	    font-style: normal;
+	    z-index: 2;
+	    font-variant: normal;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	    font-family: "Font Awesome 5 Brands"; 
+	    font-weight: 900; 
+	    font-size: 40px;
+	    content: "\f167";
+	  }
+	}
+}

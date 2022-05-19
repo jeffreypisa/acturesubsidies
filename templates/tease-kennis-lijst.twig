@@ -1,0 +1,21 @@
+<a href="{{ item.link }}" class="tease tease-kennis-lijst body3 noline">
+	<div class="row">
+		<div class="col">
+			<ul class="mod-breadcrumbs" style="margin: 0 !important;">
+				<li class="faded">Kennisbank</li>
+				<li>/</li>
+				<li class="faded"> {% if cattitle %} {{ cattitle }} {% else %} {{ item.terms( {query:{taxonomy: 'kennisbank_cat', parent: '0'} })|first }} {% endif %} </li>
+				<li> / </li>
+				<li class="faded">{% if subcattitle %} {{ subcattitle }} {% else %} {{ item.terms( {query:{taxonomy: 'kennisbank_cat'} })|first }} {% endif %} </li>
+
+			</ul>
+			<h4 style="margin: 0 0 15px">{{ item.title }}</h4>
+			<p class="muted"> {{ item.samenvatting }} </p> 
+		</div>
+		{% if item.thumbnail_uit %}
+			<div class="col-auto d-none d-md-block">
+				<div class="bg-cover ratio_4x4" style="background-image: url({{ item.thumbnail.src|resize('768') }})"></div>
+			</div>
+		{% endif %}
+	</div>
+</a>

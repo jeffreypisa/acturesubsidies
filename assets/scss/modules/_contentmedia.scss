@@ -1,0 +1,189 @@
+.mod-contentmedia {
+	&.bg-klantverhalen {
+		background-image: url(../images/flake_klantverhalen.svg);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+	&.bg-contact {
+		background-image: url(../images/flake_contact.svg);
+		background-size: cover;
+		background-position: bottom center;
+		background-repeat: no-repeat;
+	}
+	&.bg-overons {
+		background-image: url(../images/flake_overons.svg);
+		background-size: 700px;
+		background-position: right top;
+		background-repeat: no-repeat;
+	}
+	&.bg-productservice {
+		background-image: url(../images/flake_productservice.svg);
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: 1160px;
+		padding-bottom: 200px;
+	}
+	.logo {
+		height: auto;
+		width: 100%;
+		opacity: .4;
+		transition: 0.15s ease-in-out;
+	}
+	.logos {
+		a:hover {
+			.logo {
+				opacity: 1;
+			}
+		}
+	}
+	.size-full {
+		max-width: 100%;
+		height: auto;
+	}
+	img {
+		border-radius: 8px;
+	}
+	.btn {
+		margin-bottom: 15px;
+	}
+	.afbeelding-container {
+		width: 100%;
+		position: relative;
+		padding-top: 90%;
+		margin-bottom: 100px;
+		figure {
+			position: absolute;
+			height: auto;
+			width: 100%;
+			margin: 0;
+			&:nth-child(1) {
+				top: 0;
+				left: 10%;
+				right: 0%;
+				width: 90%;
+			}
+			&:nth-child(2) {
+				bottom: 0%;
+				left: 0;
+				width: 80%;	
+				padding-bottom: 50%;	
+				box-shadow: 0 6px 26px 0 rgba(0,0,0,0.70);
+			}
+		}
+	}
+	.card-body {
+		padding: 40px 0;
+		> * {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		h2 {
+			margin-bottom: 20px;
+		}
+		img {
+			height: auto;
+			max-width: 100%;
+		}
+	}
+	.bg-cover {
+		background-size: cover;
+		background-position: center center;
+		min-height: 300px;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.mod-contentmedia {
+		&.afbeelding_xl {
+			padding-bottom: 0;
+		}
+	}
+}
+@include media-breakpoint-up(md) {
+	.mod-contentmedia {
+		.bg {
+			background-color: $madison-100;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			position: absolute;
+			top: 0px;
+			width: 50%;
+			bottom: 0px;
+			z-index: -1;
+			&.bg-contain {
+				background-size: contain;
+			}
+			&.small {
+				width: 33%;
+			}
+			&.links {
+				left: 0;
+				background-position: right center;
+			}
+			&.rechts {
+				right: 0;
+				background-position: left center;
+			}
+		}
+		&.afbeelding_xl {
+			.contentspace {
+				min-height: 400px;
+			}
+		}
+		.afbeeldingx3 {
+			padding: 100px 0;
+			.afbeelding_1 {
+				transform: translateY(140px)
+			}
+			.afbeelding_3 {
+				transform: translateY(-140px)
+			}
+		}
+		.afbeelding-container {
+			margin-bottom: 40px;
+			figure:nth-child(1) {
+				top: 0;
+				left: 10%;
+				right: 0%;
+				width: 90%;
+			}
+			figure:nth-child(2) {
+				bottom: 0%;
+				left: 0;		
+				box-shadow: 0 6px 26px 0 rgba(0,0,0,0.70);
+			}
+			figure:nth-child(3) {
+				right: 9%;
+		    left: auto;
+		    top: 9%;
+			  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.50);
+			}
+		}
+		.card-body {
+			padding: 80px 30px;
+		}
+	}
+}
+@include media-breakpoint-up(lg) {
+	.mod-contentmedia {
+		.col-md-6:first-child,
+		.col-md-6.order-first {
+			.blok-body {
+				padding-right: 60px;
+			}
+		}
+		.col-md-6:last-child:not(.order-first) {
+			.blok-body {
+				padding-left: 60px;
+			}
+		}
+		&.afbeelding_xl {
+			.contentspace {
+				min-height: 500px;
+			}
+		}
+	}
+}

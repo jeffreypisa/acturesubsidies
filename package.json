@@ -1,0 +1,19 @@
+{
+  "name": "codekit-project",
+  "version": "1.0.0",
+  "description": "CodeKit created this starter package.json file. You should customize it appropriately.",
+  "scripts": {},
+  "author": "",
+  "license": "UNLICENSED",
+  "repository": {},
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "lity": "^2.4.1",
+    "masonry-layout": "^4.2.2",
+    "matchheight": "^0.1.2",
+    "popper.js": "^1.16.1",
+    "sticky-kit": "^1.1.3"
+  }
+}

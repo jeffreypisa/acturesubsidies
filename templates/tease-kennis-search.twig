@@ -1,0 +1,26 @@
+<a href="{{ item.link }}" class="tease tease-kennis-search body3 with-shadow noline">
+	<div class="row">
+		<div class="col">
+			{% set subcat = item.terms('kennisbank_cat') %}
+			{% set parentcat = item.terms('kennisbank_cat') %}
+			<ul class="mod-breadcrumbs" style="margin: 0 !important;">
+				<li class="faded">Kennisbank</li>
+				{% for cat in parentcat %}
+					<li>/</li>
+					<li class="faded"> {{ cat.name }} </li>
+				{% endfor %}
+				{% for cat in subcat %}
+					<li>/</li>
+					<li class="faded"> {{ cat.name }} </li>
+				{% endfor %}
+			</ul>
+			<h4 style="margin: 0 0 15px">{{ item.title }}</h4>
+			<p class="muted"> {{ item.samenvatting }} </p> 
+		</div>
+		{% if item.thumbnail_uit %}
+			<div class="col-auto d-none d-md-block">
+				<div class="bg-cover ratio_4x4" style="background-image: url({{ item.thumbnail.src|resize('768') }})"></div>
+			</div>
+		{% endif %}
+	</div>
+</a>

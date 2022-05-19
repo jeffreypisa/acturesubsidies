@@ -1,0 +1,68 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		{% if categories %}
+			<div class="mod-categorybar">
+				<div class="container">
+					<div class="row no-gutters">
+						<div class="col-auto col-md">
+							<a href="/kennisbank" class="btn btn-sm {% if current_category == '' %} active {% endif %}">Kennisbank</a>
+						</div>
+						{% for item in categories %}
+							{% set thelink = '' %}
+							{% if item.verwijs_door_naar_pagina and item.paginalink %}
+								{% set thelink = item.paginalink.url %}
+							{% else %}
+								{% set thelink = item.link %}
+							{% endif %}
+							<div class="col-auto">
+								<a href="{{ thelink }}" class="btn btn-sm {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	  <section class="mod-kennisbank bg-white">
+			<div class="container">
+				<h1 class="d-none"> Kennisbank </h1>
+				<div class="text-center">
+					<ul class="mod-breadcrumbs" style="margin: 0 !important">
+						<li>
+							<a href="/kennisbank"> Kennisbank </a>
+						</li>
+						<li>/</li>
+						<li> Zoeken</li>
+					</ul>
+				</div>
+				<div class="row">
+					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+						<form method="get" role="search" action="{{ site.url }}">
+						  <input class="form-control input-large" type="text" value="{{ search_query }}" placeholder="Zoek naar service of term..." name="s">
+						  <input type="submit" value="" class="submit">
+						  <input type="hidden" name="post_type" value="kennisbank">
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-white">
+			<div class="container">
+				<br><br>
+				<h5 class="grey"> {{ posts|length }} resultaten voor '{{ search_query }}' </h5>
+				<br>
+			  {% if posts|length >	 0 %}
+					<div class="cards cards-archive">
+						{% for item in posts %}  
+							{% include 'tease-kennis-search.twig' %}
+						{% endfor %}
+		      </div>
+		    {% else %}
+		    	Geen resultaten gevonden..
+		    {% endif %}
+    	</div>
+	  </section>
+		{% include 'pagebuilder.twig' %}
+	</div>
+{% endblock %}

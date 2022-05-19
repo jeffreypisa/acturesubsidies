@@ -1,0 +1,38 @@
+<section id="slider{{ sectionno }}" class="mod-slider mod-pageheader carousel slide carousel-fade" data-ride="carousel" data-interval="6000" data-aos="fade-in" data-aos-duration="800">
+  <div class="carousel-inner">
+    <div class="carousel-item slide active">
+			<div class="bg" style="background-image: url({{ post.thumbnail }})"> </div>
+      <div class="content w-100 h-100 d-flex align-items-center">
+        <div class="container">
+					<div class="row">
+						<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+					    <h1> 
+					    		{{ post.title }} 
+					    </h1>
+					    {% if post.btn_show %}
+					      <a class="btn btn-primary" href="{{ post.btn_link }}"> <i class="fal fa-arrow-right"></i> {{ post.btn_label }} </a>
+					    {% endif %}
+						</div>
+					</div>
+				</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mod-breadcrumbs">
+	<div class="container">
+		<ul class="">
+			<li>
+				<a href="{{ site.url }}"> Home </a>
+			</li>
+			<li> / </li>
+			<li>
+				<a href="{{ posttype_link }}"> {{ posttype_current|capitalize }}</a>
+			</li>
+			<li> / </li>
+			<li> 
+				{{ post.title }} 
+			</li>
+		</ul>
+	</div> 
+</section>

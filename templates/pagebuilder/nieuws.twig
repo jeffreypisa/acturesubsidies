@@ -1,0 +1,53 @@
+<section id="section{{ sectionno }}" class="mod-nieuws bg-{{ item.achtergrond }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-lg-6 d-flex align-items-center">
+      	<div class="row">
+	      	<div class="col-lg-6">
+		        {% if item.titel %}
+		          <h2>{{ item.titel }}</h2>
+		        {% endif %}
+		        {% if item.content %}
+		          {{ item.content }}
+		        {% endif %}
+		        {% if item.knop %}
+		        	<div class="d-none d-md-block">
+								<a class="btn btn-primary" href="{{ item.knop.url }}">
+									{{ item.knop.title }} 
+								</a>
+								<br><br>
+							</div>
+				    {% endif %}
+				    <br>
+	      	</div>
+					<div class="col-lg-6">
+		        {% for item in blog|slice(0,1) %}
+				      <div class="item0" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}">
+				      	{% include 'tease-post-square.twig' %}
+				      </div>
+				      {% set delay = delay + 150 %}
+			      {% endfor %}
+					</div>
+      	</div>
+      </div>
+      <div class="col-md-7 col-lg-6">
+      	<div class="blok2">
+		    	{% set delay = 150 %}
+		    	<div class="row">
+			    	{% for item in blog|slice(1,2) %}
+				      <div class="col-md-6 item{{ loop.index }}" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}">
+				      	{% include 'tease-post-square.twig' %}
+				      </div>
+				      {% set delay = delay + 150 %}
+			      {% endfor %}
+		    	</div>
+		    	{% if item.knop %}
+						<a class="btn btn-primary d-md-none" href="{{ item.knop.url }}">
+							{{ item.knop.title }} 
+						</a>
+			    {% endif %}
+      	</div>
+	    </div>
+    </div>
+  </div>
+</section>

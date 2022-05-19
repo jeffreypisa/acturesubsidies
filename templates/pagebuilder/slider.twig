@@ -1,0 +1,53 @@
+<section id="slider{{ sectionno }}" class="mod-slider body2 carousel slide carousel-fade {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}" data-ride="carousel" data-interval="6000" data-aos="fade-in" data-aos-duration="800">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				{% if item.subtitel %}
+		    	<span class="sub">{{ item.subtitel }}</span>
+		    {% endif %}
+		    {% if item.titel %}
+		    	<h2>{{ item.titel }}</h2>
+		    {% endif %}
+		    {% if item.tekst %}
+		    	<p> {{ item.tekst }} </p>
+		    {% endif %}
+			{% if item.link %}
+				<a href="{{ item.link.url }}" target="{{ item.link.target }}" class="btn btn-primary">
+					{{ item.link.title }}
+				</a>
+				<div class="clearfix"></div>
+				<br><br>
+			{% endif %}
+		    <div class="carousel-indicators">
+		    	{% set slidenr = 0 %}
+			    {% for slide in item.slides %}
+			      <a data-target="#slider{{ sectionno }}" data-slide-to="{{ slidenr }}" class="{% if slidenr == 0 %} active {% endif %}">
+			      	<div class="row">
+				      	<div class="col-auto">
+				      		<img src="{{ slide.icoon.url }}">
+				      	</div>
+				      	<div class="col">
+			            <h6> {{ slide.titel }} </h6>
+			            {{ slide.tekst }} 
+				      	</div>
+				      </div> 		
+			      </a>
+			      {% set slidenr = slidenr + 1 %}
+			    {% endfor %}
+			  </div>
+			</div>
+			<div class="col-md-6 d-flex align-items-center">
+			  <div class="carousel-inner h-100 d-flex align-items-center">
+			    {% set slidenr = 0 %}
+			    {% for slide in item.slides %}
+			      <div class="carousel-item slide {% if slidenr == 0 %} active {% endif %}">
+				      <img src="{{ slide.afbeelding|resize(1024) }}" alt="{{ item.afbeelding.alt }}" class="w-100 h-auto">
+			      </div>
+			      {% set slidenr = slidenr + 1 %}
+			    {% endfor %}
+			  </div>
+			</div>
+		</div>
+	</div>
+</section>
+{% set sectionno = sectionno + 1 %}

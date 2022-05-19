@@ -1,0 +1,36 @@
+<section class="mod-content_scroll bg-lightgrey">
+  <div class="container">
+    {% if item.titel %}
+      <h2>{{ item.titel }}</h2>
+    {% endif %}
+    <div class="row stickem-container">
+      <div class="col-md-8">
+        <div class="card body3">
+        	<div class="card-body">
+	        	{% for onderdeel in item.onderdelen %}
+	        		<div id="{{ onderdeel.titel|sanitize }}" class="onderdeel">
+								{% if onderdeel.titel %}
+				          <h3 class="h4">{{ onderdeel.titel }}</h3>
+				        {% endif %}
+				        {% if onderdeel.tekst %}
+				          {{ onderdeel.tekst }}
+				        {% endif %}
+	        		</div>
+			      {% endfor %}
+        	</div>
+        </div>
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+      	<div class="stickem">
+      		<div class="content">
+		      	<span class="sub"> {{ item.titel_menu }} </span>
+		      	{% for onderdeel in item.onderdelen %}
+		      		<a href="#{{ onderdeel.titel|sanitize }}" class="js-scrollto">{{ onderdeel.titel_menu }} </a>
+		      		<div class="clearfix"></div>
+		      	{% endfor %}
+      		</div>
+      	</div>
+      </div>
+    </div>
+  </div>
+</section>

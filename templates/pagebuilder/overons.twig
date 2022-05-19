@@ -1,0 +1,32 @@
+<section id="section{{ sectionno }}" class="mod-contentmedia body1">
+  <div class="container">  
+    {% if item.subtitel %}
+    	<span class="sub">{{ item.subtitel }}</span>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-6">
+        {% if item.titel %}
+        	<h3 class="{% if item.font_xl %} h1 {% endif %}">{{ item.titel }}</h3>
+        {% endif %}
+      </div>
+      <div class="col-md-6">
+        {% if item.lead %}
+        	<span class="lead"> {{ item.lead }} </span>
+        {% endif %}
+        {% if item.tekst %}
+        	{{ item.tekst }}
+        {% endif %}
+        {% if item.link_primary %}
+					<a class="btn btn-primary" target="{{ item.link_primary.target }}" href="{{ item.link_primary.url }}">
+						{{ item.link_primary.title }} 
+					</a>
+		    {% endif %}
+		    {% if item.link_secondary %}
+					<a class="btn btn-secondary" target="{{ item.link_secondary.target }}" href="{{ item.link_secondary.url }}">
+						{{ item.link_secondary.title }} 
+					</a>
+		    {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

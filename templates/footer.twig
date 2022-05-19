@@ -1,0 +1,85 @@
+<footer id="footer" class="section footer">
+  <div class="container"> 
+		<div class="row">
+			<div class="col-md-6 col-lg-4">
+				<div class="row">
+					<div class="col-auto">
+						<a href="{{ site.url }}" class="noline"><img src="{{ options.footer_logo }}" alt="logo" width="39" height="45"> </a>
+					</div>
+					<div class="col">
+						<h6 class="head"> {{ options.footer_mijnsubsidie }} </h6>
+						{{ options.footer_slogan }}
+					</div>
+				</div>
+				<br><br>
+			</div>
+			<div class="col-md-6 col-lg-8">
+				{% if post.verberg_header_en_footer %}
+					<h6 class="head"> Interessant? Deel via </h6>
+					<a class="color_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ post.link }}">Linkedin</a> 
+					<a class="color_whatsapp" href="whatsapp://send?text={{ post.link }}" data-action="share/whatsapp/share">Whatsapp</a> 
+					<a class="color_facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ post.link }}">Facebook</a> 
+					<a class="color_mail" href="mailto:info@example.com?&subject=&body={{ post.link }}">Mail</a> 
+					<a class="color_twitter" href="https://twitter.com/home?status={{ post.link }}">Twitter</a>
+				{% else %}
+					{% if tab_active == 'accountant' %}
+						<div class="row">
+				  		<div class="col-lg-4">
+				  			<h6 class="head"> {{ options.footer_1_b_titel }} </h6>
+				  			{% include "footermenu.twig" with {'footermenu': footermenu_1_b.get_items} %}
+				  		</div>
+				  		<div class="col-lg-4">
+				  			<h6 class="head"> {{ options.footer_2_b_titel }} </h6>
+								{% include "footermenu.twig" with {'footermenu': footermenu_2_b.get_items} %}
+				  		</div>
+				  		<div class="col-lg-4">
+				  			<h6 class="head"> {{ options.footer_3a_b_titel }} </h6>
+				  			{% include "footermenu.twig" with {'footermenu': footermenu_4_b.get_items} %}
+				  			<br>
+				  			<h6 class="head"> {{ options.footer_3b_b_titel }} </h6>
+				  			{% include "footermenu.twig" with {'footermenu': footermenu_3_b.get_items} %}
+				  		</div>
+					</div>
+					{% else %}
+						<div class="row">
+				  		<div class="col-lg-4">
+				  			<h6 class="head"> {{ options.footer_1_titel }} </h6>
+				  			{% include "footermenu.twig" with {'footermenu': footermenu_1.get_items} %}
+				  		</div>
+				  		<div class="col-lg-4">
+				  			<h6 class="head"> {{ options.footer_2_titel }} </h6>
+								{% include "footermenu.twig" with {'footermenu': footermenu_2.get_items} %}
+				  		</div>
+				  		<div class="col-lg-4">
+				  			<h6 class="head"> {{ options.footer_3a_titel }} </h6>
+				  			{% include "footermenu.twig" with {'footermenu': footermenu_4.get_items} %}
+				  			<br>
+				  			<h6 class="head"> {{ options.footer_3b_titel }} </h6>
+				  			{% include "footermenu.twig" with {'footermenu': footermenu_3.get_items} %}
+				  		</div>
+						</div>
+					{% endif %}
+				{% endif %}
+			</div>			
+		</div>
+  </div>
+	<div class="subfooter">
+		<div class="container">
+			<div class="line"></div>
+			<div class="row">
+				<div class="col-xl-auto">
+					Copyright {{ "now"|date("Y") }} {{ options.subfooter_tekst }}
+				</div>
+				<div class="col-xl d-xl-none">
+					<br>
+				</div>
+				<div class="col-xl">
+					{% include "footermenu.twig" with {'subfootermenu': subfootermenu.get_items} %}
+				</div>
+				<div class="col-xl-auto">
+					{% include 'partials/socialmedia.twig' %}
+				</div>
+			</div>
+		</div> 
+	</div>
+</footer>

@@ -1,0 +1,81 @@
+.mod-blocklinks {
+  .item {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .card {
+	  position: relative;
+	  .teachericon {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 46px;
+		  height: 46px;
+		  z-index: 9;
+	  }
+  }
+  .mod-slider {
+    padding: 0;
+    margin-bottom: 30px;
+    position: relative;
+    .steekwoorden {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: rgba(#FEE687, 0.7);
+      text-align: center;
+      line-height: 19px;
+      font-size: 16px;
+      font-weight: 700; 
+      padding: 0 10px;
+    }
+    .slide {
+      background-size: cover;
+      padding: 0 10% !important;
+      height: 300px;
+      min-height: auto !important;
+      h3 {
+        color: $yellow;
+        text-transform: uppercase;
+        text-align: center;
+        &:after {
+          background: $yellow;
+        }
+      }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+      img {
+        width: 12px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mod-blocklinks {
+    .item {
+      text-align: left;
+      margin: 0;
+    }
+    .mod-slider {
+      .slide {
+        
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .mod-blocklinks {
+    .item {
+      text-align: center;
+    }
+    .mod-slider {
+      .slide {
+      }
+    }
+  }
+}

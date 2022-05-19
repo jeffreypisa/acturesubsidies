@@ -1,0 +1,14 @@
+<a href="{{ item.link }}" class="tease hover-scale masonry-content noline">
+	{% if item.thumbnail %}
+		<img src="{{ item.thumbnail|resize(1024) }}" alt="{{ item.thumbnail.alt }}" class="w-100 h-auto borderradius-16">
+	{% endif %}
+	<br><br>
+	{% if item.title %}
+		<span class="sub"> {{ item.title }} </span>
+	{% endif %}
+	{% if item.titel %}
+		<h4> {{ item.titel }} </h4>
+	{% endif %}
+	<div class="clearfix"></div>
+	<br>
+</a>

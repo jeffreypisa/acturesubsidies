@@ -1,0 +1,90 @@
+.mod-accordion {
+	&.kennisbank {
+		.posts {
+			margin-bottom: 30px;
+		}
+		.heading {
+			position: relative;
+			display: block;
+			padding: 18px 40px 18px 25px;
+		  border-radius: 8px;
+		  background-color: $madison-100;
+		  margin-bottom: 10px;
+		  h3 {
+			  font-size: 24px;
+			  margin: 0;
+		  }
+		  i {
+			  position: absolute;
+			  top: 12px;
+			  top: 7px;
+			  right: 0;
+			  transform: rotate(-90deg);
+		  }
+		  &:hover {
+			  background-color: darken($madison-100, 2%);
+			  cursor: pointer;
+		  }
+		  &[aria-expanded="true"] {
+			  h3, i {
+				  color: $madison-300;
+			  }
+			  i {
+				  transform: rotate(0deg);
+			  }
+		  }
+		}
+	}
+	.item {
+		margin-top: -1px;
+		color: $walhalla-300;
+		font-weight: 600;
+		i {
+			color: $emerald-300;
+		}
+		&:first-child {
+			border-top: 1px solid $walhalla-100;
+		}
+		.heading {
+			display: block;
+			padding: 10px 0;
+			border-bottom: 1px solid $walhalla-100;
+			i.fa-minus {
+				display: none;
+			}
+			&:hover {
+				box-shadow: none;
+				color: $madison-300;
+				cursor: pointer;
+			}
+			&[aria-expanded="true"] {
+				i.fa-minus {
+					display: block;
+					margin-top: 7px;
+				}
+				i.fa-plus {
+					display: none;
+				}
+			}
+		}
+		.antwoord {
+			background: $madison-100;
+			padding: 20px 20px 0;
+			color: $vulcan-300;
+			font-weight: 400;
+			border-bottom: 1px solid $walhalla-100;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-accordion {
+		&.kennisbank {
+			.heading {
+			  i {
+				  top: 12px;
+				}
+			}
+		}
+	}
+}

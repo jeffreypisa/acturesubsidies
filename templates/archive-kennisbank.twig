@@ -1,0 +1,127 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		{% if categories %}
+			<div class="mod-categorybar">
+				<div class="container">
+					<div class="row no-gutters">
+						<div class="col-auto col-md">
+							<a href="/kennisbank" class="btn btn-sm {% if current_category == '' %} active {% endif %}">Kennisbank</a>
+						</div>
+						{% for item in categories %}
+							{% if item.zichtbaar %}
+								{% set thelink = '' %}
+								{% if item.verwijs_door_naar_pagina and item.paginalink %}
+									{% set thelink = item.paginalink.url %}
+								{% else %}
+									{% set thelink = item.link %}
+								{% endif %}
+								<div class="col-auto">		
+									<a href="{{ thelink }}" class="btn btn-sm {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>									
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	  <section class="bg-white">
+			<div class="container">
+				<h1 class="d-none"> {{ title }} </h1>
+				<div class="row">
+					<div class="col-md-10 offset-md-1 text-center">
+						<ul class="mod-breadcrumbs" style="margin: 0 !important;">
+							<li>
+								<a href="/kennisbank"> Kennisbank </a>
+							</li>
+							<li>/</li>
+							{% for item in categories %}
+								{% if item.id == current_category %}
+									<li>
+										{{ item.title }}
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+						{% for item in categories %}
+							{% if item.id == current_category %}
+								<h2 class="h1" style="margin-top: 0">{{ item.title }}</h2>
+								<span class="lead"> {{ item.description }} </span>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+	  </section>
+		<section class="bg-white">
+			<div class="container">
+				<br><br>      
+				
+				{% for item in categories %}
+					{% if item.id == current_category %}
+						{% if item.tutorial_weergave %}
+							<div class="row">
+								{% for item in posts %}  
+									<div class="col-md-6 col-xl-4">
+										{% include 'tease-kennis-tutorial.twig' %}
+									</div>
+								{% endfor %}
+							</div>
+						{% else %}
+							{% for category in categories %}
+								{% set catid = category.id %}
+								{% set cattitle = category.title %}
+								<div class="mod-accordion kennisbank" id="accordion{{ catid }}">
+									{% if category.id == current_category %}
+										{% for child in category.get_children %}
+									    
+											{% set subcatid = child.id %}
+											{% set subcattitle = child.title %}
+											{% set subcatslug = child.slug %}
+											{% set hasposts = 'false' %}
+											
+											{% for item in category.posts(1000) %}
+						          	{% for post in item.terms %}
+						          		{% if subcatslug == post.slug %}
+						          			{% set hasposts = 'true' %}
+									        {% endif %}
+									      {% endfor %}
+									    {% endfor %}
+									    
+									    {% if hasposts == 'true' %}
+												<a id="heading{{ catid }}{{ subcatid }}" class="heading" data-toggle="collapse" data-target="#collapse{{ catid }}{{ subcatslug }}" aria-controls="collapse{{ catid }}{{ subcatslug }}" {% if loop.first %} aria-expanded="true" {% endif %}>
+									      	<div class="row">
+										      	<div class="col">
+										        	<h3> {{ child.title }} </h3>
+										      	</div>
+										      	<div class="col-auto">
+										      		<i class="fas fa-chevron-down"></i>
+										      	</div>
+									      	</div>
+									      </a>
+							          
+							          <div id="collapse{{ catid }}{{ subcatslug }}" class="collapse {% if loop.first %} show {% endif %}" aria-labelledby="heading{{ catid }}{{ subcatslug }}" data-parent="#accordion{{ catid }}">
+								          <div class="posts">
+									          {% for item in category.posts(1000) %}
+									          	{% for post in item.terms %}
+									          		{% if subcatslug == post.slug %}
+								              		{% include 'tease-kennis-lijst.twig' %}
+								              	{% endif %}
+								              {% endfor %}
+								            {% endfor %}
+								          </div>
+							          </div>
+							        {% endif %}
+						        {% endfor %}
+					        {% endif %}
+								</div>
+							{% endfor %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+	    </div>
+	  </section>
+		{% include 'pagebuilder.twig' %}
+	</div>
+{% endblock %}

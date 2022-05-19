@@ -1,0 +1,85 @@
+<section class="mod-tabel {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-10 offset-md-1 text-center">
+		  	{% if item.subtitel %}
+		    	<span class="sub">{{ item.subtitel }}</span>
+		    {% endif %}
+		    {% if item.titel %}
+		    	<h2>{{ item.titel }}</h2>
+		    {% endif %}
+		    {% if item.lead %}
+		    	<p class="lead"> {{ item.lead }} </p>
+		    {% endif %}
+		    {% if item.tekst %}
+		    	<p> {{ item.tekst }} </p>
+		    {% endif %}
+  		</div>
+  	</div>
+  	<br>
+  	<div class="thetable body3">
+  		<div class="head">
+  			<div class="row">
+  				<div class="col-md-4">
+  				</div>
+  				<div class="col-md-4">
+  					<h3> {{ item.header_1 }} </h3>
+  				</div>
+  				<div class="col-md-4">
+  					<h3> {{ item.header_2 }} </h3>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="body">
+  			{% for item in item.rijen %}
+  				<div class="rij">
+	  				<div class="row">
+	  					<div class="col-md-4">
+	  						<div class="label bg-{{ item.label_kleur }}"> {{ item.label_tekst }} </div>
+	  					</div>
+	  					<div class="col-md-4">
+	  						{% if item.kolom_1_sterren %}
+	  							<div class="stars">
+										{% set stars_1 = item.kolom_1_sterren %}
+										
+										{% for i in range(1, stars_1) %}
+										  <i class="fas fa-star"></i>
+										{% endfor %}
+										
+										{% if stars_1 < 5 %}
+											{% set emptystars_1 = 5 - stars_1 %}
+											{% for i in range(1, emptystars_1) %}
+										    <i class="fas fa-star" style="opacity: 0.2"></i>
+											{% endfor %}
+										{% endif %}
+										
+	  							</div>
+								{% endif %}
+								{{ item.kolom_1_tekst }}
+	  					</div>
+	  					<div class="col-md-4">
+		  					{% if item.kolom_2_sterren %}
+		  						<div class="stars">
+										{% set stars_2 = item.kolom_2_sterren %}
+												
+										{% for i in range(1, stars_2) %}
+										    <i class="fas fa-star"></i>
+										{% endfor %}
+										
+										{% if stars_2 < 5 %}
+											{% set emptystars_2 = 5 - stars_2 %}
+											{% for i in range(1, emptystars_2) %}
+											    <i class="fas fa-star" style="opacity: 0.2"></i>
+											{% endfor %}
+										{% endif %}
+									</div>
+								{% endif %}
+								{{ item.kolom_2_tekst }}
+	  					</div>
+	  				</div>
+	  			</div>
+	  		{% endfor %}	
+  		</div>
+  	</div>
+	</div>  
+</section>

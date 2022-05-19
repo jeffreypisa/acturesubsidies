@@ -1,0 +1,22 @@
+.big-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: $walhalla-400;
+	opacity: 0;
+	z-index: 9;
+	transition: opacity 0.2s ease-in-out;
+}
+body.show-overlay {
+	.big-overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: $walhalla-400;
+		opacity: .56;
+		z-index: 9;
+	}
+}

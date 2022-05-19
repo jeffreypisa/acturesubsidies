@@ -1,0 +1,82 @@
+<section id="section{{ sectionno }}" class="mod-landingspaginaheader body2 {% if item.bg_alt %} bg-lightgrey {% else %} bg-darkblue {% endif %}">
+  <div class="container">
+  	<div class="l_header">
+		  <div class="row">
+		  	<div class="col d-flex align-items-center">
+					<div class="logo" role="banner">
+						<div class="row d-flex align-items-center">
+							<div class="col-auto">
+								<a class="logo-link noline" href="{{site.url}}" rel="home">
+						  		<img src="{% if item.bg_alt %}{{ options.logo }}{% else %}{{ options.logo_wit }}{% endif %}" alt="logo" width="35" height="40"> 
+						  	</a>
+						  </div>
+						</div>
+					</div>
+		    </div>
+		  </div>
+		</div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 offset-xl-2 col-xl-8 text-center">
+      	<div class="h-100 d-flex align-items-center">
+      		<div class="blok-body content">
+		        {% if item.subtitel %}
+		        	<span class="sub">{{ item.subtitel }}</span>
+		        {% endif %}
+		        {% if item.titel %}
+		        	<h1>{{ item.titel }}</h1>
+		        {% endif %}
+		        <span class="lead">
+			        {% if item.tekst %}
+			        	{{ item.tekst }}
+			        {% endif %}
+		        </span>
+		        {% if item.jaar %}
+			        <div class="countdownwrap">
+				        <div class="row">
+				        	<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+										<div id="countdown" class="row">
+										</div>
+										<div class="d-none">
+											<div id="jaar">{{ item.jaar }}</div>
+											<div id="maand">{{ item.maand }}</div>
+											<div id="dag">{{ item.dag }}</div>
+											<div id="uur">{{ item.uur }}</div>
+											<div id="minuten">{{ item.minuten }}</div>
+										</div>
+						        {% if item.link %}
+							        <div class="btn-wrap">
+							        	<a class="btn btn-primary btn-block" href="{{ item.link.url }}"> {{ item.link.title }} </a>
+							        </div>
+						        {% endif %}
+				        	</div>
+				        </div>
+			        </div>
+			      {% endif %}
+      		</div>
+      	</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% if item.logos %}
+	<section class="mod-logos ">
+		<div class="container">
+			<div class="has-flakes">
+			  <div class="card card-white with-shadow" style="z-index: 1;">
+			  	<div class="card-body">
+			  		<div class="row">
+			  			{% for item in item.logos %}
+			  				<div class="col d-flex align-items-center" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="{{ item.tekst }}">
+			  					<img src="{{ Image(item.afbeelding).src }}" alt="{{ Image(item.afbeelding).alt }}">
+			  					
+			  				</div>
+			  			{% endfor %}
+			  		</div>
+			  	</div>
+			  </div>
+			  <div class="flake bottom left flake-2"></div>
+				<div class="flake top right flake-14"></div>
+		  </div>
+	  </div>
+  </section>
+{% endif %}

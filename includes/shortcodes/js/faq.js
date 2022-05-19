@@ -1,0 +1,1 @@
+jQuery(".faq dt").click(function(){jQuery(this).toggleClass("active").find("i").toggleClass("fa-plus fa-minus").closest("dt").siblings("dt").removeClass("active").find("i").removeClass("fa-minus").addClass("fa-plus");jQuery(this).next(".faq_content").stop().slideToggle().siblings(".faq_content").slideUp()});jQuery(".faq_content").hide()

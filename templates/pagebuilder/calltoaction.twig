@@ -1,0 +1,37 @@
+<section id="section{{ sectionno }}" class="mod-calltoaction less-padding {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+		<div class="card text-white {% if item.kleur %} {{ item.kleur }} {% else %} bg-blue {% endif %}">
+			<div class="card-body body2">
+				<div class="row">
+					<div class="col-lg-5 offset-lg-1 d-flex align-items-center">
+						<div>
+			        {% if item.titel %}
+			          <h3>{{ item.titel }}</h3>
+			        {% endif %}
+			      	{% if item.tekst %}
+			        	{{ item.tekst }}
+			        {% endif %}
+						</div>
+		      </div>
+		      <div class="col-lg-5 d-flex align-items-center">
+		      	<div class="w-100">
+			      	<div class="float-lg-right">
+			      		<div class="text-lg-center">
+									{% if item.link %}
+										<a class="btn btn-light" target="{{ item.link.target }}" href="{{ item.link.url }}">
+											{{ item.link.title }} 
+										</a>
+							    {% endif %}
+							    <div class="clearfix"></div>
+							    {% if item.subtekst %}
+							    	<span class="subtext"> {{ item.subtekst }} </span>
+							    {% endif %}
+			      		</div>
+			      	</div>
+		      	</div>
+					</div>
+				</div>
+			</div> 
+		</div>
+  </div>
+</section>

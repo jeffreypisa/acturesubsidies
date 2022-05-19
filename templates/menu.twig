@@ -1,0 +1,20 @@
+{% if menu %}
+	<ul class="menu d-none d-lg-flex">
+		<li class="producten">
+			<a href="javascript:void(0)" class="js-toggle-productmenu">
+        {% if tab_active == 'accountant' %}
+          {{ options.footer_1_b_titel }}
+        {% else %}
+          {{ options.footer_1_titel }} 
+        {% endif %}
+        <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+       </a>
+		</li>
+  	{% for item in menu %}
+  		<li class="{{item.classes | join(' ')}} {% if item.title|lower == currentpostname %} current-menu-item {% endif %}">
+  			<a href="{{item.get_link}}">{{item.title}}</a>
+  			{% include "menu.twig" with {'menu': item.get_children} %}
+  		</li>
+  	{% endfor %}
+	</ul>
+{% endif %}

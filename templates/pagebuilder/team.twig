@@ -1,0 +1,21 @@
+<section id="section{{ sectionno }}" class="mod-team {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+		{% if item.subtitel %}
+    	<span class="sub">{{ item.subtitel }}</span>
+    {% endif %}
+    {% if item.titel %}
+    	<h2 class="{% if item.font_xl %} h1 {% endif %}">{{ item.titel }}</h2>
+    {% endif %}
+    {% if item.tekst %}
+    	{{ item.tekst }}
+    {% endif %}
+		{% set delay = 0 %}
+		<div class="row">
+	    {% for item in team %}
+				<div class="col-sm-6 col-lg-3" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-duration="600" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine">
+					{% include 'tease-team.twig' %}
+				</div>
+	    {% endfor %}
+		</div>
+  </div>    
+</section>

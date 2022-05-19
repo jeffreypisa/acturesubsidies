@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="content-wrapper">
+			<div class="article-body">
+				<section id="section1" class="mod-contentmedia body2 bg-transparent">
+					<div class="container">
+						
+						<h1>{% if post.titel %} {{ post.titel }} {% else %} {{ post.title }} {% endif %}</h1>
+						<div class="row">
+							<div class="col-md-6 ">
+								<div class="contentspace h-100 d-flex align-items-center">
+									<div class="blok-body w-100 text">
+										<p class="lead"> 
+											{{ post.lead }}
+										</p>
+										<a href="{{ post.link_primary.url }}" class="btn btn-primary"> {{ post.link_primary.title }} </a>
+										<a href="{{ post.link_secondary.url }}" class="btn btn-secondary"> {{ post.link_secondary.title }} </a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="h-100 d-flex align-items-center">
+									<div class="blok-body w-100">
+										<div class="image-container ratio-4-3 has-flakes"> 
+											<div class="image aos-init aos-animate" style="background-image: url({{ Image(post.thumbnail).src }})" data-aos="fade-left" data-aos-duration="800" data-aos-delay="0">
+											</div>
+											<div class="flake bottom left flake-10"></div>
+											<div class="flake top right flake-11"></div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			    </section>
+				<section id="section1" class="mod-content  bg-transparent">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 body2">
+								{{ post.content }}
+							</div>
+							<div class="col-md-6 col-xl-4 offset-xl-1">
+								<div class="has-flakes">
+									<div class="card mt-5 with-shadow body3">
+										<div class="card-body">
+											<div><strong> {{ post.scan_titel }} </strong></div>
+											<p>{{ post.scan_tekst }}</p>
+											<a href="{{ post.scan_link.url }}" class="btn btn-primary btn-block"> {{ post.scan_link.title }} </a>
+										</div>
+									</div>
+									<div class="flake top left flake-2" style="transform: rotate(90deg)"></div>
+									<div class="flake bottom right flake-15"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% set sectionno = '3' %}
+			  {% include 'pagebuilder.twig' %}
+			</div>
+		</div><!-- /content-wrapper -->
+	</article>
+{% endblock %}

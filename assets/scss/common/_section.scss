@@ -1,0 +1,36 @@
+section.bg-white + section.bg-white,
+section.bg-transparent + section.bg-transparent,
+section.bg-lightgrey + section.bg-lightgrey,
+section.bg-darkblue + section.bg-darkblue {
+	padding-top: 0 !important;
+}
+
+section {
+  padding: 80px 0 50px;
+  position: relative;
+  overflow: hidden;
+	background-size: cover;
+	background-position: center center;    
+	z-index: 1;
+	&.less-padding {
+  	padding: 50px 0 20px;
+	}
+}
+
+@include media-breakpoint-up(md) {
+  section {
+    padding: 110px 0 80px;
+    &.less-padding {
+	  	padding: 90px 0 60px;
+		}
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  section {
+    padding: 130px 0 100px;
+    &.less-padding {
+	  	padding: 110px 0 80px;
+		}
+  }
+}

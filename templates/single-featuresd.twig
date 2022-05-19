@@ -1,0 +1,61 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="content-wrapper">
+			<div class="article-body">
+				<section class="bg-lightgrey">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<ul class="mod-breadcrumbs">
+									<li>
+										<a href="/blog"> Features </a>
+									</li>
+									<li> / </li>
+									<li> 
+										{{ post.title }} 
+									</li>
+								</ul>
+								<h1> {{ post.title }} </h1>
+							</div>
+							<div class="col-lg-6">
+								
+							</div>
+						</div>
+					</div> 
+				</section>
+				<section class="blog content bg-white">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 offset-md-1">
+							  {{ post.content }}
+							  <br>
+							  {% include 'partials/author.twig' %}
+							  <br><br>
+							</div>
+						</div>
+					</div>
+			  </section>
+			  {% if post.related_posts %}
+				  <section class="bg-lightgrey">
+				  	<div class="container">
+				  		<h3 class="text-center">Gerelateerd</h3>
+				  		<br>
+					  	<div class="row">
+								{% set delay = 0 %}
+					  		{% for item in post.related_posts %}
+					  			<div class="col-md-6 col-lg-4">
+					  				{% include 'tease-blog.twig' %}
+					  			</div>
+					  			{% set delay = delay + '150' %}
+					  		{% endfor %}
+							</div>
+				  	</div>
+				  </section>
+			  {% endif %}
+			  {% include 'pagebuilder.twig' %}
+			</div>
+		</div><!-- /content-wrapper -->
+	</article>
+{% endblock %}

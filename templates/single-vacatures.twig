@@ -1,0 +1,51 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="content-wrapper">
+			<div class="article-body">
+				<section class="body2 content bg-white">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-lg-6">
+								<a href="/vacatures" class="btn-link-back"> Terug </a>
+								<h1> {{ post.title }} </h1>
+								{% if post.lead %}
+									<p class="lead">
+										{{ post.lead }}
+									</p>
+								{% endif %}
+							  {{ post.content }}
+							  {% if post.vac_link %}
+									<br>
+									<a class="btn btn-primary" target="{{ post.vac_link.target }}" href="{{ post.vac_link.url }}">
+										{{ post.vac_link.title }} 
+									</a>
+						    {% endif %}
+							</div>
+							<div class="d-none d-md-block col-md-3 offset-md-1 col-lg-4 offset-lg-2">
+								{% if post.afbeelding_1 %}
+									<div class="image-container portrait has-flakes"> 
+										<div class="image" style="background-image: url({{ Image(post.afbeelding_1).src|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+										</div>
+										<div class="flake top right flake-11"></div>
+									</div>
+									<div class="clearfix"></div>
+									<br><br>
+								{% endif %}
+								{% if post.afbeelding_2 %}
+									<div class="image-container portrait has-flakes"> 
+										<div class="image" style="background-image: url({{ Image(post.afbeelding_2).src|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+										</div>
+						      	<div class="flake bottom left flake-10"></div>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+			  </section>
+			  {% include 'pagebuilder.twig' %}
+			</div>
+		</div><!-- /content-wrapper -->
+	</article>
+{% endblock %}

@@ -1,0 +1,83 @@
+.mod-mailchimp {
+	text-align: center;
+	.links {
+		background: $darkgrey;
+		background-size: cover;
+		background-position: center center;
+		padding: 140px 20px;
+		h2 {
+			color: #fff;
+			text-align: left;
+			max-width: 540px;
+			display: inline-block;
+			margin: 0;
+		}
+	}
+	.rechts {
+		background: $green;
+		padding: 40px 10px;
+		#mc_embed_signup { 
+			margin: 0 auto;
+			background: transparent;
+			max-width: 540px;
+			font: inherit;
+			.indicates-required {
+				display: none;
+			}
+			input[type=email], input[type=text] {
+				border-color: #fff;
+				padding: 9px 2px;
+			}
+			label {
+				display: none;
+			}
+			#mc-embedded-subscribe {
+				border: 0;
+				margin: 0;
+			}
+			.btn {
+				
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+  .mod-mailchimp {
+    padding: 50px 0;
+    > .row {
+			max-width: none;
+		}
+    .links {
+	    padding: 60px;
+	    h2 {
+				display: inline-block;
+				max-width: 400px;
+				margin: 0 auto;
+	    }
+    }
+    .rechts {
+	    padding: 50px;
+			#mc_embed_signup { 
+				max-width: 420px;
+				input[type=email], input[type=text] {
+					padding: 11px 2px;
+				}
+			}
+		}
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-mailchimp {
+    padding: 70px 0;
+    .rechts {
+	    padding: 60px 0;
+			#mc_embed_signup { 
+				input[type=email], input[type=text] {
+					padding: 13px 2px;
+				}
+			}
+		}
+  }
+}

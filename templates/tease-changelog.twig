@@ -1,0 +1,21 @@
+<div class="tease card body3 with-shadow">
+	<div class="card-body">
+		<div data-mh>
+			{% for item in item.terms('changelog_cat') %}
+				<div class="status">
+					<div class="color" style="background: {{ item.kleur }}"></div> {{ item.title }}
+				</div>
+			{% endfor %}
+			{% if item.title %}
+				<h3 class="h4"> {{ item.title }} </h3>
+			{% endif %}
+			{{ item.content }}
+		</div>	
+		<br>
+		<div class="row">
+			<div class="col-auto">
+				<span class="date">{{ item.date|date('j F Y') }}</span>
+			</div>
+		</div>
+	</div>
+</div>

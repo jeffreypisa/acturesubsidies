@@ -1,0 +1,79 @@
+.bg-white {
+	background-color: transparent !important;
+}
+.bg-darkgrey {
+	background-color: #7C8A93;
+}
+.bg-grey {
+	background-color: $walhalla-300;
+}
+.bg-dark, .bg-darkblue {
+	background-color: $madison-400;
+}
+.bg-lightblue {
+	background-color: #c0cdfb;
+}
+.bg-blue {
+	background-color: #2747b0;
+}
+.bg-green {
+	background-color: #45D189;
+}
+.bg-yellow {
+	background-color: #FEBB1B;
+}
+.bg-lightpurple {
+	background-color: $indigo-200;
+}
+.bg-purple {
+	background-color: #652BD9;
+}
+.bg-lightred {
+	background-color: $berry-200;
+}
+.bg-orange {
+	background-color: $peach-200;
+}
+.bg-lightgreen {
+	background-color: $emerald-200;
+}
+.bg-lightyellow {
+	background-color: $gold-100;
+}
+.bg-darkblue {
+	background-color: $madison-400;
+	color: $madison-200;
+	h1,h2,h3,h4,h5 {
+  	color: #fff;
+  }
+	.sub {
+		color: $gold-300;
+	}
+	.lead {
+		color: $madison-200;
+	}
+}
+.bg-lightgrey {
+  background-color: $madison-100;
+  .btn-light:not(:disabled):not(.disabled) {
+	  background-color:#fff;
+	  border-color: #fff;
+	  &:hover {
+		  background-color: $grey;
+			border-color: $grey;
+	  }
+  }
+}
+
+.text-black {
+  color: $vulcan-300;
+  h1,h2,h3,h4,h5 {
+  	color: $vulcan-300;
+  }
+}
+.text-white {
+  color: #fff;
+  h1,h2,h3,h4,h5 {
+  	color: #fff;
+  }
+}

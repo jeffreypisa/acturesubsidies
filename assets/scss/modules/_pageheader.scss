@@ -1,0 +1,17 @@
+.mod-pageheader {
+	position: relative;
+	h1, h5 {
+		color: #fff;
+	}
+	.bg {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover;
+		background-position: center center;
+		opacity: 0.7;
+	}
+}

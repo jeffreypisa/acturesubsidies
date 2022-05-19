@@ -1,0 +1,27 @@
+<div class="tease card with-shadow">
+	<div class="card-body body3">
+		<div data-mh>
+			<div class="cat"> {{ item.terms( {query:{taxonomy: 'kennisbank_cat'} })|first }}</div>
+			<br>
+			{% if item.title %}
+				<h5> {{ item.title }} </h5>
+			{% endif %}
+			{% if item.samenvatting %}
+				<p> {{ item.samenvatting }} </p>
+			{% endif %}
+		</div>	
+		<br>
+		<div class="row">
+			<div class="col-auto">
+
+			</div>
+			<div class="col">
+				<div class="text-right">
+					<a class="btn-link" href="{{ item.link }}">
+						Lees meer
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

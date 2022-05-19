@@ -1,0 +1,149 @@
+.card, a.card[href] {
+  border-radius: 16px;
+  border: 0;
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: 0.2s ease-in;
+  &.steps {
+	  h3 {
+			color: $gold-400;
+			margin-bottom: 30px;
+		}
+		.step {
+			margin-bottom: 15px;
+			.number {
+				background: #fff;
+				width: 42px;
+				height: 42px;
+				border-radius: 100px;
+				text-align: center;
+				line-height: 42px;
+				display: block;
+				font-size: 24px;
+			}
+			h4 {
+				margin: 0;
+			}
+		}
+  }
+  &.with-shadow {
+	  box-shadow: 0 3px 10px 0 rgba(73, 87, 111, 0.13);
+  }
+  .card-img-top {
+	  padding-top: 57%;
+	  position: relative;
+	  overflow: hidden;
+	  background-position: center center;
+	  background-size: cover;
+  }
+  .card-body {
+	  padding: 30px;
+  }
+  .meta-tekst {
+	  font-size: 16px;
+	  font-weight: normal;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 1.5;
+	  letter-spacing: normal;
+	  color: #74818c;
+	  display: block;
+  }
+  .mb-0 {
+		margin-bottom: 0;
+	}
+	&.card-link {
+		border-radius: 6px;
+		box-shadow: 0 1px 8px 0 rgba(73, 87, 111, 0.24);
+		display: block;
+		padding: 6px 15px 6px 15px;
+		font-size: 18px;
+		color: $vulcan-300;
+		position: relative;
+		margin-bottom: 15px;
+		.icon {
+			border-radius: 100px;
+			background: #fff;
+			padding: 2px;
+			width: 32px;
+			height: 32px;
+			position: relative;
+			margin-top: 1px;
+			svg {
+				position: absolute;
+				top: 8px;
+				left: 8px;
+			}
+			i {
+				display: block;
+				text-align: center;
+				line-height: 28px;
+				color: $vulcan-300;
+				font-size: 16px;
+			}
+		}
+		&:hover {
+			color: $madison-300;
+			.icon {
+				background: $madison-300;
+				svg {
+					fill: #fff;
+				}
+				i {
+					color: #fff;
+				}
+			}
+		}
+	}
+  .linewithdots {
+	  margin-bottom: 20px;
+	  .dot {
+		  height: 8px;
+		  width: 8px;
+		  border-radius: 8px;
+	  }
+	  .line {
+		  border-radius: 8px;
+		  height: 8px;
+		  width: 100%;
+	  }
+	  .row {
+		  margin: 0 -6px;
+		  > * {
+			  padding: 0 6px;
+		  }
+	  }
+  }
+  .list-group {
+	  .list-group-item {
+		  border-left: 0;
+		  border-right: 0;
+		  padding: 4px 0;
+		  &:first-child {
+			  border-top: 0;
+		  }
+		  &:last-child {
+			  border-bottom: 0;
+		  }
+	  }
+	  &.dots {
+		  .list-group-item {
+			  border: 0;
+				.linewithdots {
+					margin: 0;
+					.dot {
+						margin-top: 10px;
+					}
+				}
+		  }
+	  }
+  }
+	&[href]:hover {
+		text-decoration: none;
+		box-shadow: 0 6px 12px 0 rgba(73, 87, 111, 0.28), 0 2px 4px 0 rgba(73, 87, 111, 0.12);
+		.card-img-top {
+			transition: all 10s;
+		  -webkit-transform: scale(1.3);
+		}
+	}
+}

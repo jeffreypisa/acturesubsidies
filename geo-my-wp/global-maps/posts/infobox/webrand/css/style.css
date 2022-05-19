@@ -1,0 +1,209 @@
+/**
+ * Global Maps "webrand" infoxbox stylesheet.
+ */
+.gmaps-gmpt-ib-webrand-template-holder {
+	background: #fff;
+	bottom: 0px;
+	box-shadow: rgba(0, 0, 0, 0.398438) 2px 2px 3px -1px;
+	color: rgb(119, 119, 119);
+	font-family: arial;
+	font-size: 12px;
+	height: 160px;
+	position: absolute;
+	width: 280px;
+	height:400px;
+	margin: -190px 0 0 0;
+	padding:0;
+	z-index: 9999999;
+	overflow:visible !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+
+}
+
+.gmaps-gmpt-ib-webrand-template-holder:before {
+	content: ' ';
+	border-color: #888 transparent transparent transparent;
+	border-style: solid;
+	border-width: 17px;
+	position: absolute;
+	left: 119px;
+	bottom: -34px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder:after {
+	content: ' ';
+	border-color: white transparent  transparent transparent;
+	border-style: solid;
+	border-width: 15px;
+	position: absolute;
+	left: 121px;
+	bottom: -29px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .gmw-ib-data-loader {
+	position: absolute;
+	top:45%;
+	left:40%;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .gmw-ib-data-loader img {
+	box-shadow:none;
+	border:0px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper {
+	max-height:400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper img {
+	max-width: 80% !important;
+	height: auto !important;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper a.gmw-close-button {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	color: #2e5191;
+	font-size: 20px;
+	cursor:pointer;
+	text-decoration:none;
+	border-radius: 0;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper div.address-wrapper {
+	display:block;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .address-icon:before {
+	color: rgb(179, 223, 193) !important;
+	font-size:18px !important;
+	float: left;
+	margin:0px;
+	padding: 0px;
+	width:20px;
+	margin-left: -5px;
+	margin-top: 1px;
+}
+
+.gmaps_gmpt_contents {
+	padding: 20px;
+	font-size: 16px;
+	color: #6d6e70;
+	font-family: "Source Sans Pro",Arial,sans-serif;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper div.address-wrapper span.address {
+	font-size: 16px;
+	color: #6d6e70;
+	font-family: "Source Sans Pro",Arial,sans-serif;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper a:link,
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper a:visited {
+	color: #c94c4e;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper a:hover,
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper a:active {
+	text-decoration: none;
+	color: #555;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper p {
+	font-size: 12px;
+	line-height: 21px;
+	color: #333;
+	margin:0 0 15px 0;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .logo {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 20px;
+	display: block;
+	background: #f9f9f9;
+	text-align: center;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper h3 {
+	margin: 0 0 15px 0;
+	display: block;
+	font-size: 20px;
+	font-family: "Source Sans Pro",Arial,sans-serif;
+	font-weight: 300;
+	color: #2e5191;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper h3 span {
+	font-weight: 400;
+	display: block;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper ul {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .featured-image {
+	text-align: center;
+	width:100%;
+	max-height: 110px;
+	overflow: hidden;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .featured-image img {
+	box-shadow:none;
+	border-radius:0;
+	max-height: 110px;
+	width:auto;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper h3.title a:link,
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper h3.title a:visited {
+	text-decoration: none;
+	color: #2c2c2c;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper h3.title a:hover,
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper h3.title a:active {
+	color: #c94c4e;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .distance {
+	font-size: 11px;
+	float:right;
+	color: #c94c4e;
+	margin-top: -10px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper a.get-directions {
+	font-size:11px;
+	display:inline;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .excerpt a.read-more {
+	font-size:11px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper div.contact-info ul {
+	margin: 15px 0 0 0;
+	clear:both;
+	color: #2e5191;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper div.contact-info ul li {
+	margin:0px;
+	padding:0px;
+}
+
+.gmaps-gmpt-ib-webrand-template-holder .template-content-wrapper .get-directions-wrapper a#get-directions-trigger {
+	font-size:11px;
+	display:inline-block;
+}

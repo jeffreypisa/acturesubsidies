@@ -1,0 +1,13 @@
+.mod-features {
+	.card {
+		background: #fff !important;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-features {
+		.col-md-4 {
+			border-right: 1px solid $walhalla-100;
+		}
+	}
+}

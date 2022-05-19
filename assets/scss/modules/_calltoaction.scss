@@ -1,0 +1,76 @@
+.mod-calltoaction {
+  .card {
+		position: relative;
+		border-radius: 16px;
+	  &:after, &:before {
+		  top: 0;
+		  bottom: 0;
+		  position: absolute;
+		  pointer-events: none;
+		  content: '';
+		  width: 150px;
+		  background-repeat: no-repeat;
+		  background-position: left top;
+		  background-size: 100%;
+		  z-index: 0;
+	  }
+	  &:before {
+		  background-position: right bottom;
+		  background-image: url(../images/cta-right.svg);
+		  right: 0;
+	  }
+	  &:after {
+		  background-position: left top;
+		  background-image: url(../images/cta-left.svg);
+		  left: 0;
+	  }
+	  .card-body {
+		  z-index: 1;
+			padding: 60px 40px;
+		  p {
+				// color: $madison-200;
+		  }
+		  a {
+			  position: relative;
+			  overflow: visible !important;
+		  }
+		  .subtext {
+				color:#fff;
+				font-size: 16px;
+				line-height: 28px;
+				font-weight: 400;
+				a[href]:not(.btn) {
+					font-weight: 600;
+					color: #fff;
+					&:after {
+						background: #fff;
+					}
+					&:hover {
+						color: #fff;
+						&:after {
+							background: #fff;
+						}
+					}
+				}
+		  }
+	  }
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-calltoaction {
+  	position: relative;
+  	&:after, &:before {
+  		width: 300px;
+  		height: 300px;
+	  }
+	  .card {
+		  .card-body {
+			  margin: 0;
+			  p {
+					margin: 0;
+			  }
+		  }
+	  }
+	}
+}

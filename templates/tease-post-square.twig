@@ -1,0 +1,7 @@
+<a href="{{ item.link }}" class="tease square card" >
+	<div class="img-container">
+		<div class="card-img-top" style="background-image: url({{ Image(item.thumbnail).src|resize('768') }})">
+		</div>
+		<h5 class="altfont">{{ item.title }}</h5>
+	</div>
+</a>

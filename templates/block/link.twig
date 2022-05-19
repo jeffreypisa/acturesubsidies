@@ -1,0 +1,17 @@
+{#
+/**
+ * Block Name: Link
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="mod-link">
+	<a class="btn btn-primary" href="{{ fields.link.url }}">{{ fields.link.title }}</a>
+</div>
+
+<style type="text/css">
+  #block-{{ block.id }} {
+    
+  }
+</style>

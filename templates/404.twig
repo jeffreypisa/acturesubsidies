@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+    <section>
+      <div class="container">
+      	<div class="row">
+      		<div class="col-md-10 offset-md-1">
+	          <img src="{{ options.afbeelding404|resize(1024) }}" class="w-100">
+	        </div>
+	      </div>
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+	        	<div class="text-center body2">
+	          	<br>
+	            <h1 class="h3"> {{ options.titel404 }} </h1>
+	            {% if options.tekst404 %}<p class="lead"> {{ options.tekst404 }} </p>{% endif %}
+	            <br>
+	            <a href="/" class="btn btn-primary"> {{ options.knoptekst404 }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</article>
+{% endblock %}

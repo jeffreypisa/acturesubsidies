@@ -1,0 +1,28 @@
+{#
+/**
+ * Block Name: Table
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="block block-table">
+	<h4> {{ fields.title }} </h4>
+	<hr>
+	{% for item in fields.rij %}
+		<div class="row">
+			<div class="col-sm-auto" style="min-width: 200px;">
+				<strong>{{ item.label }}</strong>
+			</div>
+			<div class="col-sm">
+				{{ item.content }}
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+<style type="text/css">
+    #block-{{ block.id }} {
+	    
+    }
+</style>

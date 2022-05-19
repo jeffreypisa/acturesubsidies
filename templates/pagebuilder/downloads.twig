@@ -1,0 +1,30 @@
+<section id="section{{ sectionno }}" class="mod-downloads {% if item.achtergrond %} {{ item.achtergrond }} {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-10 col-xl-8">
+	  		{% for item in item.cats %}
+	  			<div class="cat">
+	  				{% if loop.first %}{% else %} <br> {% endif %}
+	  				<h3 style="margin-bottom: 20px">{{ item.titel }}</h3>
+			      {% for item in item.downloads %}
+							<div class="download">
+								<a href="{{ item.download.url }}" target="_blank" class="card card-link">
+									<div class="row">
+										<div class="col">
+											{% if item.titel %} {{ item.titel }} {% else %} {{ item.download.title }} {% endif %}
+										</div>
+										<div class="col-auto">
+											<div class="icon">
+												<svg height="16" width="16" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/></svg>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+			      {% endfor %}
+	  			</div>
+			  {% endfor %}
+  		</div>
+    </div>
+  </div>
+</section>

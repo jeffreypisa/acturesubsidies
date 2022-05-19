@@ -1,0 +1,21 @@
+{#
+/**
+ * Block Name: Youtube
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="mod-youtube">
+	<div class="video-container">
+		{{ fields.embed}}
+	</div>
+	<div class="h3blockspace">
+		<h3 class="block"> {{ fields.titel }} </h3>
+	</div>
+</div>
+
+<style type="text/css">
+  #block-{{ block.id }} {
+  }
+</style>

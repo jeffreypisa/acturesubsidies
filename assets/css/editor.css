@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic);
+
+html .mceContentBody {
+	background: #fff;
+}
+
+* { font: 16px "Source Sans Pro", Helvetica; }
+
+body, input, textarea, p, dl, td, th, ul, ol, blockquote {
+	font-family: "Source Sans Pro", Helvetica;
+	font-size: 16px;
+	color: #6d6e70;
+}
+
+p {
+	margin: 0 0 18px 0;
+	line-height: 22px;
+}
+
+ul, ol {
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+ol ol {
+	margin: 0 0 0 40px;
+	padding: 0;
+	list-style: upper-alpha;
+}
+
+ol ol ol {
+	list-style: lower-roman;
+}
+
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+
+blockquote {
+	margin: 0;
+	padding: 10;
+	display: block;
+	line-height: 0;
+	font-style: italic;
+}
+
+code, code var {
+	padding: 10px;
+	clear: both;
+	background: #eee;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 14px;
+}
+
+pre, kbd, tt, var {
+	font-size: 14px;
+}
+
+pre {
+	padding: 15px;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	background: #f7f7f7;
+}
+
+dl {
+	margin: 0 0 24px 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-bottom: 12px;
+}
+
+cite, em, i {
+	border: none;
+	font-style: italic;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #444;
+	cursor: help;
+}
+
+ins {
+	text-decoration: none;
+}
+
+sup, sub {
+	font-size: 12px;
+	height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+/* --- URL's
+=============================== */
+
+a {
+	color: #2e5191;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+
+a:hover {
+	color: #e69925;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+
+a:focus,
+a:hover,
+a:active {
+	outline:0;
+}
+
+a img {
+	border: none;
+}
+
+/* --- Headings
+=============================== */
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+	line-height: normal;
+	color: #2e5191;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 28px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+/* --- Tables
+=============================== */
+
+table {
+	width: 100%;
+	margin: 0 0 13px 0;
+	padding: 0;
+	border: 1px dashed #444 !important;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: left;
+}
+
+tr th, thead th {
+	padding: 7px 10px;
+	border: none !important;
+	color: #444;
+	font-weight: bold;
+}
+
+tr td {
+	padding: 7px 10px;
+	border: 1px dashed #444 !important;
+}
+
+/* --- Images
+=============================== */
+
+img.alignleft {
+	float: left;
+	margin: 5px 15px 15px 0;
+}
+
+img.alignright {
+	float: right;
+	margin: 5px 0 15px 15px;
+}
+
+img.aligncenter {
+	margin: 0 auto;
+	display: block;
+}
+
+img { margin: 0; }
+img.size-auto, img.size-large, img.size-full, img.size-medium { max-width: 100%; height: auto; }
+.wp-caption { max-width: 960px !important; margin-bottom: 20px; padding: 4px; background: #f1f1f1; border: none; font-size: 12px; color: #444; text-align: center; }
+.wp-caption img { margin: 5px; }
+.wp-caption p.wp-caption-text { margin: 0 0 4px; }

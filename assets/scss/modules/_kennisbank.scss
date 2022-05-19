@@ -1,0 +1,65 @@
+.mod-kennisbank {
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #FAFBFD 55%, #F0F3FA 100%);
+  padding-top: 40px;
+	&:after {
+    background: url(../images/bg-kennisbank2.svg);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    content: '';
+    top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+	}
+	.card {
+		position: relative;
+		z-index: 1;
+		background: #fff;
+	}
+	form {
+		position: relative;
+		input.form-control {
+			white-space: nowrap;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		}
+		.submit {
+			position: absolute;
+			top: 0px; 
+			right: 00px;
+			width: 64px;
+			height: 64px;
+			border: 0;
+			background: none;
+			background-image: url('../images/icon_search.svg');
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-kennisbank {
+		padding-top: 60px;
+		.card {
+			.card-body {
+				padding: 80px 60px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-kennisbank {
+		padding-top: 80px;
+		.card {
+			.card-body {
+				padding: 100px 80px;
+			}
+		}
+	}
+}

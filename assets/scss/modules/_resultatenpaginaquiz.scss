@@ -1,0 +1,96 @@
+.mod-resultatenpaginaquiz {
+	background-image: url(../images/bg-resultatenpaginaquiz.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #F0F3FA;
+	.titel {
+		    padding: 10px 0;
+	}
+	.textscrollwrapper {
+		overflow: hidden;
+		height: 48px;
+		position: relative;
+		margin-bottom: 30px;
+		.textscroll {
+			position: absolute;
+			bottom: calc( 100% - 600px);
+			transition: 1.4s ease-out;
+			opacity: 0;
+			h2 {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.loaded .mod-resultatenpaginaquiz {
+	.textscrollwrapper {
+		.textscroll {
+			bottom: 0;
+			opacity: 1;
+		}
+	}
+
+}
+ 
+@include media-breakpoint-up(md) {
+	.mod-resultatenpaginaquiz .card .list-group.dots .list-group-item .linewithdots {
+    min-height: 56px;  
+  }
+	.mod-resultatenpaginaquiz {
+		.textscrollwrapper {
+			height: 60px;
+		}
+		.blokken {
+			.colblok {
+				&:first-child {
+					.card.body3 {
+						margin-right:20px;
+						overflow: visible;
+						li {
+							position: relative;
+							.bar {
+						    left: calc(100% + 30px);
+						    height: 8px;
+						    width: 35px;
+						    top: 14px;
+						    position: absolute;
+							}
+						}
+					}
+				}
+				&:nth-child(2) {
+					.card.body3 {
+						margin-left:20px;
+						overflow: visible;
+						li {
+							position: relative;
+							.bar {
+								right: calc(100% + 30px);
+								height: 8px;
+								width: 35px;
+								top: 14px;
+								position: absolute;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-resultatenpaginaquiz {
+		.textscrollwrapper {
+			height: 62px;
+		}
+	}
+}
+		
+@include media-breakpoint-up(xl) {
+	.mod-resultatenpaginaquiz .card .list-group.dots .list-group-item .linewithdots {
+    min-height: 0;  
+  }
+}

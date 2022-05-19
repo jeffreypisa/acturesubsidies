@@ -1,0 +1,44 @@
+<section id="section{{ sectionno }}" class="mod-quote bg-{{item.achtergrond}}">
+	{% if item.titel %}
+		<div class="container text-center">
+			<h2> {{ item.titel }} </h2>
+		</div>
+	{% endif %}
+	<div class="row">
+		<div class="col-sm-10 offset-sm-1">
+		  <div id="quotes" class="carousel slide carousel-fade" data-ride="carousel">
+		    <div class="carousel-inner">
+					{% for quote in item.quotes %}
+			    	<div class="carousel-item {% if loop.first %} active {% endif %}" data-interval="4000">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+										<div class="text-center" data-aos="fade-right" data-aos-duration="800">
+		                  {% if quote.content %} 
+		                    <h2 class="altfont js-matchheight">{{ quote.content }}</h2>
+		                  {% endif %}
+		                  <div class="clearfix"></div>
+		                  <div>
+		                    {% if quote.title %} 
+		                      - {{ quote.title }}
+		                    {% endif %}
+		                  </div>
+				            </div>
+									</div>
+								</div>
+							</div>
+			      </div>
+		      {% endfor %}
+		    </div>
+			</div>
+		</div>
+    {% if item.quotes|length > 1 %}
+	    <a class="carousel-control-prev" href="#quotes" role="button" data-slide="prev">
+	      <i class="fal fa-chevron-left"></i>
+	    </a>
+	    <a class="carousel-control-next" href="#quotes" role="button" data-slide="next">
+	      <i class="fal fa-chevron-right"></i>
+	    </a>
+	  {% endif %}
+  </div>     
+</section>

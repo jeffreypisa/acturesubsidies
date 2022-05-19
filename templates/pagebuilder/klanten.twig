@@ -1,0 +1,89 @@
+<section id="section{{ sectionno }}" class="mod-klanten {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	{% if item.subtitel or item.titel or item.tekst %}
+	  	<div class="row">
+	  		<div class="col-md-10 offset-md-1 text-center">
+			  	{% if item.subtitel %}
+			    	<span class="sub">{{ item.subtitel }}</span>
+			    {% endif %}
+			    {% if item.titel %}
+			    	<h2>{{ item.titel }}</h2>
+			    {% endif %}
+			    {% if item.tekst %}
+			    	<p> {{ item.tekst }} </p>
+			    {% endif %}
+	  		</div>
+	  	</div>
+	  	<br>
+  	{% endif %}
+  	{% if item.layout == 'cards' %}
+			<div class="row">
+				{% set delay = 0 %}
+	  		{% for item in item.cards %}
+	  			<div class="col-md-6 col-lg-4">
+	  				{% include 'tease.twig' %}
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+			</div>
+		{% elseif item.layout == 'masonry' %}
+			<div class="masonry-grid">
+				{% set delay = 0 %}
+	  		{% for item in item.cards %}
+	  			<div class="col-md-6 col-lg-4 grid-sizer masonry-item">
+						{% include 'tease-masonry.twig' %}
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+  		</div>
+		{% elseif item.layout == 'logos' %}
+			<div class="row d-flex align-items-center justify-content-center">
+				{% set delay = 0 %}
+	  		{% for item in item.cards %}
+	  			<div class="col-6 col-md-4 col-lg-3">
+	  				<a {% if item.link %} href="{{ item.link }}" {% endif %} class="d-block w-100 text-center noline"> 
+	  					{% if item.logo %} 
+	  						<img src="{{ Image(item.logo).src }}" alt="{{ Image(item.logo).alt }}" style="max-width: 80%; height: auto; margin-bottom: 30px;"> 
+							{% else %} {{ item.title }} 
+							{% endif %}
+						</a>
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+			</div>
+		{% elseif item.layout == 'logoszonder' %}
+			<div class="row d-flex align-items-center justify-content-center">
+				{% set delay = 0 %}
+	  		{% for item in item.cards %}
+	  			<div class="col-6 col-md-4 col-lg-3">
+	  				<div class="text-center"> 
+	  					{% if item.logo %} 
+	  						<img src="{{ Image(item.logo).src }}" alt="{{ Image(item.logo).alt }}" style="max-width: 80%; height: auto; margin-bottom: 30px;"> 
+							{% endif %}
+						</div>
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+			</div>
+		{% endif %}
+		<div class="text-center">
+			{% if item.tekst_onder_klanten %}
+				<br>
+				<div class="row">
+					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+						<span class="tekstonder">{{ item.tekst_onder_klanten }}</span>
+					</div>
+				</div>
+				<br>
+			{% endif %}
+			{% if item.link %}
+				<br>
+				<a class="btn btn-secondary" target="{{ item.link.target }}" href="{{ item.link.url }}">
+					{{ item.link.title }} 
+				</a>
+	    {% endif %}
+		</div>
+  </div>    
+</section>
+
+			

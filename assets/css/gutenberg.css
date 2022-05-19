@@ -1,0 +1,60 @@
+.wp-block-image {
+  padding: 20px 0; }
+  .wp-block-image img {
+    width: 100%; }
+
+.block-info {
+  background: #7C8A93;
+  color: #fff;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 0; }
+  .block-info h4 {
+    color: #fff; }
+  .block-info > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
+
+.block-table {
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 26px; }
+  .block-table hr {
+    border-top-color: #000319; }
+
+.mod-link a {
+  background: #000;
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none; }
+
+.gb-quote {
+  font-style: italic;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  border-left: 3px solid #FDBA2D; }
+
+.mod-download {
+  margin-bottom: 50px; }
+  .mod-download .panel {
+    background: #DBE3F1;
+    box-shadow: 0 20px 40px 0 rgba(22, 49, 94, 0.3);
+    border-radius: 8px;
+    padding: 20px; }
+    .mod-download .panel img {
+      display: block;
+      width: 110px;
+      margin: 0 auto 20px; }
+  .mod-download h3 {
+    margin-bottom: 10px;
+    font-weight: 700; }
+
+.mod-lead {
+  margin-bottom: 0; }
+
+.gb-lead {
+  margin-bottom: 40px; }
+  .gb-lead p {
+    margin: 0 0 5px;
+    color: #7C8A93; }

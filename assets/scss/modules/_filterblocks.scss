@@ -1,0 +1,17 @@
+.mod-filterblocks {
+  margin-bottom: 40px;
+  background: $madison-100;
+  padding: 10px 20px 8px;
+  border-radius: 8px;
+  a[href] {
+	  margin: 0 10px 10px;
+	  display: inline-block;
+	  color: $walhalla-300;
+	  font-weight: 600;
+	  font-size: 16px;
+	  line-height: 24px;
+	  &.active {
+		  color: $walhalla-400; 
+	  }
+  }
+}

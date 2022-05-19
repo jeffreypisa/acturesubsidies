@@ -1,0 +1,24 @@
+<section id="section{{ sectionno }}" class="mod-quickscan bg-white">
+  <div class="container">
+  	<div class="row">
+			<div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3 text-center body2">
+				{% if item.subtitel %}
+		      <span class="sub">{{ item.subtitel }}</span>
+		    {% endif %}
+				{% if item.titel %}
+				  <h3>{{ item.titel }}</h3>
+				{% endif %}
+				{% if item.tekst %}
+					{{ item.tekst }}
+				{% endif %}
+			</div>
+  	</div>
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<div class="card bg-lightgrey text-center">
+					{{ item.formulier }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

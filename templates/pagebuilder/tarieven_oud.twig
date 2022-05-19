@@ -1,0 +1,146 @@
+<div id="section{{ sectionno }}" class="container">
+	<ul class="nav nav-tabs justify-content-center" id="tab" role="tablist">
+	  <li class="nav-item">
+	    <a class="noline active" id="cat-1-tab" data-toggle="tab" href="#cat-1" role="tab" aria-controls="cat-1" aria-selected="true" style="border-color: {{ item.cat_1_color }}">{{ item.cat_1_titel }}</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="noline" id="cat-2-tab" data-toggle="tab" href="#cat-2" role="tab" aria-controls="cat-2" aria-selected="false" style="border-color: {{ item.cat_2_color }}">{{ item.cat_2_titel }}</a>
+	  </li>
+	</ul>
+</div>
+<section class="mod-cards {% if item.bg_alt %} bg-lightgrey {% else %} bg-white {% endif %}">
+	<div class="bg-transparent">
+	  <div class="container">
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="cat-1" role="tabpanel" aria-labelledby="cat-1-tab">  
+					<div class="row justify-content-center">
+						{% set delay = 0 %}
+			  		{% for blok in item.cat_1_blocks %}
+			  			<div class="col-lg-4">
+			  				<div class="card body3 with-shadow {% if blok.uitgelicht %} uitgelicht {% endif %}" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}">
+			  					<div class="card-body body3">
+				  					<div class="top" data-mh>
+								  		<div class="linewithdots">
+							  				<div class="row">
+							  					<div class="col-auto">
+														<div class="dot" style="background: {{ item.cat_1_color }}"></div>
+							  					</div>
+							  					<div class="col-auto">
+														<div class="dot" style="background: {{ item.cat_1_color }}"></div>
+							  					</div>
+							  					<div class="col">
+														<div class="line" style="background: {{ item.cat_1_color }}"></div>
+							  					</div>
+							  				</div>
+							  			</div>
+							  			{% if blok.subtitel %}
+							        	<span class="sub" style="color: {{ item.cat_1_color }}">{{ blok.subtitel }}</span>
+							        {% endif %}
+					  					{% if blok.prijs %}
+					  						<h5 class="d-inline">{{ blok.va }}</h5>
+					  						<h4 class="h1 d-inline" style="margin: 0"> {{ blok.prijs }}  </h4> 
+					  						<h5 class="d-inline">{{ blok.per }}</h5>
+												<div class="clearfix"></div>
+					  					{% endif %}
+					  					{% if blok.tekst %}
+					  						<div class="tekst">
+					  							{{ blok.tekst }}
+					  						</div>
+					  					{% endif %}
+					  					{% if blok.lijst %}
+					  						<ul class="list-group">
+						  						{% for item in blok.lijst %}
+						  							<li class="list-group-item"> {{ item.tekst }} </li>
+						  						{% endfor %}
+					  						</ul>
+					  					{% endif %}
+				  					</div>		
+				  					{% if blok.link_primary %}
+				  						<br>
+											<a class="btn btn-primary btn-block" target="{{ blok.link_primary.target }}" href="{{ blok.link_primary.url }}">
+												{{ blok.link_primary.title }}
+											</a>
+								    {% endif %}
+								    {% if blok.link_secondary %}
+								    	<div class="text-center">
+					  						<br>
+												<a class="btn-link" target="{{ blok.link_secondary.target }}" href="{{ blok.link_secondary.url }}">
+													{{ blok.link_secondary.title }}
+												</a>
+				  						</div>
+								    {% endif %}
+			  					</div>
+			  				</div>
+			  			</div>
+			  			{% set delay = delay + '150' %}
+			  		{% endfor %}
+					</div>
+				</div>
+				<div class="tab-pane fade" id="cat-2" role="tabpanel" aria-labelledby="cat-2-tab">  
+					<div class="row justify-content-center">
+						{% set delay = 0 %}
+			  		{% for blok in item.cat_2_blocks %}
+			  			<div class="col-lg-4">
+			  				<div class="card body3 with-shadow {% if blok.uitgelicht %} uitgelicht {% endif %}" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}">
+			  					<div class="card-body body3">
+				  					<div data-mh>
+								  		<div class="linewithdots">
+							  				<div class="row">
+							  					<div class="col-auto">
+														<div class="dot" style="background: {{ item.cat_2_color }}"></div>
+							  					</div>
+							  					<div class="col-auto">
+														<div class="dot" style="background: {{ item.cat_2_color }}"></div>
+							  					</div>
+							  					<div class="col">
+														<div class="line" style="background: {{ item.cat_2_color }}"></div>
+							  					</div>
+							  				</div>
+							  			</div>
+							  			{% if blok.subtitel %}
+							        	<span class="sub" style="color: {{ item.cat_2_color }}">{{ blok.subtitel }}</span>
+							        {% endif %}
+					  					{% if blok.prijs %}
+					  						<h5 class="d-inline">{{ blok.va }}</h5>
+					  						<h4 class="h1 d-inline" style="margin: 0"> {{ blok.prijs }}  </h4> 
+					  						<h5 class="d-inline">{{ blok.per }}</h5>
+												<div class="clearfix"></div>
+					  					{% endif %}
+					  					{% if blok.tekst %}
+					  						<div class="tekst">
+					  							{{ blok.tekst }}
+					  						</div>
+					  					{% endif %}
+					  					{% if blok.lijst %}
+					  						<ul class="list-group">
+						  						{% for item in blok.lijst %}
+						  							<li class="list-group-item"> {{ item.tekst }} </li>
+						  						{% endfor %}
+					  						</ul>
+					  					{% endif %}
+				  					</div>		
+				  					{% if blok.link_primary %}
+				  						<br>
+											<a class="btn btn-primary btn-block" target="{{ blok.link_primary.target }}" href="{{ blok.link_primary.url }}">
+												{{ blok.link_primary.title }}
+											</a>
+								    {% endif %}
+								    {% if blok.link_secondary %}
+								    	<div class="text-center">
+					  						<br>
+												<a class="btn-link" target="{{ blok.link_secondary.target }}" href="{{ blok.link_secondary.url }}">
+													{{ blok.link_secondary.title }}
+												</a>
+				  						</div>
+								    {% endif %}
+			  					</div>
+			  				</div>
+			  			</div>
+			  			{% set delay = delay + '150' %}
+			  		{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>    
+</section>

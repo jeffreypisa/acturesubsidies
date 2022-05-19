@@ -1,0 +1,36 @@
+{% if menu %}
+	<ul class="menu">
+		<li class="home {% if fn('is_front_page') %} active {% endif %}">
+			<a href="{{ site.url }}" class="noline">Home </a>
+		</li>
+		<li class="producten">
+			<a data-toggle="collapse" href="#producten_collapse" role="button" aria-expanded="false" aria-controls="producten_collapse" class="noline">Producten <i class="fa fa-chevron-down" aria-hidden="true"></i> </a>
+		</li>
+		<li style="border-color: #fff">
+			<div class="collapse" id="producten_collapse">
+				<div class="menupanel">
+					<span class="sub"> SAAS </span>
+					{% if tab_active == 'werkgever' %}
+						{% include "menu-dropdown.twig" with {'menu': saasmenu_b.get_items} %}
+					{% else %}
+						{% include "menu-dropdown.twig" with {'menu': saasmenu.get_items} %}
+					{% endif %}
+				</div>
+				<div class="menupanel grey">
+					<span class="sub">  Serviceproduct </span>
+					{% if tab_active == 'werkgever' %}
+						{% include "menu-dropdown.twig" with {'menu': serviceproductmenu_b.get_items} %}
+					{% else %}
+						{% include "menu-dropdown.twig" with {'menu': serviceproductmenu.get_items} %}
+					{% endif %}
+				</div>
+			</div>
+		</li>
+  	{% for item in menu %}
+  		<li class="noline {{item.classes | join(' ')}} {% if item.title|lower == currentpostname %} current-menu-item {% endif %}">
+  			<a href="{{item.get_link}}">{{item.title}}</a>
+  			{% include "menu.twig" with {'menu': item.get_children} %}
+  		</li>
+  	{% endfor %}
+	</ul>
+{% endif %}

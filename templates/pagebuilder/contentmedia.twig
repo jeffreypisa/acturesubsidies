@@ -1,0 +1,144 @@
+<section id="section{{ sectionno }}" class="mod-contentmedia body2 
+	{% if item.layout == 'afbeelding_xl' %} afbeelding_xl {% endif %}
+	{% if item.bg_alt %} bg-lightgrey {% elseif item.bg_darkblue %} bg-darkblue {% elseif item.layout == 'afbeelding_xl' %} {% else %} bg-transparent {% endif %}
+	{% if item.vormen == 'klantverhalen' %} bg-klantverhalen {% endif %}
+	{% if item.vormen == 'overons' %} bg-overons {% endif %}
+	{% if item.vormen == 'productservice' %} bg-productservice {% endif %}
+	{% if item.vormen == 'contact' %} bg-contact {% endif %}
+	">
+  <div class="container">
+    <div class="row">
+      <div class="{% if item.layout == 'geen_afbeelding' %} col-lg-8 offset-lg-2 text-center {% elseif item.layout == 'afbeelding_xl' and item.breder_contentvlak %} col-md-8 {% else %} col-md-6 {% endif %}">
+      	<div class="contentspace h-100 d-flex align-items-center {% if item.tekst_font_sm %} body3 {% endif %}">
+      		<div class="{% if item.layout != 'afbeeldingx3' %} blok-body {% endif %} w-100 text">
+		        {% if item.subtitel %}
+		        	<span class="sub">{{ item.subtitel }}</span>
+		        {% endif %}
+		        {% if item.titel %}
+		        	<h2 class="{% if item.font_xl %} h1 {% endif %}">{{ item.titel }}</h2>
+		        {% endif %}
+		        {% if item.lead %}
+		        	<span class="lead"> {{ item.lead }} </span>
+		        {% endif %}
+		        {% if item.tekst %}
+		        	{{ item.tekst }}
+		        {% endif %}
+		        {% if item.link_primary %}
+							<a class="btn btn-primary" target="{{ item.link_primary.target }}" href="{{ item.link_primary.url }}">
+								{{ item.link_primary.title }} 
+							</a>
+				    {% endif %}
+				    {% if item.link_secondary %}
+							<a class="btn btn-secondary" target="{{ item.link_secondary.target }}" href="{{ item.link_secondary.url }}">
+								{{ item.link_secondary.title }} 
+							</a>
+				    {% endif %}
+				    {% if item.logos %}
+				    	<div class="logos d-none d-md-block">
+					    	<br><br>
+								<div class="row">
+									{% for item in item.logos %}
+										<div class="col d-flex align-items-center">
+											{% if item.link %}
+												<a href="{{ item.link.url }}" target="{{ item.link.target }}" class="noline"> 
+													<img src="{{ item.logo.url|resize(768) }}" alt="{{ item.logo.alt }}" class="logo">
+												</a>
+											{% else %}
+												<img src="{{ item.logo.url|resize(768) }}" alt="{{ item.logo.alt }}" class="logo">
+											{% endif %}
+										</div>
+									{% endfor %}
+								</div>
+								<br><br>
+							</div>
+				    {% endif %}
+      		</div>
+      	</div>
+      </div>
+      {% if item.layout != 'geen_afbeelding' and item.layout != 'afbeeldingx3' %}
+	      <div class="{% if item.layout == 'afbeelding_xl' and item.breder_contentvlak %} col-md-4 {% else %} col-md-6 {% endif %} {% if item.positie == 'links' %} order-first {% endif %}">
+	      	<div class="h-100 d-flex align-items-center">
+		  			{% if item.layout == 'fotostapel' %}
+		  				<div class="afbeelding-container">
+			  				{% if item.afbeelding %}
+									<figure class="afbeelding_1 image-container square" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+										<div class="image" style="background-image: url({{ item.afbeelding|resize(1024) }}")></div>
+									</figure>
+								{% endif %}
+								{% if item.afbeelding_2 %}
+									<figure class="afbeelding_2 image-container portrait" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+										<div class="image" style="background-image: url({{ item.afbeelding_2|resize(1024) }}")></div>
+									</figure>
+								{% endif %}
+							</div>
+						{% elseif item.layout == 'afbeelding_xl' %}
+						{% elseif item.layout == 'afbeelding' %}
+							{% if item.afbeelding %}
+								<div class="blok-body w-100">
+									{% if item.fullsize %}
+										<img src="{{ item.afbeelding|resize(1024) }}" alt="{{ item.afbeelding.alt }}" class="w-100 h-auto">
+									{% else %}
+										<div class="image-container ratio-4-3 has-flakes"> 
+											<div class="image" style="background-image: url({{ item.afbeelding|resize(1024) }})" data-aos="{% if item.positie == 'links' %} fade-right {% else %} fade-left {% endif %}" data-aos-duration="800" data-aos-delay="0">
+											</div>
+											{% if item.vormen == 'blauw' %}
+												<div class="flake top left flake-8"></div>
+												<div class="flake top right flake-9"></div>
+											{% elseif item.vormen == 'geel' %}
+								      	<div class="flake bottom left flake-10"></div>
+												<div class="flake top right flake-11"></div>
+								      {% endif %}
+										</div>	
+									{% endif %}
+								</div>
+							{% endif %}
+						{% endif %}
+					</div>
+	      </div>
+	    {% endif %}
+    </div>
+    {% if item.layout == 'afbeeldingx3' %}
+    	<div class="afbeeldingx3 d-none d-md-block">
+	    	<div class="row row-space">
+	    		{% if item.afbeelding %}
+	    			<div class="col-md-4">
+							<figure class="afbeelding_1 image-container portrait has-flakes" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0" data-aos-offset="-100">
+								<div class="image" style="background-image: url({{ item.afbeelding|resize(1024) }}")></div>
+								<div class="flake left vertical-center flake-3"></div>
+							</figure>
+	    			</div>
+					{% endif %}
+					{% if item.afbeelding_2 %}
+		    		<div class="col-md-4">
+		    			<figure class="afbeelding_2 image-container portrait has-flakes" data-aos="fade-in" data-aos-duration="800" data-aos-delay="200" data-aos-offset="-100">
+								<div class="image" style="background-image: url({{ item.afbeelding_2|resize(1024) }}")></div>
+								<div class="flake bottom horizontal-center flake-2"></div>
+							</figure>
+		    		</div>
+	    		{% endif %}
+	    		{% if item.afbeelding_3 %}
+		    		<div class="col-md-4">
+		    			<figure class="afbeelding_3 image-container portrait has-flakes" data-aos="fade-in" data-aos-duration="800" data-aos-delay="300" data-aos-offset="-100">
+								<div class="image" style="background-image: url({{ item.afbeelding_3|resize(1024) }}")></div>
+								<div class="flake bottom right flake-4"></div>
+							</figure>
+		    		</div>
+	    		{% endif %}
+	    	</div>
+			</div>
+    {% endif %}
+  </div>
+  {% if item.layout == 'afbeelding_xl' %}
+		<div class="bg {{ item.positie }} d-none d-md-block {% if item.fullsize %} bg-contain {% endif %} {% if item.layout == 'afbeelding_xl' and item.breder_contentvlak %} small {% endif %}" style="background-image: url({{ item.afbeelding|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
+		<div class="d-md-none">
+			<br><br>
+			{% if item.fullsize %}
+				<img src="{{ item.afbeelding|resize(1024) }}" alt="{{ item.afbeelding.alt }}" class="w-100 h-auto">
+			{% else %}
+				<div class="image-container square" style="margin: 0 !important">
+					<div style="background-image: url({{ item.afbeelding|resize(1024) }})" class="image"></div>
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+</section>

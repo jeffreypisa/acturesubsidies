@@ -1,0 +1,12 @@
+<div class="mod-mobilemenu">
+  <div class="menucontent">
+  	<div class="container">
+  		{% if tab_active == 'werkgever' %}
+      	{% include "menu-mob.twig" with {'menu': menu_b.get_items} %}
+      {% else %}
+      	{% include "menu-mob.twig" with {'menu': menu.get_items} %}
+      {% endif %}
+      {% include 'partials/socialmedia.twig' %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<section class="mod-teller bg-white">
+	<div id="teller" class="container">
+		<div class="numbers d-flex justify-content-between">
+			{% for item in item.getallen %}
+				<div class="number text-center">
+					<div class="h1 mb-1" style="color: #000"><span class="js-countup">{{ item.getal }}</span>{{ item.suffix }} </div>
+					<span class="sub">{{ item.beschrijving }}</span>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

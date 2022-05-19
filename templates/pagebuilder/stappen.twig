@@ -1,0 +1,82 @@
+<section id="section{{ sectionno }}" class="mod-stappen less-padding {% if item.achtergrond %} {{ item.achtergrond }} {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	{% if item.subtitel or item.titel or item.tekst %}
+  		<div class="contentspace body2">
+		  	<div class="row">
+		  		<div class="col-md-10 col-xl-8">
+				  	{% if item.subtitel %}
+				      <span class="sub">{{ item.subtitel }}</span>
+				    {% endif %}
+						{% if item.titel %}
+				      <h2>{{ item.titel }}</h2>
+				    {% endif %}
+				  	{% if item.tekst %}
+				    	{{ item.tekst }}
+				    {% endif %}
+						<br><br><br><br>
+		  		</div>
+		  	</div>
+  		</div>
+  	{% endif %}
+  	<div class="stappen">
+	    <div class="row">
+	    	<div class="col-md-6">
+		    	{% set delay = 0 %}
+		      {% for stap in item.stappen %}
+						<div class="stap body3">
+							<div data-mh>
+								<div class="row">
+									<div class="col-auto">
+										<div class="bol">
+											{{ loop.index }}
+										</div>
+									</div>
+									<div class="col">
+										<h4> {{ stap.titel }} </h4>
+										{{ stap.tekst }}
+									</div>
+								</div>
+							</div>
+						</div>	
+						{% set delay = delay + '150' %}
+		      {% endfor %}
+	    	</div>
+	    	<div class="col-md-5 offset-md-1 col-lg-4 offset-lg-2 d-none d-md-block">
+	    		{% if item.afbeelding_1 %}
+	    			{% if item.afbeeldingen_niet_afsnijden %}
+							<img class="w-100 h-auto" src="{{ Image(item.afbeelding_1).src|resize(1024) }}" alt="{{ Image(item.afbeelding_1).alt }}">
+						{% else %}
+							<figure class="afbeelding_1 image-container portrait has-flakes" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0" data-aos-offset="-100">
+								<div class="image" style="background-image: url({{ Image(item.afbeelding_1).src|resize(1024) }}")></div>
+								<div class="flake left vertical-center flake-3"></div>
+							</figure>
+						{% endif %}
+	    			<br><br>
+					{% endif %}
+					{% if item.afbeelding_2 %}
+						{% if item.afbeeldingen_niet_afsnijden %}
+		    			<img class="w-100 h-auto" src="{{ Image(item.afbeelding_2).src|resize(1024) }}" alt="{{ Image(item.afbeelding_2).alt }}">
+						{% else %}
+							<figure class="afbeelding_2 image-container portrait has-flakes" data-aos="fade-in" data-aos-duration="800" data-aos-delay="200" data-aos-offset="-100">
+								<div class="image" style="background-image: url({{ Image(item.afbeelding_2).src|resize(1024) }}")></div>
+								<div class="flake bottom horizontal-center flake-2"></div>
+							</figure>
+						{% endif %}
+						<br><br>
+	    		{% endif %}
+	    		{% if item.afbeelding_3 %}
+	    			{% if item.afbeeldingen_niet_afsnijden %}
+	    				<img class="w-100 h-auto" src="{{ Image(item.afbeelding_3).src|resize(1024) }}" alt="{{ Image(item.afbeelding_3).alt }}">
+							{% else %}
+								<figure class="afbeelding_3 image-container portrait has-flakes" data-aos="fade-in" data-aos-duration="800" data-aos-delay="300" data-aos-offset="-100">
+									<div class="image" style="background-image: url({{ Image(item.afbeelding_3).src|resize(1024) }}")></div>
+									<div class="flake bottom right flake-4"></div>
+								</figure>
+							{% endif %}
+						<br><br>
+	    		{% endif %}
+	    	</div>
+	    </div>
+    </div>
+  </div>
+</section>

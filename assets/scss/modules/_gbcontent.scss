@@ -1,0 +1,13 @@
+
+
+@include media-breakpoint-up(md) {
+	.gb-content {
+		margin: 0 -60px 30px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.gb-content {
+		margin: 0 -100px 30px;
+	}
+}

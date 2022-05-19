@@ -1,0 +1,141 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		{% if categories %}
+			<div class="mod-categorybar">
+				<div class="container">
+					<div class="row no-gutters">
+						<div class="col-auto col-md">
+							<a href="/kennisbank" class="btn btn-sm {% if current_category == '' %} active {% endif %}">Kennisbank</a>
+						</div>
+						{% for item in categories %}
+							{% if item.zichtbaar %}
+								{% set thelink = '' %}
+								{% if item.verwijs_door_naar_pagina and item.paginalink %}
+									{% set thelink = item.paginalink.url %}
+								{% else %}
+									{% set thelink = item.link %}
+								{% endif %}
+								<div class="col-auto">
+									<a href="{{ thelink }}" class="btn btn-sm {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	  <section class="mod-kennisbank bg-white">
+			<div class="container">
+				<h1 class="d-none"> Kennisbank </h1>
+				<div class="row">
+					<div class="col-md-10 offset-md-1">
+						<div class="card with-shadow body3">
+							<div class="row no-gutters">
+						    <div class="col-md-8">
+						      <div class="card-body">
+									  <ul class="mod-breadcrumbs">
+											<li>
+												<a href="/kennisbank"> Kennisbank </a>
+											</li>
+										</ul>
+						      	<div class="row">
+						      		<div class="col-lg-10">
+												<h2>{{ post.zoeken_titel }} </h2>
+						      		</div>
+						      	</div>
+										<p class="lead"> {{ post.zoeken_tekst }}</p>
+										<form method="get" role="search" action="{{ site.url }}">
+										  <input class="form-control input-large" type="text" placeholder="Zoek naar service of term..." name="s">
+										  <input type="submit" value="" class="submit">
+										  <input type="hidden" name="post_type" value="kennisbank">
+										</form>
+  					      </div>
+						    </div>
+						    <div class="col-md-4 bg-cover" style="background-image: url('{{ theme.link }}/assets/images/bg-kennisbank.svg')">
+						    	
+						    </div>
+					    </div>
+					  </div>
+				  </div>
+					</div>
+				</div>
+			</div>
+	  </section>
+	  <section class="mod-themas bg-transparent">
+		  <div class="container">
+		  	<div class="row">
+		  		<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+				  	<div class="text-center">
+				      <span class="sub">{{ post.themas_subtitel }}</span>
+				      <h2>{{ post.themas_titel }}</h2>
+					    <br>
+				  	</div>
+		  		</div>
+		  	</div>
+		    <div class="row">
+		    	{% for item in categories %}
+		    		{% if item.zichtbaar %}
+		    			{% set thelink = '' %}
+							{% if item.verwijs_door_naar_pagina and item.paginalink %}
+								{% set thelink = item.paginalink.url %}
+							{% else %}
+								{% set thelink = item.link %}
+							{% endif %}
+			    		<div class="col-md-6">
+			    			<a href="{{ thelink }}" class="card with-shadow body3 bg-white">
+									<div class="row no-gutters">
+								    <div class="col-md-4 d-flex align-items-center bg-thecolor">
+								    	<div class="w-100 text-center">
+								      	<img src="{{ Image(item.icoon).src }}" class="">
+								      </div>
+								    </div>
+								    <div class="col-md-8">
+								      <div class="card-body">
+								      	<div data-mh>
+									        <h5>{{ item.title }}</h5>
+									        <p class="card-text"> {{ item.description }}</p>
+								      	</div>
+								      </div>
+								    </div>
+								  </div>
+							  </a>
+			    		</div>
+			    	{% endif %}
+		    	{% endfor %}
+		    </div>
+		  </div>
+		</section>
+		<section class="mod-themas bg-darkblue text-white">
+		  <div class="container">
+		  	<div class="row">
+		  		<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+				  	<div class="text-center">
+				      <span class="sub">{{ post.onze_themas_subtitel }}</span>
+				      <h2>{{ post.onze_themas_titel }}</h2>
+				      <p> {{ post.onze_themas_tekst }} </p>
+					    <br>
+				  	</div>
+		  		</div>
+		  	</div>
+		    <div class="row">
+		    	{% for item in post.get_field('onze_themas_artikelen') %}
+		    		<div class="col-md-6 col-lg-4">
+		    			{% include 'tease-kennis.twig' %}
+		    			<br><br>
+		    		</div>
+		    	{% endfor %}
+		    </div>
+		    <div class="row">
+		    	<div class="col-md-10">
+				    {% if post.onze_themas_tags %}
+				    	<span class="tags_inline"> <span>Tags:</span> {% for item in post.meta('onze_themas_tags') %}{% if loop.first %}{% else %}<span>,</span> {% endif %}<a href="{{ item.link }}" target="_blank">{{ item.title }}</a>{% endfor %}</span>
+						{% endif %}
+		    	</div>
+		    </div>
+		  </div>
+		</section>
+		{% include 'pagebuilder.twig' %}
+	</div>
+{% endblock %}

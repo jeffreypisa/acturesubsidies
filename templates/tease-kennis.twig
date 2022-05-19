@@ -1,0 +1,7 @@
+<a href="{{ item.link }}" class="tease tease-kennis body3 with-shadow">
+	{% if item.thumbnail %}
+		<div class="card-img-top" style="background-image: url({{ item.thumbnail.src|resize('768') }})"></div>
+	{% endif %}
+	<div class="sub">{{ item.get_terms('kennisbank_cat')|first }} </div>
+	<h4>{{ item.title }}</h4>
+</a>

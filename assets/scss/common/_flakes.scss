@@ -1,0 +1,107 @@
+.has-flakes {
+	position: relative;
+	margin-bottom: 60px;
+	.card {
+		z-index: 1;
+	}
+	.flake {
+		position: absolute;
+		z-index: 0;
+		content: '';
+		&.left {
+			left: -30px;
+		}
+		&.top {
+			top: -30px;
+		}
+		&.bottom {
+			bottom: -30px;
+		}
+		&.right {
+			right: -30px;
+		}
+		&.vertical-center {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&.horizontal-center {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	.flake-1 {
+		background: url(../images/flake_1.svg);
+		width: 179px;
+    height: 157px; 
+	}
+	.flake-2 {
+		background: url(../images/flake_2.svg);
+		width: 136px;
+		height: 126px;
+	}
+	.flake-3 {
+		background: url(../images/flake_3.svg);
+		width: 232px;
+		height: 196px;
+	}
+	.flake-4 {
+		background: url(../images/flake_4.svg);
+		width: 166px;
+    height: 125px;
+	}
+	.flake-5 {
+		background: url(../images/flake_5.svg);
+    width: 161px;
+    height: 76px;
+	}
+	.flake-6 {
+		background: url(../images/flake_6.svg);
+    width: 464px;
+    height: 429px;
+	}
+	.flake-7 {
+		background: url(../images/flake_7.svg);
+		width: 307px;
+    height: 129px;
+	}
+	.flake-8 {
+		background: url(../images/flake_8.svg);
+    width: 265px;
+    height: 265px;
+	}
+	.flake-9 {
+		background: url(../images/flake_9.svg);
+    width: 212px;
+    height: 284px;
+	}
+	.flake-10 {
+		background: url(../images/flake_10.svg);
+    width: 265px;
+    height: 265px;
+	}
+	.flake-11 {
+		background: url(../images/flake_11.svg);
+    width: 77px;
+    height: 75px;
+    &.top {
+    	top: 30px !important;
+    }
+	}
+	.flake-14 {
+		background: url(../images/flake_14.svg);
+    width: 126px;
+    height: 115px;
+	}
+	.flake-15 {
+		background: url(../images/flake_15.svg);
+		width: 126px;
+	    height: 101px;
+	}
+}
+
+
+@include media-breakpoint-up(md) { 
+	.has-flakes {
+		margin-bottom: 0;
+	}
+}

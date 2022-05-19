@@ -1,0 +1,20 @@
+.tooltip-inner {
+    background-color: $yellow;
+    color: #000;
+    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: 'Open Sans';
+}
+.tooltip.bs-tooltip-right .arrow:before {
+    border-right-color: $yellow !important;
+}
+.tooltip.bs-tooltip-left .arrow:before {
+    border-left-color: $yellow !important;
+}
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: $yellow !important;
+}
+.tooltip.bs-tooltip-top .arrow:before {
+    border-top-color: $yellow !important;
+}

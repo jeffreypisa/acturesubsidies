@@ -1,0 +1,25 @@
+{#
+/**
+ * Block Name: Link
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="block block-info">
+	<div class="row">
+		<div class="col-auto">
+			ICON
+		</div>
+		<div class="col">
+		  <a href="{{ fields.link.url }}">{{ fields.link.title }}</p>
+		  <p class="small">{{ fields.toelichting }}</p>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+  #block-{{ block.id }} {
+    
+  }
+</style>

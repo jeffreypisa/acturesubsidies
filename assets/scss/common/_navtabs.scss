@@ -1,0 +1,18 @@
+.content-wrapper .nav-tabs {
+	margin: 0;
+	border: 0;
+	a {
+		display: inline-block;
+		font-size: 16px;
+		line-height: 36px;
+		height: 36px;
+		color: $walhalla-300;
+		font-weight: 600;
+		margin: 0 10px 1px;
+		border-bottom: 0px solid transparent;
+		&.active {
+			color: #49576f;
+			border-width: 3px;
+		}
+	}
+}

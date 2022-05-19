@@ -1,0 +1,30 @@
+<section id="section{{ sectionno }}" class="mod-links {% if item.achtergrond %} {{ item.achtergrond }} {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-10 col-xl-8">
+	  		{% for item in item.cats %}
+	  			<div class="cat">
+	  				{% if loop.first %}{% else %} <br> {% endif %}
+	  				<h3 style="margin-bottom: 20px">{{ item.titel }}</h3>
+			      {% for item in item.links %}
+							<div class="download">
+								<a href="{{ item.link.url }}" target="{{ item.link.target }}" class="card card-link">
+									<div class="row">
+										<div class="col">
+											{{ item.link.title }}
+										</div>
+										<div class="col-auto">
+											<div class="icon">
+												<i class="fas fa-chevron-right"></i>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+			      {% endfor %}
+	  			</div>
+			  {% endfor %}
+  		</div>
+    </div>
+  </div>
+</section>

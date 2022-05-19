@@ -1,0 +1,101 @@
+<section id="section{{ sectionno }}" class="mod-contentprijs bg-transparent">
+  <div class="container">
+  	<div class="card bg-lightgrey">
+  		<div class="card-body">
+  			<br>
+		    <div class="row">
+		      <div class="col-lg-5 offset-lg-1">
+		      	<div class="h-100 d-flex align-items-center">
+		      		<div class="content body2">
+				        {% if item.subtitel %}
+				        	<span class="sub">{{ item.subtitel }}</span>
+				        {% endif %}
+				        {% if item.titel %}
+				        	<h2 class="{% if item.font_xl %} h1 {% endif %}">{{ item.titel }}</h2>
+				        {% endif %}
+				        {% if item.tekst %}
+				        	{{ item.tekst }}
+				        {% endif %}
+	  					{% if item.link_primary %}
+								<a class="btn btn-primary" target="{{ item.link_primary.target }}" href="{{ item.link_primary.url }}">
+									{{ item.link_primary.title }}
+								</a>
+					    {% endif %}
+		      		</div>
+		      	</div>
+		      </div>
+		      <div class="col-lg-5 offset-lg-1">
+		      	<div class="h-100 d-flex align-items-center">
+		    			<div class="card body3 with-shadow w-100" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}" style="max-width: 360px;">
+		  					<div class="card-body body3">
+			  					<div data-mh>
+							  		<div class="linewithdots">
+						  				<div class="row">
+						  					<div class="col-auto">
+													<div class="dot" style="background: {{ item.cat_color }}"></div>
+						  					</div>
+						  					<div class="col-auto">
+													<div class="dot" style="background: {{ item.cat_color }}"></div>
+						  					</div>
+						  					<div class="col">
+													<div class="line" style="background: {{ item.cat_color }}"></div>
+						  					</div>
+						  				</div>
+						  			</div>
+						  			{% if item.prijs_subtitel %}
+							        	<span class="sub" style="color: {{ item.cat_color }}">{{ item.prijs_subtitel }}</span>
+							        {% endif %}
+									{% if item.prijs_titel %}
+										<h3>{{ item.prijs_titel }}</h3>
+									{% endif %}
+				  					{% if item.prijs %}
+				  						<h5 class="d-inline">{{ item.va }}</h5>
+				  						<h4 class="h1 d-inline" style="margin: 0"> {{ item.prijs }}  </h4> 
+				  						<h5 class="d-inline">{{ item.per }}</h5>
+											<div class="clearfix"></div>
+					  					{% endif %}
+				  					{% if item.prijs_tekst %}
+				  						<div class="tekst">
+				  							{{ item.prijs_tekst }}
+				  						</div>
+				  					{% endif %}
+				  					{% if item.lijst %}
+				  						<ul class="list-group">
+					  						{% for item in item.lijst %}
+					  							<li class="list-group-item"> {{ item.tekst }} </li>
+					  						{% endfor %}
+				  						</ul>
+				  					{% endif %}
+			  					</div>	
+			  					{% if item.prijs_link_primary %}
+							    	<div class="text-center">
+				  						<br>
+											<a class="btn btn-primary btn-block" target="{{ item.prijs_link_primary.target }}" href="{{ item.prijs_link_primary.url }}">
+												{{ item.prijs_link_primary.title }}
+											</a>
+			  						</div>
+							    {% endif %}	
+								{% if item.prijs_link_secondary %}
+								  <br>
+									<a class="btn btn-secondary" target="{{ item.prijs_link_secondary.target }}" href="{{ item.prijs_link_secondary.url }}">
+										{{ item.prijs_link_secondary.title }}
+									</a>
+								{% endif %}	
+							    {% if item.link_secondary %}
+							    	<div class="text-center">
+				  						<br>
+											<a class="btn-link" target="{{ item.link_secondary.target }}" href="{{ item.link_secondary.url }}">
+												{{ item.link_secondary.title }}
+											</a>
+			  						</div>
+							    {% endif %}
+		  					</div>
+		  				</div>
+		  			</div>
+		  		</div>
+      	</div>
+      	<br>
+      </div>
+    </div>
+	</div>
+</section>

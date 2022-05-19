@@ -1,0 +1,9 @@
+{% if subfootermenu %}
+	<ul class="row">
+  	{% for item in subfootermenu %}
+  		<li class="{{item.classes | join(' ')}}">
+  			<a href="{{item.get_link}}">{{item.title}}</a>
+  		</li>
+  	{% endfor %}
+	</ul>
+{% endif %}

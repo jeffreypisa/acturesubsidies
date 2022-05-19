@@ -1,0 +1,63 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="content-wrapper">
+			<div class="article-body">
+				<section class="mod-pageheader bg-dark">
+					<div class="bg" style="background-image: url({{ Image(post.thumbnail).src }})"> </div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10">
+								<h5> {{ post.date|date('j F Y') }} </h5>
+								<h1> {{ post.title }} </h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="blog content bg-white">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 offset-md-1">
+								<ul class="mod-breadcrumbs">
+									<li>
+										<a href="/blog"> Blog </a>
+									</li>
+									<li> / </li>
+									<li> 
+										{{ post.title }} 
+									</li>
+								</ul>
+								<div class="clearfix"></div>
+							  {{ post.content }}
+							  <br>
+							  {% if post.verberg_auteur %}{% else %}
+							  	{% include 'partials/author.twig' %}
+							  {% endif %}
+							  <br><br>
+							</div>
+						</div>
+					</div>
+			  </section>
+			  {% if post.related_posts %}
+				  <section class="bg-lightgrey">
+				  	<div class="container">
+				  		<h3 class="text-center">Gerelateerd</h3>
+				  		<br>
+					  	<div class="row">
+								{% set delay = 0 %}
+					  		{% for item in post.get_field('related_posts') %}
+					  			<div class="col-md-6 col-lg-4">
+					  				{% include 'tease-blog.twig' %}
+					  			</div>
+					  			{% set delay = delay + '150' %}
+					  		{% endfor %}
+							</div>
+				  	</div>
+				  </section>
+			  {% endif %}
+			  {% include 'pagebuilder.twig' %}
+			</div>
+		</div><!-- /content-wrapper -->
+	</article>
+{% endblock %}

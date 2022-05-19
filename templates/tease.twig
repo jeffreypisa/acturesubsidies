@@ -1,0 +1,25 @@
+<div class="tease card with-shadow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}">
+	 {% if item.thumbnail %}
+	 	<a href="{{ item.link }}">
+			<div class="card-img-top" style="background-image: url({{ Image(item.thumbnail).src|resize('768') }})"></div>
+	 	</a>
+	{% endif %}
+	<div class="card-body body3">
+		<div data-mh>
+			{% if item.title %}
+				<h4> {{ item.title }} </h4>
+			{% endif %}
+			{% if item.preview %}
+				<p> {{ item.preview.length(16).read_more('') }} </p>
+			{% endif %}
+		</div>	
+		{% if item.link %}
+			<div class="text-right">
+				<br>
+				<a class="btn-link" href="{{ item.link }}">
+					{{ options.blog_teaser_lees_meer_link }}
+				</a>
+			</div>
+    {% endif %}
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<section id="section{{ sectionno }}" class="mod-logoslider bg-{{item.achtergrond}}">
+  <div class="container">
+  		{% if item.titel %}
+  			<h2 class="text-center">{{ item.titel }}</h2>
+  		{% endif %}
+    <div class="js-slick">
+    	{% set delay = 0 %}
+      {% for logo in item.logos %}
+				<div class="item js-matchheight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine">
+					<a {% if logo.link %} target="_blank" href="{{ logo.link.url }}" {% endif %} class="d-flex align-items-center h-100 w-100">
+						<img src="{{ logo.logo }}" width="50" height="50">
+					</a>
+				</div>
+				{% set delay = delay + '150' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

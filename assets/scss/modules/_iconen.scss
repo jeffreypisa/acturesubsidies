@@ -1,0 +1,44 @@
+.mod-iconen {
+	.contentspace {
+		margin-bottom: 40px;
+	}
+	.iconen {
+		margin-bottom: -20px;
+	}
+	.icoon {
+		margin-bottom: 40px;
+		img {
+			height: 26px;
+			width: auto;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-iconen {
+		.contentspace {
+			margin-bottom: 60px;
+		}
+		.iconen {
+			margin-bottom: -30px;
+		}
+		.icoon {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-iconen {
+		.contentspace {
+			margin-bottom: 80px;
+		}
+		.iconen {
+			margin-bottom: -50px;
+		}
+		.icoon {
+			margin-bottom: 80px;
+		}
+	}
+}

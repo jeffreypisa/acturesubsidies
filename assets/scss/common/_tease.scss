@@ -1,0 +1,85 @@
+.card.tease {
+	transform: scale(1);
+	transition: 0.2s ease-in-out;
+	display: block;
+	&.hover-scale {
+		transform: scale(1.1);
+	}
+	.date {
+		color: $walhalla-300;
+	}
+	.status {
+		font-size: 14px;
+		color: $walhalla-300;
+		margin-bottom: 10px;
+		.color {
+			height: 8px;
+			width: 8px;
+			border-radius: 10px;
+			display: inline-block;
+			margin-right: 4px;
+			transition: 0.15s ease-in-out;
+		}
+	}
+	.cat {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		height: 24px;
+		padding: 0 15px;
+	  border-radius: 12px 0 12px 0;
+	  background-color: rgba(39, 47, 63, 0.5);
+	  color: #fff;
+	  font-size: 14px;
+	  font-weight: bold;
+	  line-height: 24px;
+	  letter-spacing: 2px;
+	  text-transform: uppercase;
+	}
+}
+.tease.tease-kennis {
+	margin-bottom: 60px;
+	.card-img-top {
+		padding-bottom: 75%;
+		border-radius: 16px;
+		background-size: cover;
+		background-position: center center;
+		margin-bottom: 20px;
+	}
+	.sub {
+		color: $madison-300;
+	}
+}
+
+.tease.tease-kennis-search {
+	width: 100%;
+	padding: 30px 30px 0 30px;
+	margin: 0 -30px 6px;
+  border-radius: 12px;
+  display: block;
+  background: #fff;
+  min-height: 180px;
+	&:hover {
+		box-shadow: 0 3px 16px 0 rgba(73, 87, 111, 0.13), 0 1px 4px 0 rgba(73, 87, 111, 0.24);
+	}
+}
+
+.tease.tease-kennis-lijst {
+	width: 100%;
+  display: block;
+  background: #fff;
+  margin-bottom: 0px;
+  padding: 20px 0 20px;
+  border-top: 1px solid #eee;
+  p {
+	  margin: 0;
+  }
+  &:first-child {
+	  border: 0;
+  }
+	&:hover {
+		h4 {
+			color: $madison-300;
+		}
+	}
+}

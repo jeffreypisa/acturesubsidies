@@ -1,0 +1,45 @@
+.lity {
+	background: rgba($walhalla-400, .56);
+}
+.productmenu {
+	transform: translateY(-100%);
+	transition: transform 0.2s ease-in-out;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 60px 0;
+	background: #fff;
+	box-shadow: 0 3px 10px 0 rgba(73, 87, 111, 0.13);
+	.sub {
+		margin-bottom: 24px;
+	}
+	a[href]:not(.btn) {
+		font-size: 16px;
+	  font-weight: 600;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 2.5;
+	  color: $walhalla-300;
+	  &:hover, &.active {
+		  color: $walhalla-400;
+	  }
+	}
+	&:after {
+		position: absolute;
+		background: $madison-100;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: calc( 50% + 40px );
+		z-index: -1;
+		content: '';
+	}
+}
+
+body.openproductmenu {
+	.productmenu { 
+		transform: translateY(80px);
+	}
+}

@@ -1,0 +1,97 @@
+{% extends "base.twig" %}
+
+{% block content %}
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="content-wrapper">
+				<div class="article-body">
+					<section class="bg-lightgrey">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-6">
+									<ul class="mod-breadcrumbs">
+										<li>
+											<a href="/{{ post.post_type|lower }}"> {{ post.post_type }} </a>
+										</li>
+										<li> / </li>
+										<li> 
+											{{ post.title }} 
+										</li>
+									</ul>
+									<h1> {{ post.title }} </h1>
+									<p class="lead">
+										{{ post.lead }} 
+									</p>
+								</div>
+								<div class="col-lg-4 offset-lg-2">
+									<div clsas="has-flakes">
+										<div class="flake bottom horizontal-center flake-2"></div>
+										<div class="card with-shadow">
+											<div class="card-body {% if post.post_type|lower == 'features' %} bg-grey {% else %} bg-white {% endif %}">
+												{% if post.thumbnail %}
+													<div class="image-container ratio-4-3 {% if post.post_type == '' %}bg-contain has-border {% elseif post.post_type|lower == 'features' %} iconview {% endif %}">
+								      			<div class="{% if post.post_type|lower == 'features' %} thisicon {% else %} image {% endif %}" style="background-image: url({{ post.thumbnail|resize(768) }}")></div>
+								      		</div>
+												{% endif %}
+												{% if post.logo %}
+													{% if post.post_type|lower == 'klantverhalen' %}
+														<br>
+														<div class="logoholder">
+									      			<img class="w-100 h-auto" style="max-width: 200px" src="{{ Image(post.logo)|resize(768) }}">
+									      		</div>
+								      		{% endif %}
+												{% endif %}
+												{% if post.meta_tekst %}
+													<br>
+													<span class="meta-tekst">{{ post.meta_tekst }}</span>
+												{% endif %}
+												{% if post.meta_1_titel or post.meta_2_titel %}
+													<div class="meta">
+														<div class="row">
+															{% if post.meta_1_titel %}
+																<div class="col">
+																	<small data-mh> {{ post.meta_1_titel }} </small>
+																	<span>{{ post.meta_1_tekst }}</span>
+																</div>
+															{% endif %}
+															{% if post.meta_2_titel %}
+																<div class="col">
+																	<small data-mh> {{ post.meta_2_titel }} </small>
+																	<span>{{ post.meta_2_tekst }}</span>
+																</div>
+															{% endif %}
+														</div>
+													</div>
+												{% endif %}
+												{% if post.link_website %}
+													<div class="text-center">
+														<a class="btn-link" href="{{ post.link_website.url }}" target="_blank">
+															{{ post.link_website.title }}
+														</a>
+													</div>
+												{% endif %}
+											</div>
+										</div>
+										</div>
+								</div>
+							</div>
+						</div> 
+					</section>
+					{% if post.content %}
+						{% if post.post_type|lower == 'features' %}
+						{% else %}
+							<section class="blog bg-white">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-10 offset-md-1">
+											{{ post.content }}
+										</div>
+									</div>
+								</div>
+							</section>
+						{% endif %}
+					{% endif %}
+				  {% include 'pagebuilder.twig' %}
+				</div>
+			</div><!-- /content-wrapper -->
+		</article>
+{% endblock %}

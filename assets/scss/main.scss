@@ -1,0 +1,101 @@
+/*!
+Theme Name: Mijnsubsidie
+Theme URI: https://www.mijnsubsidie.com
+Author: Emonks
+Author URI: https://www.emonks.nl
+Description: Thema ontwikkeld door emonks.nl
+Version: 1.0
+!*/
+
+@import 'common/variables';
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/lity/dist/lity.css';
+@import '../../node_modules/aos/src/sass/aos';
+
+@import '../fonts/fonts';
+@import '../fonts/brands';
+@import '../fonts/solid';
+@import '../fonts/fontawesome';
+
+@import 'plugins/slick';
+@import 'plugins/stickem';
+
+@import 'gutenberg/base';
+@import 'gutenberg/info';
+@import 'gutenberg/table';
+@import 'gutenberg/accordion';
+@import 'gutenberg/download';
+@import 'gutenberg/lead';
+@import 'gutenberg/quote';
+
+@import 'common/base';
+@import 'common/meta';
+@import 'common/image';
+@import 'common/popup';
+@import 'common/overlay';
+@import 'common/flakes';
+@import 'common/popover';
+@import 'common/blog';
+@import 'common/inputslider';
+@import 'common/table';
+@import 'common/single';
+@import 'common/buttons'; 
+@import 'common/section';
+@import 'common/cards';
+@import 'common/tooltip';
+@import 'common/socialmedia';
+@import 'common/carousel';
+@import 'common/colors';
+@import 'common/modal';
+@import 'common/embed';
+@import 'common/form';
+@import 'common/progress';
+@import 'common/navtabs';
+@import 'common/dropdownmenu';
+@import 'common/tease';
+@import 'common/masonry';
+@import 'common/productmenu';
+
+@import 'modules/author';
+@import 'modules/categorybar';
+@import 'modules/footer';
+@import 'modules/filterblocks';
+@import 'modules/accordion';
+@import 'modules/contentprijs';
+@import 'modules/content';
+@import 'modules/header';
+@import 'modules/resultatenpaginaquiz';
+@import 'modules/resultatenpaginaquickscan';
+@import 'modules/cards';
+@import 'modules/foto';
+@import 'modules/tarieven';
+@import 'modules/video';
+@import 'modules/pageheader';
+@import 'modules/mobilemenu';
+@import 'modules/slider';
+@import 'modules/kennisbank';
+@import 'modules/iconen';
+@import 'modules/teller';
+@import 'modules/themas';
+@import 'modules/tabel';
+@import 'modules/lead';
+@import 'modules/mailchimp';
+@import 'modules/gbcontent';
+@import 'modules/nieuws';
+@import 'modules/klanten';
+@import 'modules/vacatures';
+@import 'modules/calltoaction';
+@import 'modules/stappen';
+@import 'modules/landingspaginaheader';
+@import 'modules/landingspaginaquiz';
+@import 'modules/youtube';
+@import 'modules/title';
+@import 'modules/logoslider';
+@import 'modules/breadcrumbs';
+@import 'modules/formulier';
+@import 'modules/contentmedia';
+@import 'modules/tijdlijn';
+@import 'modules/features';
+@import 'modules/quickscan';
+@import 'modules/quiz';

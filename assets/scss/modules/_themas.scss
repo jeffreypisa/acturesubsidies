@@ -1,0 +1,27 @@
+.mod-themas {
+	.bg-thecolor {
+		background: $walhalla-300;
+		padding: 40px;
+	}
+	a[href]:not(.btn) {
+		color: $vulcan-300;
+		&:hover {
+			
+		}
+	}
+	.tags_inline {
+		font-size: 13px;
+		color: #fff;
+		span {
+			color: #fff;
+			opacity: 0.5;
+		}
+		a[href]:not(.btn) {
+			color: #fff;
+			opacity: 0.5;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

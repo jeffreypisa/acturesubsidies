@@ -1,0 +1,131 @@
+<section class="mod-resultatenpaginaquiz">
+  <div class="container">
+  	{% if item.subtitel or item.titel or item.lead %}
+  		<div class="contentspace body2">
+		  	<div class="row">
+		  		<div class="col-md-10 col-xl-8 offset-md-1 offset-xl-2 text-center">
+				  	{% if item.Subtitel %}
+				      <span class="sub">{{ item.Subtitel }}</span>
+				    {% endif %}
+						{% if item.titel %}
+							<div class="textscrollwrapper">
+								<div class="textscroll">
+									<span class="h1"> Pietje precies </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Ambtenaar </span>
+									<span class="h1"> Super ondernemer </span>
+									<span class="h1"> Tijd is geld </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Pietje precies </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Ambtenaar </span>
+									<span class="h1"> Super ondernemer </span>
+									<span class="h1"> Tijd is geld </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Ambtenaar </span>
+									<span class="h1"> Super ondernemer </span>
+									<span class="h1"> Pietje precies </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Ambtenaar </span>
+									<span class="h1"> Super ondernemer </span>
+									<span class="h1"> Tijd is geld </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Pietje precies </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Ambtenaar </span>
+									<span class="h1"> Super ondernemer </span>
+									<span class="h1"> Tijd is geld </span>
+									<span class="h1"> Op de hoogte </span>
+									<span class="h1"> Ambtenaar </span>
+									<span class="h1"> Super ondernemer </span>
+						    	<h2 class="h1">{{ item.titel }}</h2>
+								</div>
+							</div>
+				    {% endif %}
+				    <p class="lead">
+					  	{% if item.lead %}
+					    	{{ item.lead }}
+					    {% endif %}
+				    </p>
+				    <br><br><br>
+		  		</div>
+		  	</div>
+  		</div>
+  	{% endif %}
+  	<div class="blokken">
+			<div class="row justify-content-center">
+				{% set delay = 0 %}
+	  		{% for blok in item.cat_1_blocks %}
+	  			<div class="col-md-6 colblok d-flex align-items-start">
+	  				<div class="w-100 card body3 with-shadow {% if blok.uitgelicht %} uitgelicht {% endif %}" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}">
+	  					<div class="card-body body3">
+		  					<div class="top" data-mh>
+						  		<div class="linewithdots">
+					  				<div class="row">
+					  					<div class="col-auto">
+												<div class="dot" style="background: {{ blok.color }}"></div>
+					  					</div>
+					  					<div class="col-auto">
+												<div class="dot" style="background: {{ blok.color }}"></div>
+					  					</div>
+					  					<div class="col">
+												<div class="line" style="background: {{ blok.color }}"></div>
+					  					</div>
+					  				</div>
+					  			</div>
+					  			<div class="titel">
+						  			{% if blok.subtitel %}
+						        	<h5 style="color: {{ blok.color }}">{{ blok.subtitel }}</h5>
+						        {% endif %}
+						  			{% if blok.titel %}
+						        	<h4> {{ blok.titel }}</h4>
+						        {% endif %}
+					        </div>
+			  					{% if blok.tekst %}
+			  						<div class="boldtekst">
+			  							{{ blok.tekst }}
+			  						</div>
+			  					{% endif %}
+									{% if blok.lijst %}
+			  						<ul class="list-group dots">
+				  						{% for item in blok.lijst %}
+				  							<li class="list-group-item"> 
+				  								<div class="bar" style="background: {{ blok.color }}"></div>
+					  							<div class="linewithdots">
+									  				<div class="row">
+									  					<div class="col-auto">
+																<div class="dot" style="background: {{ blok.color }}"> </div>
+									  					</div>
+									  					<div class="col">
+									  						{{ item.tekst }} 
+									  					</div>
+									  				</div>
+					  							</div>
+					  						</li>			
+				  						{% endfor %}
+			  						</ul>
+			  					{% endif %}
+		  					</div>		
+		  					{% if blok.link_primary %}
+		  						<br>
+									<a class="btn btn-primary btn-block" target="{{ blok.link_primary.target }}" href="{{ blok.link_primary.url }}">
+										{{ blok.link_primary.title }}
+									</a>
+						    {% endif %}
+						    {% if blok.link_secondary %}
+						    	<div class="text-center">
+			  						<br>
+										<a class="btn-link" target="{{ blok.link_secondary.target }}" href="{{ blok.link_secondary.url }}">
+											{{ blok.link_secondary.title }}
+										</a>
+		  						</div>
+						    {% endif %}
+	  					</div>
+	  				</div>
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+			</div>
+		</div>
+	</div>    
+</section>

@@ -1,0 +1,19 @@
+{#
+/**
+ * Block Name: Quote
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="gb-quote">
+	{{ fields.quote }}
+</div>
+
+<style type="text/css">
+  #block-{{ block.id }} {
+    font-style: italic;
+		padding-left: 20px;
+		border-left: 3px solid #FDBA2D;
+  }
+</style>

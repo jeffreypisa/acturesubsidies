@@ -1,0 +1,32 @@
+{#
+/**
+ * Block Name: Download
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="mod-download">
+	<div class="row">
+		<div class="col-md-auto">
+			<div class="panel">
+				<div>
+					<img src="{{ fields.icoon }}">
+				</div>
+				<div class="text-center">
+					<a class="btn btn-primary" href="{{ fields.download.url }}">{{ fields.knop_tekst }}</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md order-first order-md-last">
+			<h3>{{ fields.titel }}</h3>
+		  <p>{{ fields.toelichting }}</p>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+  #block-{{ block.id }} {
+    
+  }
+</style>

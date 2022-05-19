@@ -1,0 +1,194 @@
+.btn, .field-wrap input[type=button], body .nf-form-content button, body .nf-form-content input[type=button], body .nf-form-content input[type=submit] {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  padding: 0 25px;
+	font-size: 16px;
+  font-weight: 600;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 4px 0 rgba(110, 127, 157, 0.12);
+  .fa-play {
+	  margin-right: 10px;
+  }
+}
+
+.btn.btn-sm {
+	height: 32px;
+	line-height: 32px;
+	padding: 0px 12px 0px;
+  border-radius: 8px;
+  border: solid 1px $madison-200;
+  background-color: $madison-100;
+  font-size: 14px;
+  color: $walhalla-300;
+  &.active {
+	  color: $madison-300;
+  }
+  &:not(.active):hover {
+	  background-color: $madison-300;
+	  border-color: $madison-400;
+	  color: #fff;
+  }
+}
+
+.btn-link {
+	display: inline-block;
+	color: $madison-300;
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: bold;
+	padding-right: 15px;
+	&:hover {
+		color: $madison-300;
+		text-decoration: none;
+	}
+	&:before {
+		position: absolute;
+		top: 2px;
+		right: 0;
+		font-family: "Font Awesome 5 Free";
+	  font-weight: 400;
+	  content: "\f061";
+	  font-size: 12px;
+	  color: $madison-300;
+	}
+	&.ellipsis {
+		max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	}
+}
+
+.btn-link-back {
+	display: inline-block;
+	color: $madison-300;
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: bold;
+	padding-left: 15px;
+	&:hover {
+		color: $madison-300;
+		text-decoration: none;
+	}
+	&:before {
+		position: absolute;
+		top: 2px;
+		left: 0;
+		font-family: "Font Awesome 5 Free";
+	  font-weight: 400;
+	  content: "\f060";
+	  font-size: 12px;
+	  color: $madison-300;
+	}
+}
+
+.btn-light:not(:disabled):not(.disabled) {
+  color: #49576f;
+  background-color: #fff;
+  &:hover {
+    background-color: $madison-400;
+    border-color: $madison-400;
+    color: #fff;
+	}
+	&:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+    background-color: $madison-300;
+    border-color: $madison-400;
+    color: #fff;
+  }
+}
+
+.btn-primary, .field-wrap input[type=button], body .nf-form-content button, body .nf-form-content input[type=button], body .nf-form-content input[type=submit] {
+	background-color: $madison-300;
+  border-color: rgba(39, 71, 176, 0.25);
+  color: #fff;
+	&:hover {
+    background-color: $madison-400;
+    border-color: $madison-400;
+	}
+	&:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+    background-color: $madison-300;
+    border-color: $madison-400;
+  }
+}
+
+body .nf-form-content button, body .nf-form-content input[type=button], body .nf-form-content input[type=submit] {
+	width: 100%;
+	display: block;
+	&:hover {
+		color: #fff;	
+	}
+}
+.btn-secondary, .nf-mp-footer .field-wrap input[type=button], body .nf-form-content .nf-mp-footer button, body .nf-form-content .nf-mp-footer input[type=button], body .nf-form-content .nf-mp-footer input[type=submit] {
+	background-color: #fff;
+  border: 1px solid #d8dce3;
+  color: #49576f;
+	&:hover {
+    background-color: $madison-400;
+    border-color: $madison-400;
+    color: #fff;
+	}
+	&:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+		background-color: $madison-300;
+    border-color: $madison-400;
+    color: #fff;
+  }
+}
+
+.btn-outline-light, .footer .field-wrap input[type=button] {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  line-height: 40px;
+  &:hover {
+	  background-color: transparent;
+	  color: transparent;
+	  border-color: #fff;
+  }
+  &:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+
+  } 
+  &:before {
+		color: #fff;	
+	}
+}
+
+.btn {
+	&.btn-card {
+		box-shadow: none;
+		margin-bottom: 20px;
+		text-align: left;
+		background: #f5f7fc;
+		border-radius: 10px;
+		padding: 6px 15px;
+		height: auto;
+		font-weight: bold;
+		color: $darkgrey;
+		&:hover {
+			background: #2847B0;
+			color: #fff;
+		}
+	}
+}
+
+
+@include media-breakpoint-up(md) {
+	.btn, .field-wrap input[type=button], body .nf-form-content button, body .nf-form-content input[type=button], body .nf-form-content input[type=submit] {
+		font-size: 16px;
+		font-weight: 600;
+		height: 48px;
+		line-height: 48px;
+	}
+	.btn-link {
+		line-height: 22px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+}

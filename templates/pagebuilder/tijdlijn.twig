@@ -1,0 +1,14 @@
+<section id="section{{ sectionno }}" class="mod-tijdlijn {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	<br><br><br>
+		<div class="tijdlijn">
+			<div class="d-flex justify-content-between">
+				{% for item in item.jaren %}
+					<a tabindex="0" class="jaar" role="button" data-toggle="popover" data-trigger="hover" title="{{ item.titel }}" data-placement="top" data-content="{{ item.tekst }}">
+						<div class="jaartal">{{ item.jaar }}</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>   
+</section>

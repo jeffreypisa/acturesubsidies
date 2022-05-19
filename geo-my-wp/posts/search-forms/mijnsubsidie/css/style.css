@@ -1,0 +1,198 @@
+/**
+ * Posts Locator search form stylesheet "default"
+ */
+div.gmw-pt-default-form-wrapper {
+ 	margin:10px 0px;
+ }
+
+div.gmw-pt-default-form-wrapper input[type="text"] {
+     margin-top:6px;
+     padding:8px 10px 7px;
+ }
+
+div.gmw-pt-default-form-wrapper .gmw-address-field-wrapper {
+	display: inline-block;
+}
+
+.widget_gmw_search_form_widget .gmw-address-field-wrapper {
+    float:none;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-single-address-field {
+	float:left;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-unit-distance-wrapper {
+	display: none;
+}
+
+.gmw-radius-dropdown-wrapper {
+	display: none !important;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-radius-slider-wrapper {
+    margin-bottom:10px;
+}
+
+
+div.gmw-pt-default-form-wrapper .gmw-radius-slider-range-wrapper {
+    margin:5px 0px;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-no-address-error {
+	border: 1px solid rgb(252, 165, 165) !important;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-locator-btn-wrapper {
+	width: 28px;
+	height: 28px;
+	padding: 3px 0px;
+	display: inline-block;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-locator-btn-wrapper img {
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	border-radius: 0px !important;
+	box-shadow: none !important;
+}
+
+div.gmw-pt-default-form-wrapper .gmw-locate-btn {
+	cursor: pointer;
+}
+
+#home_subsidiescan #gmw-address-1 {
+	width: 255px;
+	margin: 20px 0 0 0;
+	font-size: 21px;
+	border-color: #fff;
+	text-align: center;
+}
+
+.gmw-form {
+	position: relative;
+}
+
+.specialists_distance {
+	margin: 0;
+	padding: 0;
+}
+
+.specialists_distance li {
+	position: relative;
+	margin: 0 40px 0 0;
+	padding: 0;
+	display: inline-block;
+	font-size: 35px;
+	font-weight: 600;
+	color: #BC771D;
+	cursor: pointer;
+}
+
+.specialists_distance li.active,
+.specialists_distance li:hover {
+	color: #fff;
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+
+.specialists_distance li:first-child {
+	display: none;
+}
+
+.specialists_distance li:last-child:before {
+	display: none !important;
+}
+
+.specialists_distance li:before {
+	position: absolute;
+	top: 18px;
+	left: 75px;
+	content: "";
+	width: 18px;
+	height: 2px;
+	background: #BC771D;
+}
+
+.specialists_distance li:after {
+	content: "km";
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.gmw-units-dropdown-wrapper {
+	display: none;
+}
+
+.home_specialist {
+	width: 30%;
+	float: left;
+	margin: 20px 0 0 0;
+	padding: 0 30px 0 0;
+}
+
+.specialist_name {
+	margin: 0 0 10px 0;
+	display: block;
+	font-size: 21px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.specialist_address .fa {
+	margin: 0 8px 0 0;
+}
+
+.specialist_contact ul {
+	margin: 0;
+	padding: 0;
+}
+
+.specialist_contact ul li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.specialist_contact ul li .label {
+	display: none;
+}
+
+.specialist_contact ul li.website a {
+	color: #fff;
+}
+
+.specialist_contact ul li.website a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.specialist_contact ul li.phone:before,
+.specialist_contact ul li.website:before {
+	margin: 0 7px 0 0;
+	font-family: "FontAwesome";
+	font-weight: normal;
+}
+
+.specialist_contact ul li.phone:before {
+	content: "\f095";
+}
+
+.specialist_contact ul li.website:before {
+	content: "\f0ac";
+}
+
+#home_subsidiescan #gmw-submit-1 {
+	position: absolute;
+	top: 30px;
+	left: 220px;
+	width: 26px;
+	height: 26px;
+	text-indent: -9999px;
+	background: #fff url(../img/specialist_search.png) no-repeat center center;
+	border: none;
+}

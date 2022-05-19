@@ -1,0 +1,27 @@
+{% if post.toon_popup %}
+	<div id="popup_wrap" class="popup-wrapper align-item-center">
+		<div class="d-flex align-items-center h-100 w-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+						<div class="card body2 with-shadow">
+							<div class="card-body text-center">
+								<div class="js-closepopup">x</div>
+								<img src="{{ theme.link}}/assets/images/mijnsubsidie_blue.svg" alt="mijnsubsidie_blue" width="64" height="72"/>
+								<div class="clearfix"></div>
+								<br>
+								<h3> {{ post.popup_titel }} </h3>
+								
+								{{ post.get_field('popup_tekst') }}
+
+								<div class="kleine_tekst"> {{ post.kleine_tekst }} </div>
+								<div id="tonen_na_hoeveel_minuten" class="d-none">{{ post.tonen_na_hoeveel_minuten }}</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}

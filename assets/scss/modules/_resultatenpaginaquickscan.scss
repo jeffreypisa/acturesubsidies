@@ -1,0 +1,18 @@
+.mod-resultatenpaginaquickscan {
+	background: url(../images/bg-resultatenpaginaquickscan.svg);
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	position: relative;
+	.grey {
+		color: $walhalla-300;
+	}
+	.icoon {
+		margin-bottom: 15px;
+	}
+	.btn-container {
+		.btn {
+			margin: 4px 8px 4px 0;
+		}
+	}
+}

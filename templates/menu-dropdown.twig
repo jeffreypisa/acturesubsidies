@@ -1,0 +1,11 @@
+{% if menu %}
+	<div class="menu">
+		<div class="row">
+  	{% for item in menu %}
+  		<div class="col-6">
+  			<a href="{{item.get_link}}" class="noline {% if item.title|lower == currentpostname %} current-menu-item {% endif %}"> {{item.title}}</a>
+  		</div>
+  	{% endfor %}
+		</div>
+	</div>
+{% endif %}

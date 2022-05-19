@@ -1,0 +1,20 @@
+.stickem-container {
+  position: relative;
+}
+
+.stickem {
+	.content {
+		padding: 30px 30px 0 30px;
+	}
+}
+
+.stickit {
+	position: fixed;
+	top: 0;
+}
+
+.stickit-end {
+	position: absolute;
+	left: 15px;
+	bottom: 0;
+}

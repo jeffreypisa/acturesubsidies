@@ -1,0 +1,27 @@
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+table td {
+}
+table .fit {
+    width: 100%;
+}
+
+
+.wp-block-table {
+	&.is-style-stripes {
+		tr {
+			padding: 4px 0;
+		}
+		thead {
+			border-bottom: 2px solid $dark;
+		}
+		tbody {
+			tr:nth-child(odd) {
+				background: $lightgrey;
+			}
+		}
+	}
+}

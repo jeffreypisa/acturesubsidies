@@ -1,0 +1,32 @@
+<div class="tease card with-shadow">
+	 {% if item.thumbnail %}
+	 	<a href="{{ item.link }}">
+			<div class="card-img-top" style="background-image: url({{ Image(item.thumbnail).src|resize('768') }})">
+				<div class="cat">{{ item.get_terms('category')|first }} </div>
+			</div>
+	 	</a>
+	{% endif %}
+	<div class="card-body body3">
+		<div data-mh>
+			{% if item.title %}
+				<h5> {{ item.title }} </h5>
+			{% endif %}
+			{% if item.preview %}
+				<p> {{ item.preview.length(16).read_more('') }} </p>
+			{% endif %}
+		</div>	
+		<br>
+		<div class="row">
+			<div class="col-auto">
+				<span class="date">{{ item.date|date('j F Y') }}</span>
+			</div>
+			<div class="col">
+				<div class="text-right">
+					<a class="btn-link" href="{{ item.link }}">
+						Lees meer
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

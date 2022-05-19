@@ -1,0 +1,141 @@
+{% block html_head_container %}
+  {% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+  <body class="{{body_class}} {% if options.cookietab == 'TRUE' %} has-topheader {{ tab_active }} {% endif %}" data-template="base.twig">
+    <div class="big-overlay"></div>
+    {% if post.verberg_header_en_footer %}{% else %}
+			<header class="w-100">
+				{% block header %}
+					{% if options.cookietab == 'TRUE' %}
+						<div class="topheader">
+			    		<div class="container">
+			    			<div class="tabs">
+			    				<a href="{{ site.link }}?tab=accountant" id="accountant" class="{% if tab_active == 'accountant' or tab_active is empty %} active {% endif %}"> Accountant </a>
+				    			<a href="{{ options.cookietab_page }}?tab=werkgever" id="werkgever" class="{% if tab_active == 'werkgever' %} active {% endif %}"> Werkgever </a>
+			    			</div>
+			    		</div>
+			    	</div>
+		    	{% endif %}
+					<div class="header w-100 d-flex align-items-center">
+						<div class="container">
+						  <div class="row">
+						  	<div class="col d-flex align-items-center">
+									<div class="logo" role="banner">
+										<div class="row d-flex align-items-center">
+											<div class="col-auto d-lg-none">
+												<a id="mobilemenubtn" class="btn-menu js-menu">
+											    <div class="lines">
+											  		<span></span>
+										        <span></span>
+										        <span></span>
+											    </div>
+										    </a>
+											</div>
+											<div class="col-auto">
+												<a class="logo-link noline" href="{% if tab_active == 'accountant' %}{{site.url}}{% else %}{{ options.cookietab_page }}{% endif %}" rel="home">
+										  		<img src="{{ options.logo }}" alt="logo" width="35" height="40"> 
+										  	</a>
+										  </div>
+										</div>
+									</div>
+						    </div>
+						    <div class="col-auto d-flex align-items-center d-lg-none">
+						    	
+						    </div>
+						    <div id="nav-main" class="col-auto d-flex align-items-center">
+						    	{% if tab_active == 'werkgever' %}
+										{% include "menu.twig" with {'menu': menu_b.get_items} %}
+										<ul class="menu d-flex align-items-center">
+											{% if options.portal_link_active %}
+											<li class="d-none d-md-inline"> 
+											  <a href="https://portal.mijnsubsidie.com">
+												  <i class="fa fa-lock"></i> MijnSubsidie Portal
+												  </a>
+										  	</li>
+										  {% endif %}
+									  	{% if options.header_btn_b %}
+										  	<li> 
+										  		<a class="btn btn-primary" target="{{ options.header_btn_b.target }}" href="{{ options.header_btn_b.url }}">
+														{{ options.header_btn_b.title }} 
+													</a>
+										  	</li>
+									  	{% endif %}
+										</ul>
+									{% else %}
+										{% include "menu.twig" with {'menu': menu.get_items} %}
+										<ul class="menu d-flex align-items-center">
+										
+									  	{% if options.header_btn %}
+										  	<li> 
+										  		<a class="btn btn-primary" target="{{ options.header_btn.target }}" href="{{ options.header_btn.url }}">
+														{{ options.header_btn.title }} 
+													</a>
+										  	</li>
+									  	{% endif %}
+										</ul>
+									{% endif %}
+						    </div>
+						  </div>
+						 </div>
+					</div>
+					<div class="productmenu">
+						<div class="container">
+							<div class="row">
+								{% if tab_active == 'werkgever' %}
+									<div class="col-md-6">
+										<span class="sub"> {{ options.saas_b }} </span>
+										{% include "menu-dropdown.twig" with {'menu': saasmenu_b.get_items} %}
+									</div>
+									<div class="col-md-6 col-lg-4 offset-lg-1 body3">
+										{% if options.werkgever_cta_titel %}
+											<h4> {{ options.werkgever_cta_titel }} </h4>
+										{% endif %}
+										{% if options.werkgever_cta_tekst %}
+											<p> {{ options.werkgever_cta_tekst }} </p>
+										{% endif %}
+										{% if options.werkgever_cta_link_primary %}
+											<a class="btn btn-primary" target="{{ options.werkgever_cta_link_primary.target }}" href="{{ options.werkgever_cta_link_primary.url }}" style="margin-bottom: 4px">
+												{{ options.werkgever_cta_link_primary.title }}
+											</a>
+										{% endif %}
+										{% if options.werkgever_cta_link_secundary %}
+											<a class="btn btn-secondary" target="{{ options.werkgever_cta_link_secundary.target }}" href="{{ options.werkgever_cta_link_secundary.url }}" style="margin-bottom: 4px">
+												{{ options.werkgever_cta_link_secundary.title }}
+											</a>
+										{% endif %}
+										<!--<span class="sub">  {{ options.serviceproduct_b }} </span>
+										{% include "menu-dropdown.twig" with {'menu': serviceproductmenu_b.get_items} %} -->
+									</div>
+								{% else %}
+									<div class="col-md-6">
+										<span class="sub"> {{ options.saas }} </span>
+										{% include "menu-dropdown.twig" with {'menu': saasmenu.get_items} %}
+									</div>
+									<div class="col-md-6">
+										<span class="sub">  {{ options.serviceproduct }} </span>
+										{% include "menu-dropdown.twig" with {'menu': serviceproductmenu.get_items} %}
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+	  		{% endblock %}
+				<div class="clearfix"></div>
+			</header>
+			{% include 'mobilemenu.twig' %}
+		{% endif %}
+		<main id="content" role="main">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</main>
+		{% block footer %}
+      {% include 'footer.twig' %}
+    {% endblock %}
+	</body>
+  {{ function('wp_footer') }}
+</html>

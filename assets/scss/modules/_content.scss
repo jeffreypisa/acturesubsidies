@@ -1,0 +1,35 @@
+
+.metadata {
+  margin-bottom: 15px;
+  .sub {
+	  font-size: 12px;
+	  line-height: 15px;
+	  display: block;
+	  font-weight: 400;
+	  margin-bottom: 10px;
+	  color: $grey;
+	}
+}
+
+
+.mod-content {
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  h2 {
+    @extend h3
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .mod-content {
+
+  }
+}
+@include media-breakpoint-up(md) {
+  .mod-content {
+
+  }
+}

@@ -1,0 +1,22 @@
+.mod-vacatures {
+	.vacatures {
+		margin-top: 30px;
+		.vacature {
+			border-top: 1px solid $walhalla-100;
+			padding: 10px 0;
+			font-size: 18px;
+			font-weight: bold;
+			a[href] {
+				color: $walhalla-400;
+				&:hover {
+					color: #476fff;
+				}
+			}
+			.locatie {
+				color: #6e7f9d;
+				font-size: 14px;
+				font-weight: 600;
+			}
+		}
+	}
+}

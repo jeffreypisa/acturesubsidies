@@ -1,0 +1,136 @@
+.footer {
+  padding: 60px 0 0;
+  min-height: 65px;
+	font-size: 14px;
+	line-height: 20px;
+	overflow: hidden;
+	position: relative;
+	background: $vulcan-400;
+	color: $walhalla-200;
+	font-weight: 600;
+	a[href]:not(.btn):not(.noline) {
+			color: $grey;
+			&:after {
+				background-color: #fff;
+			}
+			&:hover {
+				color: #fff;
+				&:after {
+					background-color: #fff;
+				}
+			}
+		}
+	.head {
+	  color: #fff;
+  }
+  ul {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0;
+	  display: inline-block;
+	  li {
+		  margin-bottom: 8px;
+		  a {
+			  color: $walhalla-200;
+			  &:hover {
+				  text-decoration: none;
+			  }
+		  }
+		  &.nolink {
+			  display: none;
+		  }
+	  }
+  }
+  img.size-full {
+	  height: 12px;
+    width: auto;
+    border-radius: 2px;
+  }
+  .footermenu {
+	  margin-bottom: 30px;
+	  list-style-type: none;
+		
+  }
+  .subfooter {
+	  font-size: 12px;
+	  margin-top: 40px;
+	  color: $walhalla-300;
+	  padding-bottom: 15px;
+	  .line {
+	  	border-top: 3px dotted #272F3F;
+			margin-bottom: 30px;
+	  }
+	  a {
+		  color: $grey;
+		  &:hover {
+			  text-decoration: none;
+		  }
+	  }
+  }
+  .color_linkedin {
+	  margin-right: 6px;
+	  color: #fff !important;
+	  &:hover {
+		  color: #0077b5 !important;
+	  }
+	  &:after {
+		  width: 100% !important;
+		  background: #0077b5 !important;
+	  }
+  }
+  .color_whatsapp {
+	  margin-right: 6px;
+	  color: #fff !important;
+	  &:hover {
+		  color: #25d366 !important;
+	  }
+	  &:after {
+		  width: 100% !important;
+		  background: #25d366 !important;
+	  }
+  }
+  .color_facebook {
+	  margin-right: 6px;
+	  color: #fff !important;
+	  &:hover {
+		  color: #3b5998 !important;
+	  }
+	  &:after {
+		  width: 100% !important;
+		  background: #3b5998 !important;
+	  }
+  }
+  .color_mail {
+	  margin-right: 6px;
+	  color: #fff !important;
+	  &:hover {
+		  color: #1e4dff !important;
+	  }
+	  &:after {
+		  width: 100% !important;
+		  background: #1e4dff !important;
+	  }
+  }
+  .color_twitter {
+	  color: #fff !important;
+	  &:hover {
+		  color: #1da1f2 !important;
+	  }
+	  &:after {
+		  width: 100% !important;
+		  background: #1da1f2 !important;
+	  }
+  }
+}
+@include media-breakpoint-up(md) {
+  .footer {
+	  padding: 90px 0 0;
+	  .subfooter {
+		  margin-top: 0;
+		  padding: 60px 0 34px;
+	  }
+	  .nf-form-cont {
+		  margin-bottom: 12px;
+	  }
+  }
+}

@@ -1,0 +1,157 @@
+.nf-form-content.quiz {
+	.nf-mp-footer {
+		clear: both;
+	}
+	.nf-progress-container {
+    height: 20px;
+    border-radius: 0;
+    background-color: #dde5f7;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+		.nf-progress {
+			height: 20px;
+		  border-radius: 0 100px 100px 0;
+		  background-color: $madison-300;
+		}
+  }
+	.nf-pass.field-wrap .nf-field-element:after {
+		opacity: 0;
+	}
+	.mailchimp-optin-wrap, .mailchimp-option-wrap {
+		label {
+			position: relative;
+			padding-left: 30px;
+			&:before {
+				bottom: auto;
+				top: 0;
+			}
+			&:after {
+				bottom: auto;
+				top: 0;
+			}
+		}
+	}
+	.list-select-wrap .nf-field-element > div, 
+	input:not([type=button]), 
+	textarea {
+		border-radius: 4px;
+	  box-shadow: 0 2px 4px 0 rgba(110, 127, 157, 0.12);
+	  border: solid 1px #d8dce3;
+		margin: 0 !important;
+		padding: 12px 12px 12px 60px;
+		font-size: 16px;
+	  font-weight: 600;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 1.5;
+	  letter-spacing: normal;
+	  color: #49576f;
+	  transition: 0.15s ease-in-out;
+	}
+	.list-radio-wrap {
+		li {
+			position: relative;
+			transition: 0.15s ease-in-out;
+			label {
+				border-radius: 4px;
+			  box-shadow: 0 2px 4px 0 rgba(110, 127, 157, 0.12);
+			  border: solid 1px #d8dce3;
+				margin: 0 !important;
+				padding: 12px 12px 12px 60px;
+				font-size: 16px;
+			  font-weight: 600;
+			  font-stretch: normal;
+			  font-style: normal;
+			  line-height: 1.5;
+			  letter-spacing: normal;
+			  color: #49576f;
+			  transition: 0.15s ease-in-out;
+				&:before {
+					font-size: 16px;
+				  font-weight: bold;
+				  font-stretch: normal;
+				  font-style: normal;
+				  line-height: 1.5;
+				  letter-spacing: normal;
+				  color: #49576f;
+				  position: absolute;
+				  top: 12px;
+				  left: 18px;
+				  content: '';
+				  background: none;
+					padding: 0;
+				}
+				&:after {
+					left: 44px;
+					top: 0;
+					bottom: 0;
+					width: 1px;
+					background: #d8dce3;
+					height: 100%;
+					padding: 0;
+					border-radius: 0;
+					border: 0;
+					transition: 0.15s ease-in-out;
+				}
+				&:hover {
+					box-shadow: 0 2px 4px 0 rgba(110, 127, 157, 0.12);
+				  border: solid 1px #d8dce3;
+				  background-color: rgba(218, 223, 232, 0.2);
+				  cursor: pointer;
+				}
+			}
+			input:checked {
+				& + label {
+					background: $indigo-300;
+					border-color: $indigo-400;
+					color: #fff;
+					&:before {
+					  color: #fff;
+					}
+					&:after {
+						background: $indigo-400;
+					}
+				}
+			}
+			&:first-child label:before {
+				content: 'A';
+			}
+			&:nth-child(2) label:before {
+				content: 'B';
+			}
+			&:nth-child(3) label:before {
+				content: 'C';
+			}
+			&:nth-child(4) label:before {
+				content: 'D';
+			}
+			&:nth-child(5) label:before {
+				content: 'E';
+			}
+			&:nth-child(6) label:before {
+				content: 'F';
+			}
+			&:nth-child(7) label:before {
+				content: 'G';
+			}
+			&:nth-child(8) label:before {
+				content: 'H';
+			}
+			&:nth-child(9) label:before {
+				content: 'I';
+			}
+		}	
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.nf-form-content.quiz {
+		.nf-progress-container {
+	    width: 67%;
+	  }
+	}
+}

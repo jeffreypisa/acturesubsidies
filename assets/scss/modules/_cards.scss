@@ -1,0 +1,57 @@
+.mod-cards {
+	border-radius: 8px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-image: url(../images/flake_producten.svg);
+	background-size: contain;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	&.bg-white {
+		box-shadow: 0 3px 10px 0 rgba(73, 87, 111, 0.13);
+	}
+	.delabel {
+		margin: 20px 0 30px;
+		text-align: center;
+		padding: 2px 10px;
+		font-size: 14px;
+	  font-weight: 600;
+	  color: $walhalla-300;
+		border-radius: 4px;
+	}
+	.card {
+		.tekst {
+			p {
+				margin: 0 0 30px;
+			}
+		}
+		.boldtekst {
+		  font-size: 14px;
+		  font-weight: 600;
+		  font-stretch: normal;
+		  font-style: normal;
+		  line-height: normal;
+		  letter-spacing: normal;
+		  color: #6e7f9d;
+		  min-height: 40px;
+		  output {
+			  color: #000;
+		  }
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-cards {
+		.card {
+			&.uitgelicht {
+				transform: translateY(-30px);
+				.tekst {
+					margin-bottom: 30px;
+					p {
+						margin: 0 0 60px;
+					}
+				}		
+			}
+		}
+	}
+}

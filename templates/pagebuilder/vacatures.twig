@@ -1,0 +1,27 @@
+<section id="vacatures" class="mod-vacatures {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	{% if item.titel %}
+  		<h3> {{ item.titel }} </h3>
+  	{% endif %}
+    <div class="vacatures">
+    	{% set delay = 0 %}
+      {% for item in item.Vacatures %}
+				<div class="vacature">
+					<div class="row">
+						<div class="col">
+							{% if item.link %}
+								<a target="{{ item.link.target }}" href="{{ item.link.url }}">
+									{{ item.link.title }}
+								</a>
+					    {% endif %}
+						</div>
+						<div class="col-auto">
+							<span class="locatie"> {{ item.locatie }} </span>
+						</div>
+					</div>
+				</div>
+				{% set delay = delay + '150' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

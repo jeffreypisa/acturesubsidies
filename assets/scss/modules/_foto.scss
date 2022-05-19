@@ -1,0 +1,39 @@
+.mod-foto {
+	.lead {
+		color: #fff;
+	}
+	.bg, .bgc {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.bg {
+		background-size: cover;
+		background-position: center center;
+		z-index: -1;
+	}
+	.bgc {
+		z-index: 0;
+		opacity: 0.6;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-foto {
+		min-height: 600px;
+		.bg {
+			
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-foto {
+		min-height: 845px;
+		.bg {
+			
+		}
+	}
+}

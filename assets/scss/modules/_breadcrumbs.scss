@@ -1,0 +1,69 @@
+.mod-breadcrumbs-yoast {
+	display: inline-block; 
+	font-size: 16px;
+	list-style-type: none;
+	color: #a6b8fa;
+	padding: 0;
+	margin-bottom: 10px !important;
+	span {
+		padding: 0;
+		font-size: 14px;
+		line-height: 24px;
+	  font-weight: bold;
+	  letter-spacing: 1.7px;
+	  color: $madison-300;
+	  text-transform: uppercase;
+		&:after {
+			display: none;
+		}
+		a[href], &.faded {
+			color: #a6b8fa;
+		}
+	}
+	span span span {
+		// color: #fff;
+		display: none;
+		a {
+			pointer-events: none;
+			color: $madison-300;
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+	span span span span {
+		display: none;
+	}
+}
+
+.mod-breadcrumbs {
+	display: inline-block; 
+	font-size: 16px;
+	list-style-type: none;
+	color: #a6b8fa;
+	padding: 0;
+	margin-bottom: 10px !important;
+	li {
+		display: inline-block;
+		padding: 0 5px 0 0 !important;
+		float: left;
+		font-size: 14px;
+		line-height: 24px;
+	  font-weight: bold;
+	  letter-spacing: 1.7px;
+	  color: $madison-300;
+	  text-transform: uppercase;
+		&:after {
+			display: none;
+		}
+		a[href], &.faded {
+			color: #a6b8fa;
+		}
+	}
+}
+
+
+@include media-breakpoint-up(md) {
+	.mod-breadcrumbs {
+	}
+}

@@ -1,0 +1,76 @@
+.mod-nieuws {
+	.item0 {
+		.card {
+			width: 70%;
+		}
+	}
+	.item1 {
+		.card {
+			margin-left: -30px;
+		}
+	}
+	.item2 {
+		.card {
+			margin-right: -30px;
+			width: 80%;
+			display: block;
+			float: right;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-nieuws {
+		.item0 {
+			.card {
+				width: 100%;
+			}
+		}
+		.blok2 {
+			height: 520px;
+			position: relative;
+			.item1 {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				.card {
+					margin: 0;
+					width: 320px;
+				}
+			}
+			.item2 {
+				position: absolute;
+				top: 0;
+				right: 0;
+				.card {
+					margin: 0;
+					float: none;
+					width: 240px;
+					box-shadow: 0 8px 32px 0 rgba(0,0,0,0.70);
+				}
+			}
+		}
+	}
+}
+
+
+@include media-breakpoint-up(lg) {
+	.mod-nieuws {
+		.item0 {
+			width: 110%;
+		}
+		.blok2 {
+			height: 650px;
+			.item1 {
+				.card {
+					width: 400px;
+				}
+			}
+			.item2 {
+				.card {
+					width: 260px;
+				}
+			}
+		}
+	}
+}

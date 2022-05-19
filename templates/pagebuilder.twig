@@ -1,0 +1,174 @@
+{% set sectionno = '0' %}
+
+{% for item in post.get_field('blokken') %}
+
+  {% set sectionno = sectionno + '1' %}
+  
+  {% if item.acf_fc_layout == 'pageheader' %}
+		{% include 'pagebuilder/pageheader.twig' %}
+			
+  {% elseif item.acf_fc_layout == 'accordion' %}
+		{% include 'pagebuilder/accordion.twig' %}
+
+  {% elseif item.acf_fc_layout == 'cards' %}
+		{% include 'pagebuilder/cards.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'klanten' %}
+		{% include 'pagebuilder/klanten.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'downloads' %}
+		{% include 'pagebuilder/downloads.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'links' %}
+		{% include 'pagebuilder/links.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'contentmedia' %}
+		{% include 'pagebuilder/contentmedia.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'teller' %}
+		{% include 'pagebuilder/teller.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'content_met_scrollmenu' %}
+		{% include 'pagebuilder/content_scroll.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'overons' %}
+		{% include 'pagebuilder/overons.twig' %}
+		
+  {% elseif item.acf_fc_layout == 'features' %}
+		{% include 'pagebuilder/features.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'landingspaginaheader' %}
+		{% include 'pagebuilder/landingspaginaheader.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'landingspaginaquiz' %}
+		{% include 'pagebuilder/landingspaginaquiz.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'resultatenpaginaquiz' %}
+		{% include 'pagebuilder/resultatenpaginaquiz.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'resultatenpaginaquickscan' %}
+		{% include 'pagebuilder/resultatenpaginaquickscan.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'stappen' %}
+			{% include 'pagebuilder/stappen.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'koppelingen' %}
+		{% include 'pagebuilder/integraties.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'tarieven' %}
+		{% include 'pagebuilder/tarieven.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'buttons' %}
+		{% include 'pagebuilder/buttons.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'tabel' %}
+		{% include 'pagebuilder/tabel.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'contentprijs' %}
+		{% include 'pagebuilder/contentprijs.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'video' %}
+		{% include 'pagebuilder/video.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'quickscan' %}
+		{% include 'pagebuilder/quickscan.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'slider' %}
+		{% include 'pagebuilder/slider.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'iconen' %}
+		{% include 'pagebuilder/iconen.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'calltoaction' %}
+		{% include 'pagebuilder/calltoaction.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'vacatures' %}
+		{% include 'pagebuilder/vacatures.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'formulier' %}
+		{% include 'pagebuilder/formulier.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'tijdlijn' %}
+		{% include 'pagebuilder/tijdlijn.twig' %}
+		
+  {% endif %}
+  
+{% endfor %}
+
+{% if post.verberg_blokken %} {% else %}
+	
+	{% for item in options.blokken %}
+	
+	  {% set sectionno = sectionno + '1' %}
+	  
+	  {% if item.acf_fc_layout == 'pageheader' %}
+			{% include 'pagebuilder/pageheader.twig' %}
+				
+	  {% elseif item.acf_fc_layout == 'accordion' %}
+			{% include 'pagebuilder/accordion.twig' %}
+	
+	  {% elseif item.acf_fc_layout == 'cards' %}
+			{% include 'pagebuilder/cards.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'klanten' %}
+			{% include 'pagebuilder/klanten.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'downloads' %}
+			{% include 'pagebuilder/downloads.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'links' %}
+			{% include 'pagebuilder/links.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'contentmedia' %}
+			{% include 'pagebuilder/contentmedia.twig' %}
+			
+	  {% elseif item.acf_fc_layout == 'features' %}
+			{% include 'pagebuilder/features.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'landingspaginaheader' %}
+			{% include 'pagebuilder/landingspaginaheader.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'stappen' %}
+			{% include 'pagebuilder/stappen.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'koppelingen' %}
+			{% include 'pagebuilder/integraties.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'tarieven' %}
+			{% include 'pagebuilder/tarieven.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'tabel' %}
+			{% include 'pagebuilder/tabel.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'contentprijs' %}
+			{% include 'pagebuilder/contentprijs.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'video' %}
+			{% include 'pagebuilder/video.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'quickscan' %}
+			{% include 'pagebuilder/quickscan.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'slider' %}
+			{% include 'pagebuilder/slider.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'iconen' %}
+			{% include 'pagebuilder/iconen.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'calltoaction' %}
+			{% include 'pagebuilder/calltoaction.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'vacatures' %}
+			{% include 'pagebuilder/vacatures.twig' %}
+			
+		{% elseif item.acf_fc_layout == 'tijdlijn' %}
+			{% include 'pagebuilder/tijdlijn.twig' %}
+		
+		{% elseif item.acf_fc_layout == 'team' %}
+			{% include 'pagebuilder/team.twig' %}
+			
+	  {% endif %}
+	  
+	{% endfor %}
+
+{% endif %}

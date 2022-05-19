@@ -1,0 +1,22 @@
+.mod-teller {
+	padding: 60px 0;
+	.container {
+		position: relative;
+		&:after {
+			position: absolute;
+			content: '';
+			top: 32px;
+			left: 30px;
+			right: 30px;
+			border-bottom: 4px dotted $grey;
+			z-index: 0;
+		}
+		.number {
+			background: #fff;
+			padding: 0 10px;
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+		}
+	}
+}

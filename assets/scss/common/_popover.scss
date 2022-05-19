@@ -1,0 +1,25 @@
+.popover {
+	background: $walhalla-400;
+	h3.popover-header {
+		background: $walhalla-400;
+		color: #fff;
+		border: 0;
+		padding-bottom: 0;
+		padding-top: 10px;
+		font-size: 18px;
+		font-weight: bold;
+		letter-spacing: 0.3px;
+		line-height: 1.33;
+	}
+	.popover-body {
+		color: $walhalla-100;
+		padding-bottom: 10px;
+    padding-top: 4px;
+	}
+}
+.bs-popover-top > .arrow::after, .bs-popover-auto[x-placement^="top"] > .arrow::after {
+    border-top-color: $walhalla-400;
+}
+.bs-popover-bottom > .arrow::after, .bs-popover-auto[x-placement^="bottom"] > .arrow::after {
+    border-bottom-color: $walhalla-400;
+}

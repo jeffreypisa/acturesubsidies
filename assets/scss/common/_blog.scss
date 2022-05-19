@@ -1,0 +1,51 @@
+.single {
+	.author {
+		margin-bottom: 30px;
+		.img {
+			height: 100px;
+			width: 100px;
+			border-radius: 300px;
+			background-size: cover;
+			background-position: center center;
+			overflow: hidden;
+			margin: 0 auto 15px;
+		}
+		h4 {
+			margin-bottom: 0px;
+		}
+	}
+	.blog img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+	}
+	.wp-block-image {
+		img {
+			margin-bottom: 10px;
+		}
+		figcaption {
+			text-align: center;
+			color: $walhalla-300;
+			font-size: 16px;
+		}
+	}
+	.authorblock {
+		h3, h4, h5, h6, p {
+			margin: 0 !important;
+		}
+		h4 {
+			margin: 0 0 10px !important;
+		}
+		.card-body {
+			padding: 20px !important;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.blog {
+		.author {
+			margin-bottom: 60px;
+		}
+	}
+}

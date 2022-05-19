@@ -1,0 +1,915 @@
+@media only screen and (min-width:200px) and (max-width: 479px) {
+
+	#header_navigation {
+		display: none;
+	}
+
+	#searchform {
+		display: none;
+	}
+
+	#search_button {
+		display: block;
+	}
+
+	#call_to_action .tour_form {
+		font-size: inherit;
+	}
+
+	.tour_form li.gfield {
+		width: 100% !important;
+		margin: 0 0 10px 0 !important;
+	}
+
+	#call_to_action .tour_form .gform_footer .button {
+		width: 100%;
+		display: block;
+	}
+
+	#home_subsidiescan .home_specialist {
+		width: 100% !important;
+	}
+
+	#team_picture img {
+		max-width: 100%;
+	}
+
+	.post,
+	.post.large {
+		width: 100% !important;
+		float: none;
+	}
+
+	#footer .footer_widget {
+		width: 100% !important;
+		float: none;
+		margin: 0 0 30px 0 !important;
+	}
+
+}
+
+@media only screen and (min-width:200px) and (max-width: 767px) {
+
+	body {
+		font-size: 15px;
+	}
+
+	#wrapper {
+		padding: 77px 0 0 0;
+	}
+
+	p {
+		line-height: 22px;
+	}
+
+	iframe {
+		max-width: 100%;
+		height: auto;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	h2 {
+		font-size: 26px;
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	h4 {
+		font-size: 22px;
+	}
+
+	h5 {
+		font-size: 18px;
+	}
+
+	h6 {
+		font-size: 16px;
+	}
+
+	.container {
+		width: auto;
+	}
+
+	#logo {
+		width: 90px;
+		margin: 10px 30px 0 0;
+	}
+
+	#search_toggle {
+		margin: 25px 20px 0 0;
+	}
+
+	#searchform {
+		margin: 0;
+	}
+
+	#searchform #searchfield {
+		font-size: 17px;
+	}
+
+	.button.subsidiescan {
+		display: none;
+	}
+
+	#navigation_toggle {
+		margin: 17px 0 0 10px;
+	}
+
+	#header_navigation {
+		margin: 10px 0 0 0;
+	}
+
+	#header_navigation ul {
+		margin: 0;
+		padding: 5px 0;
+	}
+
+	#header_navigation ul li {
+		float: none;
+	}
+
+	#header_navigation ul li:after {
+		display: none;
+	}
+
+	#megamenu {
+		padding: 30px 0;
+	}
+
+	#megamenu .header_widget {
+		width: 50%;
+	}
+
+	#megamenu .widget-2,
+	#megamenu .widget-3,
+	#megamenu .widget-4 {
+		display: none;
+	}
+
+	#home_usps {
+		position: inherit;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		left: 0;
+		right: 0;
+		bottom: inherit;
+		border-radius: 0;
+	}
+
+	#home_usps ul {
+		padding: 25px 0 0 0;
+	}
+
+	#home_usps ul li {
+		width: 50%;
+		margin: 0 0 25px 0;
+	}
+
+	#home_usps ul li:last-child {
+		display: none;
+	}
+
+	#home_usps ul li .title {
+		margin: 0 0 15px 0;
+		font-size: 18px;
+	}
+
+	#home_usps ul li img {
+		width: 25%;
+		margin: 0 0 15px 0;
+	}
+
+	#home_usps .blue_bar {
+		position: inherit;
+		height: auto;
+		overflow: hidden;
+		clear: both;
+		padding: 20px 15px 25px 15px;
+		border-radius: 0;
+		text-align: center;
+	}
+
+	#home_usps .blue_bar span {
+		margin: 0;
+		font-size: 19px;
+		float: none;
+		display: inline-block;
+	}
+
+	#home_usps .blue_bar .button {
+		margin: 10px 0 0 0;
+		float: none;
+		display: inline-block;
+	}
+
+	#home_info1 .column,
+	#home_info2 .column {
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+
+	#home_info1 .column.visuals img {
+		display: none;
+	}
+
+	#home_subsidiescan {
+		text-align: center;
+	}
+
+	#home_subsidiescan .container {
+		min-height: inherit;
+		background-image: none;
+	}
+
+	#home_subsidiescan #gmw-submit-1 {
+		display: none;
+	}
+
+	.home_specialist {
+		width: 50% !important;
+	}
+
+	#page_header {
+		min-height: 160px;
+		margin: 0 0 50px 0;
+		padding: 20px 0 0 0;
+	}
+
+	#page_header.team {
+		padding: 50px 0 0 0;
+		height: 200px;
+	}
+
+	body.page-template-_tour #page_header {
+		height: auto;
+		padding: 20px 0;
+	}
+
+	#page_header .title {
+		font-size: 26px;
+	}
+
+	#page_header .text {
+		font-size: 18px;
+	}
+
+	#page_header #searchform {
+		width: 100%;
+		margin: 35px 0 0 0;
+		display: block;
+	}
+
+	#page_header #searchform #searchfield {
+		width: 92%;
+	}
+
+	#team_picture img {
+		max-width: 120%;
+	}
+
+	#breadcrumbs {
+		top: -25px;
+	}
+
+	#content {
+		padding: 0 0 30px 0;
+	}
+
+	#content.with_sidebar #main {
+		width: 100%;
+		float: none;
+	}
+
+	#content.posts #breadcrumbs {
+		display: none;
+	}
+
+	#content.posts #main {
+		margin: 0;
+	}
+
+	#posts {
+		padding: 30px 0 0 0;
+	}
+
+	.post {
+		width: 100%;
+	}
+
+	.post a,
+	.post.large.bureau,
+	#content.term .post.term a {
+		min-height: inherit;
+		height: inherit;
+	}
+
+	.post img {
+		display: none;
+	}
+
+	.post .post_more {
+		margin: 10px 0 0 0;
+		display: block;
+		position: inherit;
+		bottom: inherit;
+		left: inherit;
+	}
+
+	#related .container {
+		padding: 0 15px;
+	}
+
+	#paging {
+		margin: 20px 0;
+	}
+
+	#content.single_post .container {
+		padding: 0 15px;
+	}
+
+	#content.single_post .single_post_meta {
+		position: relative;
+		bottom: inherit;
+		z-index: 2;
+	}
+
+	#content.single_post .single_post_content {
+		margin: 0;
+		padding: 0;
+	}
+
+	#content.single_post #breadcrumbs {
+		margin: 0;
+		top: -25px;
+	}
+
+	.tour_intro h2, .tour_section .tour_text h2 {
+		margin: 0 0 10px 0;
+	}
+
+	.tour_intro, .tour_more {
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	.tour_intro p, .tour_section .tour_text p, .tour_more p {
+		line-height: 24px;
+	}
+
+	.tour_section .tour_text {
+		padding: 30px 30px 30px 15px;
+		font-size: inherit;
+	}
+
+	.tour_section .tour_image {
+		padding: 50px 15px;
+	}
+
+	#testimonials .container {
+		padding: 30px 15px 60px 15px;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	#testimonials .container p {
+		line-height: 22px;
+	}
+
+	#testimonials_nav.owl-carousel .owl-item,
+	#testimonials_nav.owl-carousel .owl-item .item {
+		width: 80px !important;
+		height: 80px !important;
+	}
+
+	#testimonials_nav.owl-carousel .owl-item {
+		margin: 0 15px;
+	}
+
+	#testimonials_nav {
+		margin: -40px 0 0 0;
+	}
+
+	body.page-template-_contact #content .column {
+		width: 100%;
+		float: none;
+	}
+
+	#page_header.subsidie {
+		padding: 20px 0 0 0;
+	}
+
+	#page_header.subsidie .title {
+		margin: 0 0 10px 0;
+	}
+
+	.subsidie_details {
+		height: auto;
+		padding: 20px;
+		margin: 30px 0 0 0;
+		overflow: hidden;
+		border-radius: 0;
+	}
+
+	.subsidie_geo {
+		height: auto;
+		padding: 20px 20px 0 20px;
+		margin: 10px 0 0 0;
+		overflow: hidden;
+		border-radius: 0;
+	}
+
+	.subsidie_geo i {
+		font-size: 50px;
+	}
+
+	.subsidie_detail i {
+		font-size: 26px;
+	}
+
+	.subsidie_detail.subsidie_prijs,
+	.subsidie_detail.subsidie_thema,
+	.subsidie_detail.subsidie_moeilijkheidsgraad {
+		width: 100%;
+		float: none;
+		clear: both;
+		overflow: hidden;
+	}
+
+	.subsidie_detail.subsidie_prijs,
+	.subsidie_detail.subsidie_thema {
+		margin: 0 0 15px 0;
+	}
+
+	.subsidie_detail .value, .subsidie_geo .value {
+		font-size: 16px;
+	}
+
+	#subsidie_content #related .container {
+		padding: 0 15px;
+	}
+
+	#related .related_item {
+		width: 100%;
+		margin: 0 0 2% 0;
+		float: none;
+	}
+
+	#subsidie_content {
+		margin: 0 0 30px 0;
+		overflow: hidden;
+	}
+
+	#subsidie_content .column {
+		width: 100%;
+		float: none;
+	}
+
+	.subsidie_dates,
+	.subsidie_excerpt {
+		height: auto;
+		overflow: hidden;
+		float: none;
+		border-radius: 0;
+	}
+
+	body.single-subsidie #call_to_action {
+		margin: 30px 0 0 0;
+	}
+
+	body.single-subsidie #main .column {
+		width: 100%;
+		float: none;
+	}
+
+	.subsidie_cta {
+		border-radius: 0;
+		height: auto;
+	}
+
+	#bureau_content {
+		height: 300px;
+		margin: 30px 0 10px 0;
+		border-radius: 0;
+	}
+
+	#bureau_subsidies {
+		margin: 0 0 10px 0;
+		height: auto;
+		border-radius: 0;
+	}
+
+	#bureau_contact {
+		margin: 0;
+		height: auto;
+		border-radius: 0;
+	}
+
+	#contact_vcard {
+		display: none;
+	}
+
+	#mobile_contact {
+		display: block;
+	}
+
+	.social_links {
+		display: none;
+	}
+
+	.gform_footer input[type="submit"] {
+		width: 100%;
+	}
+
+	#call_to_action {
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	#call_to_action p {
+		line-height: 24px;
+	}
+
+	#home_info1,
+	#home_carousel1,
+	#home_info2,
+	#home_subsidiescan,
+	.tour_intro, .tour_more {
+		padding: 30px 0;
+	}
+
+	.tour_more.has_image {
+		padding: 0;
+	}
+
+	.tour_more_text {
+		padding: 0 !important;
+	}
+
+	.column.two_third.tour_more_text {
+		padding: 50px 40px 50px 15px !important;
+	}
+
+	#footer {
+		padding: 30px 0 0 0;
+	}
+
+	#footer .footer_widget {
+		width: 50%;
+		margin: 0 0 30px 0;
+	}
+
+	#footer #searchform {
+		width: 100%;
+		display: block;
+	}
+
+	.footer_widget_title {
+		margin: 0 0 15px 0;
+	}
+
+	#copyrights {
+		margin: 0;
+		padding: 0;
+	}
+
+	#copyrights .column {
+		width: 50%;
+	}
+
+	#sidebar {
+		display: none;
+	}
+
+	#keuze_popup {
+		overflow: scroll;
+	}
+
+	#keuze_popup .popup_content {
+		position: static;
+		top: inherit;
+		left: inherit;
+		width: auto;
+		height: auto;
+		margin: 15px;
+		padding: 30px 0;
+		overflow: hidden;
+	}
+
+	#keuze_popup .popup_content .popup_logo {
+		width: 100px;
+	}
+
+	#keuze_popup .popup_content .popup_text {
+		margin: 30px 0;
+		font-size: 22px;
+	}
+
+	#keuze_popup .popup_content .popup_choices li {
+		padding: 0;
+	}
+
+	#keuze_popup .popup_content .popup_choices li svg {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto 40px auto;
+	}
+
+	#keuze_popup .popup_content .popup_choices li .button {
+		margin: 0 15px;
+		padding: 10px;
+	}
+
+	#related_locations {
+		padding: 25px 0;
+	}
+
+	#related_locations ul li {
+		width: 96%;
+	}
+
+	#content.term .post.term.thumbnail h3,
+	.post.thumbnail h3 {
+		margin: 0 0 10px 0;
+	}
+
+	.post.thumbnail .post_excerpt {
+		margin: 0;
+	}
+
+	.single_template_about {
+		height: auto;
+		border-radius: 0;
+	}
+
+	#content.single_template.advisor .single_template_contact,
+	.single_template_content .column.one_half {
+		width: auto;
+		min-height: inherit;
+		float: none;
+		border-radius: 0;
+	}
+
+}
+
+@media only screen and (min-height:600px) and (max-height: 800px) {
+
+	#keuze_popup {
+		overflow: scroll;
+	}
+
+	#keuze_popup .popup_content {
+		height: auto;
+		margin: -200px 0 0 -340px;
+		padding: 30px 0;
+		overflow: hidden;
+	}
+
+	#keuze_popup .popup_content .popup_logo {
+		width: 100px;
+	}
+
+	#keuze_popup .popup_content .popup_text {
+		margin: 30px 0;
+		font-size: 22px;
+	}
+
+	#keuze_popup .popup_content .popup_choices li {
+		padding: 0;
+	}
+
+	#keuze_popup .popup_content .popup_choices li svg {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto 40px auto;
+	}
+
+	#keuze_popup .popup_content .popup_choices li .button {
+		margin: 0 15px;
+		padding: 10px;
+	}
+
+	#related_locations ul li {
+		width: 48%;
+	}
+
+}
+
+@media only screen and (min-width:768px) and (max-width: 959px) {
+
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+	h3 {
+		font-size: 26px;
+	}
+
+	h4 {
+		font-size: 24px;
+	}
+
+	h5 {
+		font-size: 18px;
+	}
+
+	h6 {
+		font-size: 16px;
+	}
+
+	.container {
+		width: auto;
+	}
+
+	.button.subsidiescan {
+		display: none;
+	}
+
+	.navigation_toggle {
+		margin: 18px 0 0 30px;
+	}
+
+	#megamenu {
+		padding: 30px 0;
+	}
+
+	#megamenu .header_widget {
+		width: 25%;
+	}
+
+	#megamenu .widget-4 {
+		display: none;
+	}
+
+	#home_usps {
+		width: 100%;
+		height: 320px;
+		margin: 0;
+		left: 0;
+	}
+
+	#home_usps ul li .title {
+		font-size: 15px;
+		line-height: 15px;
+	}
+
+	#home_usps ul li img {
+		width: 50%;
+	}
+
+	#home_usps .blue_bar span {
+		margin: 17px 0 0 20px;
+		font-size: 19px;
+	}
+
+	#home_usps .blue_bar .button {
+		margin: 12px 20px 0 0;
+		font-size: 16px;
+	}
+
+	.home_text .button {
+		font-size: 16px;
+	}
+
+	#page_header {
+		min-height: 240px;
+		padding: 50px 0 0 0;
+	}
+
+	#page_header.team {
+		padding: 120px 0 0 0;
+		height: 400px;
+	}
+
+	#team_picture img {
+		max-width: 120%;
+	}
+
+	.subsidie_details,
+	.subsidie_geo {
+		height: 90px;
+		padding: 20px;
+		margin: 30px 0 0 0;
+	}
+
+	.subsidie_detail i {
+		font-size: 26px;
+	}
+
+	.subsidie_geo i {
+		display: none;
+	}
+
+	.subsidie_detail .value, .subsidie_geo .value {
+		font-size: 16px;
+	}
+
+	#subsidie_content #related .container {
+		padding: 0 15px;
+	}
+
+	#subsidie_content {
+		margin: 0 0 30px 0;
+	}
+
+	.subsidie_dates,
+	.subsidie_excerpt {
+		height: auto;
+		overflow: hidden;
+	}
+
+	.post a {
+		padding: 20px 20px 50px 20px;
+	}
+
+	.subsidie_cta {
+		height: auto;
+	}
+
+	body.single-subsidie #call_to_action {
+		margin: 30px 0 0 0;
+	}
+
+	.tour_section .tour_text {
+		padding: 50px 40px 50px 15px;
+		font-size: inherit;
+	}
+
+	.tour_section.even .tour_text {
+		padding: 50px 15px 50px 40px;
+	}
+
+	.tour_section .tour_image {
+		padding: 60px 15px;
+	}
+
+	.column.two_third.tour_more_text {
+		padding: 50px 40px 50px 15px !important;
+	}
+
+	#contact_vcard {
+		top: 45px;
+	}
+
+	.social_links {
+		display: none;
+	}
+
+	#home_info1 {
+		padding: 180px 0 30px 0;
+	}
+	#home_carousel1,
+	#home_info2,
+	#home_subsidiescan,
+	#footer {
+		padding: 30px 0;
+	}
+
+}
+
+@media only screen and (min-width:960px) and (max-width: 1070px) {
+
+	.container {
+		width: 960px;
+	}
+
+	.button.subsidiescan {
+		display: none;
+	}
+
+	#page_header.team {
+		padding: 160px 0 0 0;
+		height: 500px;
+	}
+
+}
+
+@media only screen and (min-width:1px) and (max-width: 1851px) {
+	#team_picture {
+		margin: 0;
+		left: 0;
+	}
+}
+
+@media only screen and (min-width:1721px) and (max-width: 5000px) {
+
+	#team_picture {
+		margin: 0;
+		left: inherit;
+	}
+
+	#team_picture .picture {
+		width: 100%;
+	}
+
+}

@@ -1,0 +1,45 @@
+<section id="section{{ sectionno }}" class="mod-iconen less-padding {% if item.achtergrond %} {{ item.achtergrond }} {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	{% if item.subtitel or item.titel or item.tekst %}
+  		<div class="contentspace body2">
+		  	<div class="row">
+		  		<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+				  	<div class="text-center">
+					  	{% if item.subtitel %}
+					      <span class="sub">{{ item.subtitel }}</span>
+					    {% endif %}
+							{% if item.titel %}
+					      <h2>{{ item.titel }}</h2>
+					    {% endif %}
+					  	{% if item.tekst %}
+					    	{{ item.tekst }}
+					    {% endif %}
+					  </div>
+		  		</div>
+		  	</div>
+  		</div>
+  	{% endif %}
+  	<div class="iconen">
+	    <div class="row">
+	    	{% set delay = 0 %}
+	      {% for icoon in item.iconen %}
+					<div class="col-lg-4">
+						<div class="icoon body3">
+							<div data-mh>
+								<img src="{{ icoon.icoon.url }}" width="50" height="50">
+								<h4> {{ icoon.titel }} </h4>
+								{{ icoon.tekst }}
+							</div>
+							{% if icoon.link %}
+								<a class="btn-link" target="{{ icoon.link.target }}" href="{{ icoon.link.url }}">
+									{{ icoon.link.title }} 
+								</a>
+					    {% endif %}
+						</div>
+					</div>
+					{% set delay = delay + '150' %}
+	      {% endfor %}
+	    </div>
+    </div>
+  </div>
+</section>

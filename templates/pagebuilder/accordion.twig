@@ -1,0 +1,45 @@
+<section id="section{{ sectionno }}" class="mod-accordion body2 {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-6">
+  			{% if item.subtitel %}
+		    	<span class="sub">{{ item.subtitel }}</span>
+		    {% endif %}
+			  {% if item.titel %}
+		      <h3>{{ item.titel }}</h3>
+		    {% endif %}
+		    {% if item.tekst %}
+			    {{ item.tekst }}
+		    {% endif %}
+  		</div>
+	  	<div class="col-md-6">
+				<div class="accordion" id="accordion{{ sectionno }}">
+					{% if item.cards %}
+						{% set cardno = 1 %}
+						{% for card in item.cards %}
+						  <div class="item">
+					      <a id="heading{{ sectionno }}{{ cardno }}" class="heading" data-toggle="collapse" data-target="#collapse{{ sectionno }}{{ cardno }}" aria-controls="collapse{{ sectionno }}{{ cardno }}">
+					      	<div class="row">
+						      	<div class="col">
+						        	{{ card.titel }}
+						      	</div>
+						      	<div class="col-auto">
+						      		<i class="fas fa-plus"></i>
+						      		<i class="fas fa-minus"></i>
+						      	</div>
+					      	</div>
+					      </a>
+						    <div id="collapse{{ sectionno }}{{ cardno }}" class="collapse" aria-labelledby="heading{{ sectionno }}{{ cardno }}" data-parent="#accordion{{ sectionno }}">
+						    	<div class="antwoord body3">
+						    		{{ card.tekst }}
+						    	</div>
+						    </div>
+						  </div>
+						  {% set cardno = cardno + 1 %}
+						{% endfor %}
+					{% endif %}
+				</div>
+		  </div>
+  	</div>
+	</div>
+</section>

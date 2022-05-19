@@ -1,0 +1,14 @@
+.block-info {
+	background: $grey;
+	color: #fff;
+	padding: 30px;
+	margin-bottom: 40px;
+	border: 0;
+	h4 {
+		color:#fff;
+	}
+	> * {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}

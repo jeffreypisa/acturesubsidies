@@ -1,0 +1,29 @@
+{% if options.facebook or options.twitter or options.linkedin or options.instagram %}
+	<div class="followus">
+		{% if options.facebook %}
+		  	<a class="noline" href="{{options.facebook}}" target="_blank"> 
+		  		<i class="fab fa-facebook-f"></i> 
+		  	</a>
+	  {% endif %}
+	  {% if options.twitter %}
+	  		<a class="noline" href="{{options.twitter}}" target="_blank"> 
+	  			<i class="fab fa-twitter"></i> 
+	  		</a>
+	  {% endif %}
+	  {% if options.linkedin %}
+	  		<a class="noline" href="{{options.linkedin}}" target="_blank"> 
+	  			<i class="fab fa-linkedin"></i> 
+	  		</a>
+	  {% endif %}
+	  {% if options.instagram %}
+	  		<a class="noline" href="{{options.instagram}}" target="_blank"> 
+	  			<i class="fab fa-instagram"></i> 
+	  		</a>
+	  {% endif %}
+	  {% if options.youtube %}
+	  		<a class="noline" href="{{options.youtube}}" target="_blank"> 
+	  			<i class="fab fa-youtube"></i> 
+	  		</a>
+	  {% endif %}
+	</div>
+{% endif %}

@@ -1,0 +1,65 @@
+<section id="section{{ sectionno }}" class="mod-video body2 {% if item.achtergrond %} {{ item.achtergrond }} {% else %} bg-transparent {% endif %} {% if item.bedrag %} count-animation {% endif %}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-xl-10 offset-xl-1">
+		    <div class="row">
+		      <div class="{% if item.positie == 'center' %} offset-lg-3 text-center {% endif %} col-lg-6">
+		      	<div class="h-100 d-flex align-items-center">
+		      		<div class="blok-body content">
+				        {% if item.subtitel %}
+				        	<span class="sub">{{ item.subtitel }}</span>
+				        {% endif %}
+				        {% if item.titel %}
+				        	<h3 class="{% if item.font_xl %} h1 {% endif %}">{{ item.titel }}</h3>
+				        {% endif %}
+				        {% if item.tekst %}
+				        	{{ item.tekst }}
+				        {% endif %}
+				        {% if item.bedrag %}
+				        	<p id="bedragenlopenoptot">Bedragen kunnen oplopen tot <span>€</span><span class="count" data-value="{{ item.bedrag }}"></span> per stuk</p>
+				        {% endif %}
+				        {% if item.link_title %}
+				        	<a class="btn btn-secondary" href="{{ item.video }}&amp;rel=0&modestbranding=1" data-lity> <i class="fas fa-play"></i> {{ item.link_title }} </a>
+				        {% endif %}
+		      		</div>
+		      	</div>
+		      </div>
+		      {% if item.positie == 'center' %}
+		      	{% if item.screenshot %}
+			      	<div class="col-12">
+			      		<br><br><br>
+			      		<a class="noline" href="{{ item.video }}&amp;rel=0&modestbranding=1" data-lity>
+				      		<div class="image-container borderradius-16 has-flakes has-img">
+				      			<i class="fas fa-play"></i>
+				      			<img class="image w-100 h-auto" src="{{ item.screenshot|resize(2024) }}">
+				      			<div class="flake top left flake-1"></div>
+				      			<div class="flake bottom right flake-5"></div>
+				      		</div>
+			      		</a>
+			      	</div>
+			      {% endif %}
+		      {% else %}
+			      <div class="col-lg-6 {% if item.positie == 'links' %} order-first {% endif %}">
+			      	<div class="h-100 d-flex align-items-center">
+			      		<div class="blok-body video w-100">
+			      			{% if item.screenshot %}
+			      				<a class="videotile noline" href="{{ item.video }}&amp;rel=0&modestbranding=1" data-lity>
+						      		<div class="image-container ratio-4-3 borderradius-16 has-flakes">
+						      			<i class="fas fa-play"></i>
+						      			<div class="image" style="background-image: url({{ item.screenshot|resize(1024) }}")></div>
+						      			<div class="flake top left flake-1"></div>
+						      			<div class="flake bottom right flake-5"></div>
+						      		</div>
+			      				</a>
+				      		{% else %}
+				      			{{ item.video }}
+				      		{% endif %}
+			      		</div>
+			      	</div>
+			      </div>
+					{% endif %}
+		    </div>
+  		</div>
+  	</div>
+  </div>
+</section>

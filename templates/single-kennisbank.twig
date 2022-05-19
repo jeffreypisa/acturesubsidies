@@ -1,0 +1,202 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="content-wrapper">
+			<div class="article-body">
+				<section class="content bg-white {% if post.arabisch_font %}arabic_font{% endif %}">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 {% if post.arabisch_font %}offset-md-2{% endif %}">
+								<ul class="mod-breadcrumbs">
+									{{ breadcrumbs }}
+								</ul>
+								<h1> {{ post.title }} </h1>
+								<br>
+							</div>
+						</div>
+					  <div class="row">
+						  <div class="col-md">
+							  <div class="row">
+								  <div class="col-lg-10 onlycontent">
+										{{ post.content }}
+								  </div>
+							  </div>
+							  {% for item in post.get_field('blog_blokken') %}
+
+								  {% set sectionno = sectionno + '1' %}
+								  
+								  {% if item.acf_fc_layout == 'content' %}
+									  <div class="row">
+										  <div class="col-lg-10 onlycontent">
+												{{ item.content }}
+										  </div>
+									  </div>
+										
+									{% elseif item.acf_fc_layout == 'afbeelding' %}
+										<br>
+										<div class="image bg-cover ratio_4x3" style="background-image: url({{ Image(item.afbeelding)|resize(1024) }}")></div>
+										<div class="description"> {{ item.toelichting }}</div>
+										<br><br>
+										
+									{% elseif item.acf_fc_layout == 'stappen' %}
+										<div class="card steps bg-lightyellow">
+											<div class="card-body">
+												<h3> {{ item.titel }} </h3>
+												{% for item in item.stappen %}
+													<div class="step">
+														<div class="row">
+															<div class="col-auto">
+																<h3 class="number"> {{ loop.index }} </h3>
+															</div>
+															<div class="col">
+																<h4> {{ item.titel }} </h4>
+																{{ item.tekst }}
+															</div>
+														</div>
+													</div>
+												{% endfor %}
+											</div>
+										</div>
+									{% endif %}
+								{% endfor %}
+								{% if post.verberg_auteur %}{% else %}
+									<br>
+									{% include 'partials/author.twig' %}
+								{% endif %}
+						  </div>
+						  
+					  
+						  {% set lessgodocs = 'no' %}
+						  {% for item in post.get_field('documenten_links') %}
+								{% if item.download.url %}
+									{% set lessgodocs = 'go' %}
+								{% endif %}
+							{% endfor %}
+							
+							{% set lessgolinks = 'no' %}
+						  {% for item in post.get_field('links_links') %}
+								{% if item.link %}
+									{% set lessgolinks = 'go' %}
+								{% endif %}
+							{% endfor %}
+							
+							{% if lessgodocs == 'go' or lessgolinks == 'go' or post.benodigdheden_titel or post.benodigdheden_tekst or post.talen %}
+							
+							  <div class="col-md-4">
+								  {% if post.talen %}
+								  	<div class="card bg-lightgrey body3">
+										<div class="card-body">
+											{% if post.talen_titel %}
+												<h4 class="h5">{{ post.talen_titel }}</h4>
+											{% endif %}
+											<div class="flags">
+												{% for item in post.get_field('talen') %}
+													<a href="{{ item.link.url }}" class="noline">
+														<img src="{{ theme.link }}/assets/images/flags/{{ item.taal }}.svg" width="28" height="21">
+													</a>
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+								  {% endif %}
+								  {% if post.documenten_links and lessgodocs == 'go' %}
+									  <div class="card bg-lightgrey body3">
+										  <div class="card-body">
+											  <h4> Handige documenten </h4>
+											  <p> Het team van Mijnsubsidie heeft 
+		wat documenten gemaakt. </p>
+												{% for item in post.get_field('documenten_links') %}
+													{% if item.download.url %}
+														<div class="download">
+															<a href="{{ item.download.url }}" target="_blank" class="card card-link">
+																<div class="row">
+																	<div class="col">
+																		{% if item.titel %} {{ item.titel }} {% else %} {{ item.download.title }} {% endif %}
+																	</div>
+																	<div class="col-auto">
+																		<div class="icon">
+																			<svg height="16" width="16" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/></svg>
+																		</div>
+																	</div>
+																</div>
+															</a>
+														</div>
+													{% endif %}
+												{% endfor %}
+										  </div>
+									  </div>
+								  {% endif %}
+	
+								  {% if (post.links_links) and (lessgolinks == 'go') %}
+									  <div class="card bg-lightgrey body3">
+										  <div class="card-body">
+											  <h4> Handige links </h4>
+											  <p> Het team van Mijnsubsidie heeft 
+		wat handig links voor u! </p>
+												{% for item in post.get_field('links_links') %}
+													{% if item.link %}
+														{% if loop.first %}{% else %} <br> {% endif %}
+														<a href="{{ item.link.url }}" class="btn-link ellipsis" target="{{ item.link.target }}"> {% if item.link.title %} {{ item.link.title }} {% else %} {{ item.link.url }} {% endif %}</a>
+														<div class="clearfix"></div>
+													{% endif %}
+												{% endfor %}
+										  </div>
+									  </div>
+								  {% endif %}
+								{% if post.benodigdheden_titel or post.benodigdheden_tekst %}
+									<div class="card bg-lightgrey body3">
+										<div class="card-body">
+											{% if post.benodigdheden_titel %}
+												<h4> {{ post.benodigdheden_titel }} </h4>
+											{% endif %}
+											
+											{{ post.benodigdheden_tekst }}
+										</div>
+									</div>
+								{% endif %}
+							  </div>
+						  {% endif %}
+					  </div>
+				  </div>
+			  </section>
+			  <div class="{% if post.arabisch_font %}arabic_font{% endif %}">
+			  	{% include 'pagebuilder.twig' %}
+			  </div>
+			  {% if related %}
+			  	{% if post.verberg_blokken %}{% else %}
+				  	<section class="mod-themas bg-lightgrey text-dark">
+					  	<div class="container">
+						  	<div class="row">
+							  	<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+								  	<div class="text-center">
+								  	<h2>Gerelateerd</h2>
+										<br>
+								  	</div>
+							  	</div>
+						  	</div>
+							<div class="row">
+								{% set thisterm = post.terms('kennisbank_cat')|first %}
+								{% if thisterm == 'Tutorials' %}
+									{% for item in related %}
+										<div class="col-md-6 col-xl-4">
+												{% include 'tease-kennis-tutorial.twig' %}
+											</div>
+										{% endfor %}
+								{% else %}
+									{% for item in related %}
+										<div class="col-md-6 col-lg-4">
+											{% include 'tease-kennis-related.twig' %}
+											<br><br>
+										</div>
+									{% endfor %}
+								{% endif %}
+							</div>
+					  	</div>
+						</section>
+					{% endif %}
+				{% endif %}
+			</div>
+		</div><!-- /content-wrapper -->
+	</article>
+{% endblock %}

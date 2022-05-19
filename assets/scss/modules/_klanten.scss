@@ -1,0 +1,21 @@
+.mod-klanten {
+	a.d-block {
+		height: auto;
+		width: 100%;
+		opacity: .4;
+		transition: 0.15s ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.tekstonder {
+		font-size: 21px;
+	  font-weight: 600;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 1.71;
+	  letter-spacing: normal;
+	  text-align: center;
+	  color: $walhalla-300;
+	}
+}

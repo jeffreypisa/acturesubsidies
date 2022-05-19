@@ -1,0 +1,163 @@
+.mod-blok {
+	.nf-form-cont {
+	  .label-above .nf-field-element, .label-below .nf-field-element {
+			font-size: inherit;
+		}
+		.nf-error-msg {
+	    color: #fff;
+	  }
+	}
+}
+
+.nf-form-content {
+	padding: 0;
+}
+
+.form-control.input-large {
+	padding: 0 60px 0 20px;
+	height: 64px;
+	border: 0;
+	border-radius: 12px;
+  box-shadow: 0 3px 16px 0 rgba(73, 87, 111, 0.13), 0 1px 4px 0 rgba(73, 87, 111, 0.24);
+}
+
+.nf-form-cont {
+	.checkbox-wrap .nf-field-element label.nf-checked-label:before, .checkbox-wrap .nf-field-label label.nf-checked-label:before, .listcheckbox-wrap .nf-field-element label.nf-checked-label:before, .listcheckbox-wrap .nf-field-label label.nf-checked-label:before {
+		color: $madison-300;
+		font-size: 14px;
+    padding: 2px 4px;
+	}
+	select.ninja-forms-field, select.ninja-forms-field:focus {
+		background-image: url(../images/chevrondown.png);
+		background-repeat: no-repeat;
+		background-position: right 15px center;
+		background-size: 20px;
+	}
+  .label-above .nf-field-element, .label-below .nf-field-element {
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .nf-form-title, .nf-form-fields-required {
+    display: none;
+  }
+  .nf-error-msg {
+    color: $darkgrey;
+  }
+  .ninja-forms-req-symbol {
+	  display: none;
+  }
+  input[type=button] {
+	  cursor: pointer;
+  }
+  h5 {
+    margin-bottom: -5px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 5px;
+  }
+  .nf-field-label {
+    margin-bottom: 4px;
+    label {
+      display: block;
+      width: 100%;
+		  font-size: 14px;
+		  font-weight: 600;
+		  font-stretch: normal;
+		  font-style: normal;
+		  line-height: normal;
+		  letter-spacing: normal;
+		  color: #6e7f9d;
+		  text-align: left;
+    }
+  }
+  .label-right .checkbox-wrap .nf-field-label {
+	  display: block;
+    width: 100%;
+  }
+  .nf-field-container {
+    margin-bottom: 15px;
+  }
+  .nf-error {
+	  &.field-wrap .nf-field-element:after {
+		  background: $berry-300 !important;
+	  }
+	  .ninja-forms-field {
+	  	border-color: $berry-300 !important;
+	  }
+	  .nf-error-msg {
+	    color: $berry-300 !important;
+	  }
+  }
+  
+  textarea.ninja-forms-field, select, input:not([type=checkbox]):not([type=radio]):not([type=button]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 4px 20px;
+    font-size: 16px;
+    color: $vulcan-300;
+    transition: 0.2s ease-in-out;
+    border-radius: 4px;
+	  border: solid 1px $walhalla-200;
+		background-color: #ffffff;
+    &:focus {
+    }
+  }
+
+  .nf-field-element textarea {
+    height: 140px;
+  }
+  .nf-response-msg {
+
+  }
+  .nf-form-content .list-select-wrap>div select:hover {
+		cursor: pointer;
+  }
+  .nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea {
+	  padding: 4px 20px;
+	  font-size: 16px;
+	  color: #383c45;
+	  transition: 0.2s ease-in-out;
+	  border-radius: 4px;
+	  border: solid 1px #b6bdcb;
+	  background-color: #ffffff;
+	}
+}
+#footer.footer .nf-form-cont {
+	textarea, select, input:not([type=checkbox]):not([type=radio]):not([type=button]) {
+    background: $nightblue;
+    border: 2px solid $nightblue;
+    color: #fff;
+    &:focus {
+      border-color: $blue;
+      background: #B6C4CD;
+      color: $darkblue;
+    }
+  }
+  .nf-error-msg {
+    color: #fff;
+  }
+}
+
+.list-checkbox-wrap .nf-field-element li label, .list-radio-wrap .nf-field-element li label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.list-checkbox-wrap .nf-field-element li input, .list-radio-wrap .nf-field-element li input {
+  margin-top: 0.35em;
+}
+
+@include media-breakpoint-up(md) {
+  .nf-form-cont {
+    .nf-field-container {
+      margin-bottom: 20px;
+    }
+    h5 {
+     font-size: 20px;
+     line-height: 26px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{#
+/**
+ * Block Name: Accordion
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+<div id="block-{{ block.id }}" class="mod-accordion">
+	<div class="accordion" id="accordion-{{ block.id }}">
+		{% set rownr = 1 %}
+		{% set delay = 200 %}
+		{% for card in fields.accordion %}
+		  <div class="item">
+	      <a id="heading{{ rownr }}" class="heading" data-toggle="collapse" data-target="#collapse{{ rownr }}" aria-controls="collapse{{ rownr }}">
+	      	<div class="row">
+		      	<div class="col-auto" style="width: 20px">
+		      		<i class="fal fa-chevron-right"></i>
+		      	</div>
+		      	<div class="col">
+		        	<h5>{{ card.vraag }}</h5>
+		      	</div>
+	      	</div>
+	      </a>
+		
+		    <div id="collapse{{ rownr }}" class="collapse" aria-labelledby="heading{{ rownr }}" data-parent="#accordion-{{ block.id }}">
+		    <div class="row">
+		      <div class="col-auto" style="width: 20px">
+		      	</div>
+		      	<div class="col">
+							{{ card.antwoord }}
+		      	</div>
+		    </div>
+		    </div>
+		  </div>
+		  {% set delay = delay + 200 %}
+		  {% set rownr = rownr + 1 %}
+		{% endfor %}
+	</div>
+</div>
+
+<style type="text/css">
+  #block-{{ block.id }} {
+    h5 {
+	    font-size: 18px;
+	    margin-bottom: 10px;
+	    color: #000;
+    }
+  }
+</style>

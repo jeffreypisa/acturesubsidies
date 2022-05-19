@@ -1,0 +1,74 @@
+<div class="submenu hidden-sm-down">
+  {% for hoofdmenu in options.hoofdmenu %}
+	  {% if hoofdmenu.menu_type != 'paginalink'%}
+	    <div id="{{ hoofdmenu.naam|sanitize }}" class="item hidden">
+    	  		<div class="container">
+					<div class="row">
+						<div class="col-3">
+							<h4 style="margin-bottom: 10px"> {{ hoofdmenu.naam }} </h4>
+							<p> {{ hoofdmenu.toelichting }} </p>
+							{% if hoofdmenu.knop %}
+								<a class="btn btn-light" href="{{ hoofdmenu.knop.url }}">
+									{{ hoofdmenu.knop.title }} 
+								</a>
+							{% endif %}
+						</div>
+						<div class="col-8 offset-1">
+							<div class="row">
+								{% if hoofdmenu.menu_type == 'diensten'%}
+									{% for pagina in diensten %}
+									  <div class="col-6">
+									    <a href="{{ pagina.permalink }}"> 
+									    	<div class="row">
+									    		<div class="col-auto" style="margin-right: -20px;">
+									    			<i class="fal fa-chevron-right"></i> 
+									    		</div>
+									    		<div class="col">
+									    			{{ pagina.title }}
+									    		</div>
+									    	</div> 
+									    </a>
+									  </div>
+									{% endfor %}
+								{% elseif hoofdmenu.menu_type == 'vestigingen'%}
+									{% for pagina in vestigingen %}
+									  <div class="col-6">
+									    <a href="{{ pagina.permalink }}"> 
+									    	<div class="row">
+									    		<div class="col-auto" style="margin-right: -20px;">
+									    			<i class="fal fa-chevron-right"></i> 
+									    		</div>
+									    		<div class="col">
+									    			{{ pagina.title }}
+									    		</div>
+									    	</div> 
+									    </a>
+									  </div>
+									{% endfor %}
+								{% else %}
+									{% for pagina in hoofdmenu.paginas %}
+									  <div class="col-6">
+									    <a href="{{ pagina.pagina_link }}"> 
+									    	<div class="row">
+									    		<div class="col-auto" style="margin-right: -20px;">
+									    			<i class="fal fa-chevron-right"></i> 
+									    		</div>
+									    		<div class="col">
+									    			{{ pagina.naam }}
+									    		</div>
+									    	</div> 
+									    </a>
+									    {% if pagina.toelichting %}
+												<p style="padding-left: 16px;"> {{ pagina.toelichting }} </p>
+									    {% endif %}
+									  </div>
+									{% endfor %}
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	  {% endif %}
+	{% endfor %}
+</div>

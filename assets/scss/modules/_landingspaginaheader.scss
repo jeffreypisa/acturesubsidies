@@ -1,0 +1,86 @@
+.mod-landingspaginaheader {
+	padding: 20px 0 200px;
+	position: relative;
+	background-image: url(../images/bg-landingspagina.svg);
+	background-size: contain;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	.row {
+		margin: 0 -5px;
+		> * {
+			padding: 0 5px;
+		}
+	}
+	.l_header {
+		margin-bottom: 60px;
+	}
+	.countdownwrap {
+		
+	}
+	#countdown {
+		margin: 10px 0;
+		.dateblock {
+			margin-bottom: 10px;
+			.wrapper {
+				height: 64px;
+			  border-radius: 4px;
+			  background-color: rgba(216, 216, 216, 0.2);
+			  span {
+				  display: block;
+					font-size: 16px;
+					line-height: 64px;
+					font-weight: 600;
+					font-stretch: normal;
+					font-style: normal;
+					letter-spacing: normal;
+					text-align: center;
+					color: #ED8531;
+					font-weight: 600;
+				}
+			}
+			&#days span:after {
+				content: ' dagen';
+			}
+			&#hours span:after {
+				content: ' uren';
+			}
+			&#minutes span:after {
+				content: ' minuten';
+			}
+		}
+	}
+	#seconds {
+		display: none;
+	}
+	.btn-wrap {
+		padding: 0 5px;		
+	}
+}
+
+.mod-logos {
+	margin-top: -200px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	.card-body {
+		padding: 50px 30px;
+	}
+	img {
+		max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin: 0 auto;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-landingspaginaheader {
+		.l_header {
+			margin-bottom: 120px;
+		}
+	}
+	.mod-logos {
+		img {
+			max-width: 60%;
+		}
+	}
+}

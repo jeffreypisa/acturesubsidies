@@ -1,0 +1,12 @@
+.mod-contentprijs {
+	
+}
+
+@include media-breakpoint-down(md) {
+	.mod-contentprijs {
+		.card {
+			width: 100%;
+			margin-top: 60px;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.followus {
+  display: block;
+  margin-bottom: 30px;
+  a {
+	  margin-right: 10px;
+	  display: inline-block;
+	  transition: all 0.3s;
+    i {
+      font-size: 21px;
+      transition: all 0.3s;
+      color: $walhalla-300;
+    }
+    &:hover {
+	    color: #fff;
+	    i {
+		    color: #fff;
+	    }
+    }
+  }
+}

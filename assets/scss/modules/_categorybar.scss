@@ -1,0 +1,20 @@
+.mod-categorybar {
+	padding: 10px 0 2px;
+	border-bottom: 1px solid #e2edff;
+	a {
+		margin: 0 4px 8px 0;
+		.color {
+			height: 8px;
+			width: 8px;
+			border-radius: 10px;
+			display: inline-block;
+			margin-right: 4px;
+			transition: 0.15s ease-in-out;
+		}
+		&:hover {
+			.color {
+				background: #fff !important;
+			}
+		}
+	}
+}

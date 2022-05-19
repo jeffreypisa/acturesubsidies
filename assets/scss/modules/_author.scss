@@ -1,0 +1,21 @@
+.mod-author {
+	margin: 10px 0 30px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #6e7f9d;
+	img.profilepicture {
+		border-radius: 100px;
+		width: 80px;
+		height: 80px;
+		margin-right: 20px;
+	}
+	h5 {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		margin-bottom: 4px !important;
+	}
+	.desc {
+		display: inline-block;
+		line-height: 20px;
+	}
+}

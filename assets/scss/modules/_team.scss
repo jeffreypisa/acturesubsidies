@@ -1,0 +1,98 @@
+.mod-team {
+	.card {
+		background-size: cover;
+		background-position: center center;
+		h5 {
+			margin: 0;
+			color: #fff;
+			width: 100%;
+		}
+		.icon {
+			margin-top: 4%;
+			position: relative;
+		}
+		&.flip-card-front {
+			background-color: $lightblue;
+			.card-body {
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.16+100 */
+				background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#29000000',GradientType=0 ); /* IE6-9 */
+			}
+		}
+		&.flip-card-back {
+			background-color: $purple;
+		}
+		.sticktobottom {
+			bottom: 20px;
+			left: 20px;
+			right: 20px;
+			color: #fff;
+			text-shadow: 1px 1px rgba(0,0,0,.2);
+			h4, h5, p{
+				margin: 0;
+			}
+			p {
+				font-size: 14px;
+				line-height:20px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.mod-team {
+		.card {
+			h5 {
+				font-size: 16px;
+				line-height: 24px;			
+			}
+		}
+	}
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+	height: 300px;
+  display: block;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+  .card {
+  }
+}

@@ -1,0 +1,56 @@
+<section id="section{{ sectionno }}" class="mod-features {% if item.bg_alt %} bg-lightgrey {% else %} bg-transparent {% endif %}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+		  	<div class="text-center">
+			  	{% if item.subtitel %}
+			      <span class="sub">{{ item.subtitel }}</span>
+			    {% endif %}
+					{% if item.titel %}
+			      <h2>{{ item.titel }}</h2>
+			    {% endif %}
+			  	{% if item.lead %}
+			    	{{ item.lead }}
+			    {% endif %}
+			    <br>
+		  	</div>
+  		</div>
+  	</div>
+    <div class="row">
+    	{% for item in item.features %}
+    		<div class="col-md-6">
+    			<div class="card with-shadow body3 bg-white">
+						<div class="row no-gutters">
+					    <div class="col-md-4 d-flex align-items-center {{ item.kleur }}">
+					    	<div class="w-100 text-center">
+					    		<a class="noline" {% if item.niet_actief %} {% else %}  href="{{ item.link }} {% endif %}">
+					      		<img src="{{ item.thumbnail.src }}" class="card-img" alt="..." style="width: 30%;">
+					      	</a>
+					      </div>
+					    </div>
+					    <div class="col-md-8">
+					      <div class="card-body">
+					      	<div data-mh>
+						        <h5>{{ item.title }}</h5>
+						        <p class="card-text"> {{ item.samenvatting }}</p>
+					      	</div>
+									{% if item.niet_actief %}{% else %}
+						        <div class="text-right">
+						        	<br>
+						        	<a class="btn-link" href="{{ item.link }}"> Lees meer </a>
+						        </div>
+					        {% endif %}
+					      </div>
+					    </div>
+					  </div>
+				  </div>
+    		</div>
+    	{% endfor %}
+    </div>
+		{% if item.link %}
+			<a class="btn btn-light" target="{{ item.link.target }}" href="{{ item.link.url }}">
+				{{ item.link.title }} 
+			</a>
+    {% endif %}
+  </div>
+</section>

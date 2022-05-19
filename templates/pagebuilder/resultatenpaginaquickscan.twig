@@ -1,0 +1,76 @@
+<section class="mod-resultatenpaginaquickscan bg-white">
+  <div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8 col-lg-6">
+				{% if item.Subtitel %}
+					<div class="text-center">
+						<h4 class="grey">{{ item.Subtitel }}</h4>
+						<br>
+					</div>
+				{% endif %}	 
+				<div class="w-100 card body3 with-shadow" data-aos="fade-up" data-aos-duration="800">
+					<div class="card-body body3">
+  					<div class="top" data-mh>
+  						<div class="row">
+  							<div class="col-6">
+						  		<div class="linewithdots">
+					  				<div class="row">
+					  					<div class="col-auto">
+												<div class="dot" style="background: {{ item.color }}"></div>
+					  					</div>
+					  					<div class="col-auto">
+												<div class="dot" style="background: {{ item.color }}"></div>
+					  					</div>
+					  					<div class="col">
+												<div class="line" style="background: {{ item.color }}"></div>
+					  					</div>
+					  				</div>
+					  			</div>
+  							</div>
+  						</div>
+			  			{% if item.titel %}
+			        	<h2>{{ item.titel }}</h2>
+			        {% endif %}	  
+			        {{ item.tekst }}		
+			        <br>			
+			      </div>		
+			      <div class="btn-container">
+	  					{% if item.primaire_link %}
+								<a class="btn btn-primary" target="{{ item.primaire_link.target }}" href="{{ item.primaire_link.url }}">
+									{{ item.primaire_link.title }}
+								</a>
+					    {% endif %}
+					    {% if item.secundaire_link %}
+								<a class="btn btn-secondary" target="{{ item.secundaire_link.target }}" href="{{ item.secundaire_link.url }}">
+									{{ item.secundaire_link.title }}
+								</a>
+					    {% endif %}
+			      </div>
+					</div>
+				</div>
+			</div>
+			{% set delay = delay + '150' %}
+		</div>
+		{% if item.usps %}
+			<br><br>
+			<div class="row">
+				{% for icoon in item.usps %}
+					<div class="col-md-4">
+						<div data-mh class="body2">
+							<img class="icoon" src="{{ icoon.icoon.url }}" width="26" height="26">
+							<h5> {{ icoon.titel }} </h5>
+							{{ icoon.tekst }}
+						</div>
+						<div class="clearfix"></div>
+						{% if icoon.link %}
+							<a class="btn-link" target="{{ icoon.link.target }}" href="{{ icoon.link.url }}">
+								{{ icoon.link.title }} 
+							</a>
+				    {% endif %}
+				    <br><br>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</section>

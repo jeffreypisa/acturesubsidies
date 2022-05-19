@@ -1,0 +1,66 @@
+<section id="section{{ sectionno }}" class="mod-landingspaginaquiz body2">
+	<div class="container">
+		<div class="top">
+		  <div class="row">
+		    <div class="col-lg-10 offset-lg-1 text-center ">
+		    	<div class="contentspace h-100 d-flex align-items-center">
+		    		<div class="blok-body text">
+			        {% if item.titel %}
+			        	<h2 class="h1">{{ item.titel }}</h2>
+			        {% endif %}
+			        {% if item.lead %}
+			        	<div class="lead"> {{ item.lead }} </div>
+			        {% endif %}
+							{% if item.link %}
+								<a class="btn btn-primary" target="{{ item.link.target }}" href="{{ item.link.url }}">
+									{{ item.link.title }} 
+								</a>
+					    {% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fotos d-none d-md-block">
+			<div class="fotoblok links">
+				<div style="background-image: url({{ item.foto_1.url|resize(768) }})" class="foto foto_1"></div>
+				<div style="background-image: url({{ item.foto_2.url|resize(768) }})" class="foto foto_2"></div>
+				<div style="background-image: url({{ item.foto_3.url|resize(768) }})" class="foto foto_3"></div>
+			</div>
+			<div class="fotoblok rechts">
+				<div style="background-image: url({{ item.foto_4.url|resize(768) }})" class="foto foto_4"></div>
+				<div style="background-image: url({{ item.foto_5.url|resize(768) }})" class="foto foto_5"></div>
+				<div style="background-image: url({{ item.foto_6.url|resize(768) }})" class="foto foto_6"></div>
+			</div>
+		</div>
+		<div class="nr123">
+			<div class="card body3">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="content">
+								<div class="nr"> 1 </div>
+								<h5> {{ item.blok_1_titel }} </h5>
+								{{ item.blok_1_tekst }}
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="content">
+								<div class="nr"> 2 </div>
+								<h5> {{ item.blok_2_titel }} </h5>
+								{{ item.blok_2_tekst }}
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="content">
+								<div class="nr"> 3 </div>
+								<h5> {{ item.blok_3_titel }} </h5>
+								{{ item.blok_3_tekst }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

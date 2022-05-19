@@ -1,0 +1,19 @@
+.progress {
+	border-radius: 10px;
+	height: 22px;
+	background: transparent;
+	.progress-bar {
+		border-radius: 10px;
+		position: relative;
+		span {
+			position: absolute;
+			display: inline-block;
+			top: 0px;
+			line-height: 22px;
+			left: 100%;
+			padding-left: 6px;
+			color: $grey;
+			font-size: 16px;
+		}
+	}
+}
